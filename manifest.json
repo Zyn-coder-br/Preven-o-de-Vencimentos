@@ -1,9 +1,1 @@
-{
-  "name": "Prevenção de Vencimentos",
-  "short_name": "Prevenção",
-  "start_url": "./index.html",
-  "display": "standalone",
-  "background_color": "#f4f7fb",
-  "theme_color": "#163a5f",
-  "lang": "pt-BR"
-}
+{"name":"Prevenção de Vencimentos V3","short_name":"Prevenção V3","start_url":"./","display":"standalone","background_color":"#f4f7fb","theme_color":"#163a5f","lang":"pt-BR","icons":[]}

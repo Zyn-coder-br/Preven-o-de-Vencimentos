@@ -1,21 +1,33 @@
-# Sistema de Prevenção de Vencimentos — versão 2
+PREVENÇÃO DE VENCIMENTOS — V3.0
 
-Abra `index.html` no navegador.
+Esta V3 foi construída sobre a V2 e faz migração automática dos registros locais da chave prevencao_vencimentos_v2 para a estrutura V3.
 
-## No Android
-Abra o arquivo em um navegador compatível. Para uso como aplicativo, hospede esta pasta em um serviço HTTPS e use "Adicionar à tela inicial".
+PRINCIPAIS MUDANÇAS
+- Cadastro usa apenas CORREDOR. Não há Seção nem Lado.
+- Loja começa com 18 corredores, editáveis pelo administrador.
+- Batida: um corredor por vez.
+- Recomendação automática: corredor com maior tempo desde a última batida.
+- É possível fazer outro corredor sem alterar a prioridade do recomendado.
+- Batidas registram data/hora, corredor, responsável e quantidade de produtos.
+- Produto registra a validade crítica encontrada; não exige cadastrar validade distante.
+- Foto direta pela câmera/galeria com compressão local.
+- Status: Encontrado; Ainda no corredor; Separado; Aguardando oferta; Oferta solicitada; Oferta aplicada; Resolvido.
+- Lista de produtos com miniatura e seleção múltipla para mudança de status em lote.
+- Controle de quantidade encontrada e ajuste posterior.
+- Alertas no painel e suporte à permissão de notificações do navegador.
+- Escala de equipe para decidir quem recebe alertas, sem bloquear usuários.
+- Histórico de batidas e relatórios básicos.
+- Backup V3 em JSON.
 
-## No computador
-Use a mesma aplicação pelo navegador. Os dados ficam no navegador de cada aparelho. Para sincronizar manualmente entre aparelhos:
-1. No aparelho de origem, use Backup > Exportar dados.
-2. Leve o arquivo JSON ao outro aparelho.
-3. Use Backup > Importar dados.
+EQUIPE INICIAL
+Ramon — Pleno 2 — administrador
+Luan — Pleno 1 — operador
+Wagner — Chefe — operador
 
-## Estrutura
-Seção 1: corredores 1–5, esquerdo e direito.
-Seção 2: corredores 1–4, esquerdo e direito.
+IMPORTANTE SOBRE SINCRONIZAÇÃO
+A V3.0 entregue neste pacote ainda usa armazenamento local do navegador. Ela não sincroniza automaticamente entre Androids e computador. A estrutura foi separada para permitir a próxima etapa de nuvem compartilhada. Para ativar sincronização real, será necessário configurar um serviço de banco/conta compartilhada e suas credenciais.
 
-## Prioridades
-Vencido; 0–7 dias; 8–15 dias; 16–31 dias; 32–60 dias; >60 dias.
-
-A aplicação foi feita para cadastro rápido, filtros por prioridade/seção/corredor, painel, rotina, mapa e controle de status.
+ATUALIZAÇÃO SEGURA
+1. Exporte o backup antes de atualizar.
+2. Não apague o backup.
+3. Futuras versões devem manter a chave/estrutura de dados ou executar migração explícita.
