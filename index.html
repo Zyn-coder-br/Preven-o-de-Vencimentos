@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#163a5f">
+<link rel="manifest" href="manifest.json"><title>Prevenção — Controle de Vencimentos</title>
+<style>
+:root{--navy:#163a5f;--blue:#2563eb;--bg:#f4f7fb;--card:#fff;--text:#182230;--muted:#687586;--red:#c62828;--orange:#ef6c00;--yellow:#b77900;--green:#2e7d32;--line:#dbe2ea}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text)}
+header{background:var(--navy);color:#fff;padding:16px 18px;position:sticky;top:0;z-index:5;box-shadow:0 2px 8px #0002}
+header h1{margin:0;font-size:20px}header small{opacity:.8}
+nav{display:flex;gap:7px;overflow:auto;padding:10px 12px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:70px;z-index:4}
+nav button{border:0;background:#eef3f8;border-radius:10px;padding:10px 13px;white-space:nowrap;font-weight:700;color:#28445f}nav button.active{background:var(--blue);color:white}
+main{max-width:1100px;margin:auto;padding:16px}.view{display:none}.view.active{display:block}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px;box-shadow:0 2px 8px #163a5f0b}.metric strong{font-size:27px;display:block;margin-top:5px}.metric span{color:var(--muted);font-size:13px}
+.red{color:var(--red)}.orange{color:var(--orange)}.yellow{color:var(--yellow)}.green{color:var(--green)}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.toolbar input,.toolbar select,.form input,.form select,.form textarea{padding:11px;border:1px solid #cbd5e1;border-radius:9px;background:white;width:100%}.toolbar>*{flex:1;min-width:150px}
+button.primary,button.action{background:var(--blue);color:white;border:0;border-radius:9px;padding:11px 14px;font-weight:800;cursor:pointer}button.secondary{background:#e9eef5;border:0;border-radius:9px;padding:11px 14px;font-weight:700}
+.tablewrap{overflow:auto;background:white;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;min-width:900px}th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}th{background:#eef3f8;position:sticky;top:0}.badge{display:inline-block;padding:5px 8px;border-radius:999px;font-size:11px;font-weight:800}.b-red{background:#fde2e2;color:#9b1c1c}.b-orange{background:#ffead5;color:#a74700}.b-yellow{background:#fff3c4;color:#806000}.b-blue{background:#dcecff;color:#164c9c}.b-green{background:#dff2df;color:#216126}.b-gray{background:#e8eaed;color:#505860}
+.formgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.form label{font-size:12px;font-weight:800;color:#526171;display:block;margin-bottom:5px}.form .full{grid-column:1/-1}
+.alert{padding:12px;border-radius:10px;background:#fff4d6;border:1px solid #f0d27c;margin:10px 0}.empty{padding:30px;text-align:center;color:var(--muted)}
+#toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#182230;color:#fff;padding:12px 16px;border-radius:10px;display:none;z-index:20}
+@media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}.formgrid{grid-template-columns:1fr}main{padding:10px}.metric strong{font-size:23px}}
+</style>
+</head>
+<body>
+<header><h1>🛒 Prevenção de Vencimentos</h1><small>Controle diário • 2 seções • 18 corredores</small></header>
+<nav>
+<button data-view="dashboard" class="active">Painel</button>
+<button data-view="novo">＋ Novo</button>
+<button data-view="lista">Vencimentos</button>
+<button data-view="rotina">Rotina</button>
+<button data-view="mapa">Mapa</button>
+<button data-view="backup">Backup</button>
+</nav>
+<main>
+<section id="dashboard" class="view active">
+<h2>Painel</h2>
+<div class="grid" id="metrics"></div>
+<div class="card" style="margin-top:14px">
+<h3>🔴 Prioridade de hoje</h3><div id="priority"></div>
+</div>
+<div class="card" style="margin-top:14px">
+<h3>📅 Próximos 60 dias</h3><div id="next60"></div>
+</div>
+</section>
+
+<section id="novo" class="view">
+<h2>Novo vencimento</h2>
+<div class="card form">
+<div class="formgrid">
+<div><label>Produto *</label><input id="produto" placeholder="Ex.: Café Qualitá 250g"></div>
+<div><label>Marca</label><input id="marca" placeholder="Marca"></div>
+<div><label>Categoria</label><input id="categoria" placeholder="Ex.: Mercearia"></div>
+<div><label>Validade *</label><input id="validade" type="date"></div>
+<div><label>Quantidade *</label><input id="quantidade" type="number" min="1" placeholder="0"></div>
+<div><label>Seção *</label><select id="secao"><option value="">Selecione</option><option>1</option><option>2</option></select></div>
+<div><label>Corredor *</label><select id="corredor"></select></div>
+<div><label>Lado *</label><select id="lado"><option value="">Selecione</option><option>Esquerdo</option><option>Direito</option></select></div>
+<div><label>Status</label><select id="status"><option>Encontrado</option><option>Separado</option><option>Oferta solicitada</option><option>Oferta aplicada</option><option>Em exposição</option><option>Vendido</option><option>Retirado</option><option>Baixa/Descartar</option></select></div>
+<div><label>Foto/Link</label><input id="foto" placeholder="Opcional"></div>
+<div class="full"><label>Observações</label><textarea id="obs" rows="3" placeholder="Ex.: lote, quantidade por caixa, observação da oferta..."></textarea></div>
+</div>
+<div style="margin-top:14px;display:flex;gap:8px"><button class="primary" onclick="salvar()">Registrar vencimento</button><button class="secondary" onclick="limpar()">Limpar</button></div>
+</div>
+<div class="alert">💡 Dica: durante a batida, registre somente os produtos que precisam de acompanhamento. O sistema calcula a prioridade automaticamente.</div>
+</section>
+
+<section id="lista" class="view">
+<h2>Vencimentos</h2>
+<div class="toolbar">
+<input id="busca" placeholder="🔎 Produto..." oninput="renderLista()">
+<select id="filtroPrioridade" onchange="renderLista()"><option value="">Todas prioridades</option><option value="VENCIDO">Vencidos</option><option value="0-7">0–7 dias</option><option value="8-15">8–15 dias</option><option value="16-31">16–31 dias</option><option value="32-60">32–60 dias</option><option value="NORMAL">Mais de 60 dias</option></select>
+<select id="filtroSecao" onchange="renderLista()"><option value="">Todas seções</option><option>1</option><option>2</option></select>
+<select id="filtroCorredor" onchange="renderLista()"><option value="">Todos corredores</option></select>
+</div>
+<div class="tablewrap"><table><thead><tr><th>Produto</th><th>Validade</th><th>Dias</th><th>Local</th><th>Qtd.</th><th>Prioridade</th><th>Ação</th><th>Status</th><th></th></tr></thead><tbody id="tbody"></tbody></table></div>
+</section>
+
+<section id="rotina" class="view">
+<h2>Rotina de trabalho</h2>
+<div class="card">
+<h3>🌅 Início do turno</h3><p>1. Abra o Painel. 2. Veja vencidos e itens até 15 dias. 3. Separe as prioridades.</p>
+<h3>🔎 Batida — Seção 1</h3><p>Corredor 1–5 Esquerdo → Corredor 1–5 Direito.</p>
+<h3>🔎 Batida — Seção 2</h3><p>Corredor 1–4 Esquerdo → Corredor 1–4 Direito.</p>
+<h3>📦 Depois da batida</h3><p>Filtre os itens do mês, organize a ação e atualize o status.</p>
+<h3>🌙 Fechamento</h3><p>Não deixe itens trabalhados sem status. Faça uma revisão rápida dos próximos 60 dias.</p>
+</div>
+<div class="card" style="margin-top:12px">
+<h3>Checklist</h3>
+<label><input type="checkbox"> Verifiquei prioridades</label><br><br>
+<label><input type="checkbox"> Fiz Seção 1</label><br><br>
+<label><input type="checkbox"> Fiz Seção 2</label><br><br>
+<label><input type="checkbox"> Atualizei ações/status</label><br><br>
+<label><input type="checkbox"> Revisei próximos 60 dias</label>
+</div>
+</section>
+
+<section id="mapa" class="view">
+<h2>Mapa dos corredores</h2>
+<div id="mapgrid" class="grid"></div>
+</section>
+
+<section id="backup" class="view">
+<h2>Backup e dados</h2>
+<div class="card">
+<p>Os registros ficam salvos neste aparelho/navegador. Para trabalhar também no computador, use <strong>Exportar</strong> e importe o arquivo no outro dispositivo.</p>
+<button class="primary" onclick="exportar()">Exportar dados (.json)</button>
+<button class="secondary" onclick="document.getElementById('importFile').click()">Importar dados</button>
+<input id="importFile" type="file" accept=".json" style="display:none" onchange="importar(event)">
+</div>
+<div class="card" style="margin-top:12px"><h3>Fluxo recomendado</h3><p><strong>Android:</strong> registre durante a batida → exporte no fim do turno.</p><p><strong>Computador:</strong> importe → revise com filtros → exporte a versão atualizada.</p></div>
+</section>
+</main>
+<div id="toast"></div>
+<script>
+const KEY='prevencao_vencimentos_v2';
+let items=JSON.parse(localStorage.getItem(KEY)||'[]');
+const $=id=>document.getElementById(id);
+function hoje(){let d=new Date();d.setHours(0,0,0,0);return d}
+function dias(v){if(!v)return null;let d=new Date(v+'T00:00:00');return Math.ceil((d-hoje())/86400000)}
+function prioridade(n){if(n===null)return '';if(n<0)return 'VENCIDO';if(n<=7)return '0-7';if(n<=15)return '8-15';if(n<=31)return '16-31';if(n<=60)return '32-60';return 'NORMAL'}
+function badge(p){let cls=p==='VENCIDO'||p==='0-7'?'b-red':p==='8-15'?'b-orange':p==='16-31'?'b-yellow':p==='32-60'?'b-blue':p==='NORMAL'?'b-green':'b-gray';return `<span class="badge ${cls}">${p}</span>`}
+function acao(p){return p==='VENCIDO'||p==='0-7'?'AÇÃO IMEDIATA':p==='8-15'?'PROGRAMAR OFERTA':p==='16-31'?'TRABALHAR NESTE MÊS':p==='32-60'?'ACOMPANHAR':'ACOMPANHAR'}
+function save(){localStorage.setItem(KEY,JSON.stringify(items));}
+function toast(t){$('toast').textContent=t;$('toast').style.display='block';setTimeout(()=>$('toast').style.display='none',2200)}
+function setup(){
+ let opts='<option value="">Selecione</option>';for(let i=1;i<=10;i++)opts+=`<option>${i}</option>`;$('corredor').innerHTML=opts;
+ let f='<option value="">Todos corredores</option>';for(let i=1;i<=10;i++)f+=`<option>${i}</option>`;$('filtroCorredor').innerHTML=f;
+ document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>show(b.dataset.view,b));
+ renderDashboard();renderLista();renderMapa();
+}
+function show(id,b){document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));if(b)b.classList.add('active');if(id==='dashboard')renderDashboard();if(id==='lista')renderLista()}
+function salvar(){
+ if(!$('produto').value||!$('validade').value||!$('quantidade').value||!$('secao').value||!$('corredor').value||!$('lado').value){toast('Preencha os campos obrigatórios.');return}
+ items.push({id:Date.now(),produto:$('produto').value.trim(),marca:$('marca').value.trim(),categoria:$('categoria').value.trim(),validade:$('validade').value,quantidade:+$('quantidade').value,secao:$('secao').value,corredor:$('corredor').value,lado:$('lado').value,status:$('status').value,foto:$('foto').value.trim(),obs:$('obs').value.trim(),criado:new Date().toISOString()});
+ save();toast('Vencimento registrado!');limpar();renderDashboard();
+}
+function limpar(){['produto','marca','categoria','validade','quantidade','foto','obs'].forEach(id=>$(id).value='');$('secao').value='';$('corredor').value='';$('lado').value='';$('status').value='Encontrado'}
+function renderDashboard(){
+ let ps=items.map(x=>dias(x.validade));let counts={v:0,p7:0,p15:0,m:0,n60:0,normal:0};
+ items.forEach(x=>{let p=prioridade(dias(x.validade));if(p==='VENCIDO')counts.v++;else if(p==='0-7')counts.p7++;else if(p==='8-15')counts.p15++;else if(p==='16-31')counts.m++;else if(p==='32-60')counts.n60++;else counts.normal++});
+ $('metrics').innerHTML=[
+  ['Total',items.length,''],['Vencidos',counts.v,'red'],['0–7 dias',counts.p7,'red'],['8–15 dias',counts.p15,'orange'],['Este mês',counts.m,'yellow'],['32–60 dias',counts.n60,'blue'],['>60 dias',counts.normal,'green']
+ ].map(a=>`<div class="card metric"><span>${a[0]}</span><strong class="${a[2]}">${a[1]}</strong></div>`).join('');
+ let urgent=items.filter(x=>{let n=dias(x.validade);return n<=15}).sort((a,b)=>dias(a.validade)-dias(b.validade));
+ $('priority').innerHTML=urgent.length?urgent.slice(0,12).map(rowMini).join(''):'<div class="empty">Nenhum item até 15 dias.</div>';
+ let next=items.filter(x=>{let n=dias(x.validade);return n>=0&&n<=60}).sort((a,b)=>new Date(a.validade)-new Date(b.validade));
+ $('next60').innerHTML=next.length?next.slice(0,15).map(rowMini).join(''):'<div class="empty">Nenhum item nos próximos 60 dias.</div>';
+}
+function rowMini(x){let n=dias(x.validade),p=prioridade(n);return `<div style="padding:10px 0;border-bottom:1px solid var(--line)"><strong>${esc(x.produto)}</strong> — ${fmt(x.validade)} • ${n} dia(s) • ${badge(p)}<br><small>${esc(x.quantidade)} un. • Seção ${x.secao} / Corredor ${x.corredor} / ${x.lado} • ${acao(p)}</small></div>`}
+function renderLista(){
+ let q=($('busca').value||'').toLowerCase(),fp=$('filtroPrioridade').value,fs=$('filtroSecao').value,fc=$('filtroCorredor').value;
+ let arr=items.filter(x=>(!q||x.produto.toLowerCase().includes(q))&&(!fp||prioridade(dias(x.validade)).includes(fp))&&(!fs||x.secao===fs)&&(!fc||x.corredor===fc)).sort((a,b)=>new Date(a.validade)-new Date(b.validade));
+ $('tbody').innerHTML=arr.length?arr.map(x=>{let n=dias(x.validade),p=prioridade(n);return `<tr><td><strong>${esc(x.produto)}</strong><br><small>${esc(x.marca||'')}</small></td><td>${fmt(x.validade)}</td><td class="${n<=15?'red':''}"><strong>${n}</strong></td><td>S${x.secao}/C${x.corredor}<br>${x.lado}</td><td>${x.quantidade}</td><td>${badge(p)}</td><td>${acao(p)}</td><td><select onchange="status(${x.id},this.value)">${['Encontrado','Separado','Oferta solicitada','Oferta aplicada','Em exposição','Vendido','Retirado','Baixa/Descartar'].map(s=>`<option ${s===x.status?'selected':''}>${s}</option>`).join('')}</select></td><td><button class="secondary" onclick="remover(${x.id})">Excluir</button></td></tr>`}).join(''):'<tr><td colspan="9"><div class="empty">Nenhum registro encontrado.</div></td></tr>';
+}
+function status(id,s){let x=items.find(a=>a.id===id);if(x){x.status=s;x.dataAcao=new Date().toISOString();save();toast('Status atualizado.');renderDashboard()}}
+function remover(id){if(confirm('Excluir este registro?')){items=items.filter(x=>x.id!==id);save();renderLista();renderDashboard()}}
+function renderMapa(){
+ let arr=[];for(let sec=1;sec<=2;sec++){let max=sec===1?5:4;for(let c=1;c<=max;c++){for(let lado of ['Esquerdo','Direito']){let count=items.filter(x=>x.secao==sec&&x.corredor==c&&x.lado==lado).length;arr.push(`<div class="card"><strong>Seção ${sec} • Corredor ${c}</strong><br><small>${lado}</small><h3>${count} item(ns)</h3><button class="secondary" onclick="filtrarMapa('${sec}','${c}')">Ver vencimentos</button></div>`)}}}$('mapgrid').innerHTML=arr.join('');
+}
+function filtrarMapa(sec,c){$('filtroSecao').value=sec;$('filtroCorredor').value=c;show('lista',document.querySelector('[data-view=lista]'));renderLista()}
+function fmt(v){if(!v)return '';let [y,m,d]=v.split('-');return `${d}/${m}/${y}`}
+function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
+function exportar(){let blob=new Blob([JSON.stringify(items,null,2)],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='backup_prevencao_'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(a.href);toast('Backup exportado.')}
+function importar(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let d=JSON.parse(r.result);if(!Array.isArray(d))throw 0;items=d;save();renderDashboard();renderLista();renderMapa();toast('Dados importados!')}catch{toast('Arquivo inválido.')}};r.readAsText(f)}
+setup();
+</script>
+<script>if("serviceWorker" in navigator){navigator.serviceWorker.register("./service-worker.js")}</script></body>
+</html>

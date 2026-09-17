@@ -1,0 +1,9 @@
+{
+  "name": "Prevenção de Vencimentos",
+  "short_name": "Prevenção",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#163a5f",
+  "lang": "pt-BR"
+}
