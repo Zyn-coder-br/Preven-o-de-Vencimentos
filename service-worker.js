@@ -1,4 +1,4 @@
-const CACHE='vencimentos-pa-v3-19-5';
+const CACHE='vencimentos-pa-v3-24';
 const SHELL=[
   './',
   './index.html',
@@ -11,7 +11,9 @@ const SHELL=[
   './notification-icon-pique.png',
   './notification-icon-batida.png',
   './notification-icon-fefo.png',
-  './notificacao_pa.wav'
+  './notification-icon-promotor.png',
+  './notificacao_pa.wav',
+  './notificacao_promotor.wav'
 ];
 
 self.addEventListener('install', event=>{
