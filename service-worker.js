@@ -1,4 +1,4 @@
-const CACHE='vencimentos-pa-v3-19';
+const CACHE='vencimentos-pa-v3-19-1';
 self.addEventListener('install',()=>self.skipWaiting());
 self.addEventListener('activate',event=>event.waitUntil(self.clients.claim()));
 self.addEventListener('message',event=>{
