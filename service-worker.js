@@ -1,4 +1,4 @@
-const CACHE='vencimentos-pa-v3-19-4-pwa';
+const CACHE='vencimentos-pa-v3-19-5';
 const SHELL=[
   './',
   './index.html',
