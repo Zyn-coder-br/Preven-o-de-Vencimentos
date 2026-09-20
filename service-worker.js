@@ -1,11 +1,11 @@
-const CACHE='vencimentos-pa-v3-19-1';
+const CACHE='vencimentos-pa-v3-19-2';
 self.addEventListener('install',()=>self.skipWaiting());
 self.addEventListener('activate',event=>event.waitUntil(self.clients.claim()));
 self.addEventListener('message',event=>{
   const data=event.data||{};
   if(data.type==='SHOW_NOTIFICATION'){
     const title=data.title||'Vencimentos PA';
-    const options=data.options||{};
+    const options={...(data.options||{}),badge:'./notification-icon-produto.png'};
     event.waitUntil(self.registration.showNotification(title,options));
   }
 });
