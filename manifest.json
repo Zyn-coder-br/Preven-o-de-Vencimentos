@@ -4,14 +4,17 @@
   "short_name": "Vencimentos PA",
   "description": "Controle inteligente de validade",
   "lang": "pt-BR",
+  "dir": "ltr",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "display_override": ["window-controls-overlay", "standalone"],
+  "orientation": "portrait-primary",
   "background_color": "#f7f9f3",
-  "theme_color": "#8aa477",
+  "theme_color": "#536b35",
+  "prefer_related_applications": false,
   "icons": [
-    {"src":"./logo-pa.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
-    {"src":"./logo-pa.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+    {"src":"./icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"./icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
   ]
 }
