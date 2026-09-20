@@ -1,0 +1,1131 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#536b35"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="Vencimentos PA"><link rel="apple-touch-icon" href="./icon-192.png"><link rel="manifest" href="manifest.json"><title>Vencimentos PA</title>
+<style>
+:root{--navy:#163a5f;--blue:#2563eb;--bg:#f4f7fb;--card:#fff;--text:#182230;--muted:#687586;--red:#c62828;--orange:#ef6c00;--yellow:#b77900;--green:#2e7d32;--line:#dbe2ea;--purple:#6d4aff}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--text)}header{background:var(--navy);color:#fff;padding:15px 17px;position:relative;z-index:1;box-shadow:0 2px 8px #0002}header h1{margin:0;font-size:20px}header small{opacity:.82}nav{display:flex;gap:7px;overflow:auto;padding:9px 11px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:65px;z-index:9}nav button{border:0;background:#eef3f8;border-radius:10px;padding:10px 12px;white-space:nowrap;font-weight:800;color:#28445f;cursor:pointer}nav button.active{background:var(--blue);color:white}#subnav{top:116px;z-index:8;padding-top:7px;padding-bottom:7px;background:#f8fafc}#subnav button{font-size:13px;padding:9px 11px}#subnav[hidden]{display:none}@media(max-width:760px){nav{gap:6px;padding:8px 9px}#subnav{top:112px}nav button{padding:9px 10px;font-size:13px}}main{max-width:1100px;margin:auto;padding:14px}.view{display:none}.view.active{display:block}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:0 2px 8px #163a5f0b}.metric strong{font-size:27px;display:block;margin-top:4px}.metric span{color:var(--muted);font-size:13px}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.toolbar>*{flex:1;min-width:145px}.toolbar input,.toolbar select,.form input,.form select,.form textarea{padding:11px;border:1px solid #cbd5e1;border-radius:9px;background:#fff;width:100%}button.primary,button.action{background:var(--blue);color:#fff;border:0;border-radius:9px;padding:11px 14px;font-weight:800;cursor:pointer}.hero .primary{background:#fff;color:var(--olive-dark);border:0}button.secondary{background:#e9eef5;border:0;border-radius:9px;padding:10px 13px;font-weight:700;cursor:pointer}button.danger{background:#fde2e2;color:#9b1c1c;border:0;border-radius:9px;padding:10px 13px;font-weight:700}.formgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}.form label{font-size:12px;font-weight:800;color:#526171;display:block;margin-bottom:5px}.full{grid-column:1/-1}.alert{padding:12px;border-radius:10px;background:#fff4d6;border:1px solid #f0d27c;margin:10px 0}.empty{padding:25px;text-align:center;color:var(--muted)}.badge{display:inline-block;padding:5px 8px;border-radius:999px;font-size:11px;font-weight:800}.b-red{background:#fde2e2;color:#9b1c1c}.b-orange{background:#ffead5;color:#a74700}.b-yellow{background:#fff3c4;color:#806000}.b-blue{background:#dcecff;color:#164c9c}.b-green{background:#dff2df;color:#216126}.b-gray{background:#e8eaed;color:#505860}.b-purple{background:#ece7ff;color:#5333b7}.red{color:var(--red)}.orange{color:var(--orange)}.yellow{color:var(--yellow)}.green{color:var(--green)}.section-title{display:flex;align-items:center;justify-content:space-between;gap:8px}.hero{padding:18px;background:linear-gradient(135deg,#163a5f,#285b8d);color:#fff;border-radius:16px}.hero button{background:#fff;color:#163a5f}.batida-list,.product-list{display:flex;flex-direction:column;gap:8px}.item{display:flex;gap:10px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:12px;background:#fff}.item input{width:20px;height:20px;flex:0 0 auto}.thumb{width:52px;height:52px;border-radius:9px;background:#eef3f8;object-fit:cover;flex:0 0 auto}.item-main{min-width:0;flex:1}.item-main strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.item-main small{color:var(--muted)}.actions{display:flex;gap:6px;flex-wrap:wrap}.stickybar{position:sticky;bottom:8px;background:#fff;border:1px solid var(--line);box-shadow:0 3px 12px #0002;border-radius:13px;padding:9px;display:flex;gap:7px;align-items:center;z-index:5}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.list-table{overflow:auto}.list-table table{width:100%;border-collapse:collapse;min-width:760px}.list-table th,.list-table td{padding:9px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}.list-table th{background:#eef3f8}.muted{color:var(--muted)}.next-action{margin-top:8px;padding:9px 10px;border-left:4px solid var(--blue);background:#f5f9ff;border-radius:9px;color:#24425f}.kpi{font-size:13px}.corridor-row{display:grid;grid-template-columns:70px 1fr auto;gap:8px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line)}#toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#182230;color:#fff;padding:12px 16px;border-radius:10px;display:none;z-index:30;max-width:90%;text-align:center}@media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}.formgrid,.two{grid-template-columns:1fr}main{padding:10px}.metric strong{font-size:23px}.item .actions{width:100%}.item{align-items:flex-start;flex-wrap:wrap}.thumb{width:48px;height:48px}}
+/* Identidade Vencimentos PA — homenagem visual ao Pão de Açúcar */
+:root{--navy:#7f956d;--blue:#8aa274;--bg:#f7f9f4;--card:#fff;--text:#283322;--muted:#68725f;--red:#b3262d;--orange:#d56a00;--yellow:#9a7000;--green:#5c7a45;--line:#dfe5d9;--purple:#6750a4;--olive:#8aa274;--olive-dark:#607651;--gold:#d8b15a}body{background:linear-gradient(180deg,#fafbf8 0%,#f5f7f1 100%)}header.brand-header{background:linear-gradient(135deg,#7f956d 0%,#8aa274 68%,#9bad89 100%);padding:13px 17px 12px;box-shadow:0 3px 12px #7f956d33}header .brand-row{display:flex;align-items:center;gap:10px}.brand-mark{width:42px;height:42px;border-radius:50%;background:#fff;color:#8aa274;display:grid;place-items:center;font-weight:950;font-size:16px;box-shadow:0 2px 8px #0002;border:3px solid #e9d28d}.logo-holder{width:58px;height:58px;border-radius:14px;padding:3px;background:#fff;border:2px solid #e9d28d;overflow:hidden}.logo-holder img{width:100%;height:100%;object-fit:contain;display:block;border-radius:10px}.brand-header h1{font-size:21px;letter-spacing:.1px}.brand-header small{opacity:.9}.brand-slogan{font-size:13px;font-weight:900;letter-spacing:.35px;margin:8px 0 1px;color:#fff}.brand-note{font-size:11px;color:#f1f5ed;opacity:.92}.welcome-card{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:17px 18px;margin-bottom:10px;background:#fff;border:1px solid var(--line);border-left:5px solid var(--olive);border-radius:16px;box-shadow:0 3px 12px #304b2510}.welcome-card h2{margin:3px 0 4px}.welcome-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}.welcome-kicker{font-size:11px;font-weight:950;letter-spacing:1px;color:var(--olive)}.welcome-badge{background:#eef4e9;color:#506842;border-radius:999px;padding:9px 11px;font-size:12px;font-weight:900;white-space:nowrap}.quick-guide{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:10px 0 12px}.quick-guide>div{background:#fff;border:1px solid var(--line);border-radius:13px;padding:11px;box-shadow:0 2px 7px #5f76500b}.quick-guide strong{display:block;font-size:13px}.quick-guide span{display:block;color:var(--muted);font-size:11px;margin-top:4px;line-height:1.35}.hero{background:linear-gradient(135deg,#7f956d,#91a980);border:1px solid #a8b99a}.hero button{color:#506842}.metric{border-top:3px solid #dfe7d5}.metric strong{color:var(--olive-dark)}nav button{color:#506042;background:#eef3ed}nav button.active{background:var(--olive)}#subnav{background:#fbfcfa}.card{box-shadow:0 2px 9px #5f765012}.next-action{border-left-color:var(--olive);background:#f3f7ee}button.primary,button.action{background:var(--olive)}button.secondary{background:#eef3eb;color:#506842}.toolbar input:focus,.toolbar select:focus,.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid #c5d3b4;outline-offset:1px}@media(max-width:760px){.welcome-card{align-items:flex-start;flex-direction:column}.welcome-badge{align-self:flex-start}.quick-guide{grid-template-columns:1fr}}
+/* Modal de edição pós-batida */
+.modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,.62);display:none;align-items:center;justify-content:center;padding:12px;z-index:50}.modal-overlay.open{display:flex}.edit-modal{width:min(720px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:18px;box-shadow:0 18px 60px #0005}.edit-modal-head{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);padding:15px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;z-index:2}.edit-modal-head h3{margin:0;font-size:19px}.edit-modal-body{padding:16px}.edit-modal-actions{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--line);padding:12px 16px;display:flex;justify-content:flex-end;gap:8px;z-index:2}.edit-photo-preview{width:74px;height:74px;border-radius:12px;object-fit:cover;background:#eef3f8;border:1px solid var(--line);display:block;margin-top:8px}.edit-help{font-size:12px;color:var(--muted);margin-top:4px}@media(max-width:760px){.modal-overlay{padding:0;align-items:flex-end}.edit-modal{width:100%;max-height:94vh;border-radius:18px 18px 0 0}.edit-modal-body{padding:13px}.edit-modal-actions{padding-bottom:calc(12px + env(safe-area-inset-bottom))}}
+.filter-choice-modal{max-width:560px}.filter-choice-list{display:flex;flex-direction:column;gap:0}.filter-choice{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:16px 14px;border:0;border-bottom:1px solid var(--line);background:#fff;color:var(--text);text-align:left;font-size:16px;font-weight:700;cursor:pointer}.filter-choice:last-child{border-bottom:0}.filter-choice .choice-radio{width:22px;height:22px;border:3px solid #aab2bf;border-radius:50%;flex:0 0 auto}.filter-choice.selected .choice-radio{border-color:#2563eb;box-shadow:inset 0 0 0 4px #fff;background:#2563eb}.photo-modal-content{width:min(760px,100%);max-width:100%;min-width:0;overflow:hidden}.photo-modal-body{width:100%;max-width:100%;min-width:0;overflow:hidden}.photo-modal-body img{display:block;width:auto;max-width:100%;height:auto;max-height:calc(100dvh - 150px);object-fit:contain;border-radius:12px;margin:0 auto}@media(max-width:760px){.photo-modal-content{width:100%;border-radius:18px 18px 0 0}.photo-modal-body{padding:8px!important;min-height:0!important}.photo-modal-body img{max-width:100%;max-height:calc(100dvh - 145px)}}.status-modal{max-width:560px}.status-options{display:flex;flex-direction:column;gap:9px}.status-option{width:100%;text-align:left;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:pointer;font-weight:800;display:flex;align-items:center;gap:10px}.status-option.current{box-shadow:0 0 0 2px #2563eb33;border-color:#2563eb}.status-option:hover{background:#f7faff}.status-dot{width:12px;height:12px;border-radius:50%;flex:0 0 auto}.dot-found{background:#2e7d32}.dot-corridor{background:#c62828}.dot-separated{background:#2e7d32}.dot-wait{background:#b77900}.dot-requested{background:#2e7d32}.dot-applied{background:#2e7d32}.dot-resolved{background:#2e7d32}.dot-area{background:#2563eb}.dot-plu{background:#2e7d32}
+@media print{header,nav,#subnav,#toast,#relatorios>.section-title,#relatorios>.toolbar,#relatorios>.alert{display:none!important}body{background:#fff}.view{display:none!important}.view#relatorios{display:block!important}.card{box-shadow:none;break-inside:avoid}main{max-width:none;padding:0}.list-table table{min-width:0;font-size:10px}}
+
+/* Nuvem Supabase — primeira etapa: login */
+#cloudAuthGate{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;background:linear-gradient(180deg,#fafbf8 0%,#f1f5ec 100%);overflow:auto}
+#cloudAuthGate[hidden]{display:none}
+.cloud-auth-card{width:min(430px,100%);background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 14px 45px #536b3526}
+.cloud-auth-brand{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.cloud-auth-logo{width:52px;height:52px;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden;border:2px solid #d8b15a;box-shadow:0 2px 8px #0002;flex:0 0 auto}.cloud-auth-logo img{width:100%;height:100%;object-fit:cover;display:block}
+.cloud-auth-card h2{margin:0;color:#536b35;font-size:22px}
+.cloud-auth-card p{margin:5px 0 18px;color:var(--muted);font-size:13px}
+.cloud-auth-card label{display:block;font-size:12px;font-weight:800;color:#526171;margin:12px 0 5px}
+.cloud-auth-card input{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:10px;background:#fff;font-size:15px}
+.cloud-auth-card button{width:100%;margin-top:16px;padding:12px;border:0;border-radius:10px;background:#8aa274;color:#fff;font-weight:900;font-size:15px;cursor:pointer}
+.cloud-auth-card button:disabled{opacity:.65;cursor:wait}
+#cloudAuthMsg{min-height:20px;margin-top:12px;font-size:13px;font-weight:700}
+.cloud-auth-ok{color:#2e7d32}.cloud-auth-error{color:#b3262d}
+
+/* V3.14.1 — segurança de sessão e comprovante PIQUE */
+.pique-modal{max-width:560px}.pique-proof{border:2px dashed #9bad89;background:#f7faf4;border-radius:14px;padding:14px}.pique-proof input{margin-top:8px}.pique-proof-preview{width:100%;max-height:280px;object-fit:contain;border-radius:12px;background:#eef3e9;margin-top:10px;display:block}.pique-report-list{display:flex;flex-direction:column;gap:10px}.pique-report-item{display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:start;border:1px solid var(--line);border-radius:13px;padding:10px;background:#fff}.pique-report-item img{width:110px;height:110px;object-fit:cover;border-radius:10px;background:#eef3e9}.pique-report-item strong{display:block;margin-bottom:4px}.pique-report-item small{color:var(--muted)}@media print{.pique-report-item{break-inside:avoid}.pique-report-item img{width:95px;height:95px}}
+/* V3.15.1 — somente o menu principal permanece fixo; o subnav rola normalmente */
+#nav{position:sticky;top:0;z-index:40;box-shadow:0 2px 8px #0002}
+#subnav{position:relative;top:auto;z-index:9}
+#subnav.scroll-hidden{transform:none;opacity:1;pointer-events:auto}
+
+.fab-nav{position:fixed;right:18px;bottom:18px;z-index:60;width:56px;height:56px;border:0;border-radius:50%;background:var(--olive);color:#fff;font-size:27px;font-weight:950;box-shadow:0 7px 22px #304b2540;cursor:pointer;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}.fab-nav.open{transform:rotate(90deg);background:#607651}.fab-nav:active{transform:scale(.94)}.fab-nav.open:active{transform:rotate(90deg) scale(.94)}.fab-nav.modal-hidden,.fab-menu.modal-hidden{display:none!important}.fab-menu{position:fixed;right:18px;bottom:84px;z-index:59;display:none;min-width:190px;padding:9px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 32px #304b2530}.fab-menu.open{display:flex;flex-direction:column;gap:6px;animation:fabIn .16s ease-out}.fab-menu button{border:0;background:#eef3eb;color:#506842;border-radius:11px;padding:11px 13px;text-align:left;font-weight:850;cursor:pointer}.fab-menu button:hover{background:#dfe9d8}.fab-menu small{display:block;padding:3px 6px 5px;color:var(--muted);font-weight:800}@keyframes fabIn{from{opacity:0;transform:translateY(7px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.products-date-group{margin:12px 0 18px}.products-date-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 13px;margin-bottom:8px;background:#f0f5eb;border:1px solid var(--line);border-radius:12px;color:#506842}.products-date-head strong{font-size:14px}.products-date-head span{font-size:12px;font-weight:800;color:var(--muted)}.product-clean-card{display:flex;gap:12px;align-items:center;padding:12px;margin-bottom:8px;background:#fff;border:1px solid var(--line);border-radius:13px;box-shadow:0 2px 8px #5f76500b}.product-clean-card .thumb{width:58px;height:58px}.product-clean-main{min-width:0;flex:1}.product-clean-main strong{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:4px}.product-clean-line{font-size:12px;color:var(--muted);line-height:1.5}.product-clean-line b{color:var(--text)}.product-clean-badges{margin-top:5px;display:flex;gap:5px;flex-wrap:wrap}.product-clean-actions{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}.product-clean-actions button{padding:9px 11px}@media(max-width:760px){.fab-nav{right:14px;bottom:14px}.fab-menu{right:14px;bottom:78px;max-width:calc(100vw - 28px)}.products-date-head{top:108px}.product-clean-card{align-items:flex-start}.product-clean-card .thumb{width:54px;height:54px}.product-clean-actions{width:100%;justify-content:flex-start;margin-top:4px}.product-clean-card{flex-wrap:wrap}}
+.reminder-done{opacity:.72;background:#eef8ee;text-decoration:line-through}.reminder-done .actions{text-decoration:none}.reminder-item .actions{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+</style><style>.fefo-status{background:#dcecff;color:#164c9c}.photo-click{cursor:zoom-in}.promotor-filter{min-width:180px}.password-panel{border:2px solid #1565c0;background:#f8fbff}.password-msg{margin-top:8px;font-weight:700}</style>
+<style>
+.reminder-list{display:flex;flex-direction:column;gap:8px}
+.reminder-item{display:flex;align-items:flex-start;gap:10px;padding:10px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.reminder-item .reminder-text{flex:1;white-space:pre-wrap;word-break:break-word}
+.reminder-item .reminder-meta{display:block;margin-top:3px;font-size:12px;color:#64748b}
+.tag-plu{display:inline-flex;align-items:center;gap:4px;padding:4px 8px;border-radius:999px;background:#e8f5e9;color:#166534;font-size:12px;font-weight:700;border:1px solid #a7d7ad}
+.reminder-modal textarea{min-height:180px;resize:vertical;font-size:16px;line-height:1.5}
+.reminder-item{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.reminder-check{width:19px;height:19px;flex:0 0 auto;accent-color:var(--olive)}
+.reminder-title{flex:1 1 180px;min-width:0;border:0;background:transparent;color:var(--text);font:inherit;font-weight:850;text-align:left;padding:5px 2px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reminder-title:hover{text-decoration:underline;color:var(--olive-dark)}
+.reminder-item.reminder-done .reminder-title{text-decoration:line-through;opacity:.65}
+.reminder-item .actions{flex:0 1 auto}
+@media(max-width:760px){.reminder-title{flex-basis:calc(100% - 35px)}.reminder-item .actions{width:100%;padding-left:27px}.reminder-item .actions button{font-size:11px;padding:7px 8px}}
+
+.fefo-clean-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+</style>
+
+<style>
+html,body{max-width:100%;overflow-x:hidden}
+.stickybar{flex-wrap:wrap;min-width:0;max-width:100%;overflow:hidden}
+.stickybar>strong{flex:1 1 100%;min-width:0}
+.stickybar select{flex:1 1 130px;min-width:0;max-width:100%;padding:8px 9px;font-size:12px}
+.stickybar button{flex:0 1 auto;min-width:0;padding:8px 9px;font-size:12px;white-space:normal;line-height:1.2}
+@media(max-width:760px){
+.stickybar{gap:5px;padding:8px}
+.stickybar button,.stickybar select{font-size:11px;padding:7px 6px;border-radius:8px}
+.stickybar button.primary{flex:1 1 54px}
+.stickybar #selectAllBtn{flex:1 1 74px}
+.stickybar #bulkStatus{flex:1 1 92px}
+.stickybar button.danger{flex:1 1 48px}
+.stickybar button:last-child{flex:1 1 105px}
+.product-clean-card{max-width:100%;min-width:0}
+.product-clean-main{min-width:0;max-width:100%}
+.product-clean-actions{max-width:100%;gap:4px}
+.product-clean-actions button{font-size:11px;padding:7px 8px}
+}
+</style>
+</head><body>
+<div id="cloudAuthGate">
+  <div class="cloud-auth-card">
+    <div class="cloud-auth-brand">
+      <div class="cloud-auth-logo"><img src="logo-pa.png" alt="Pão de Açúcar"></div>
+      <div><h2>Vencimentos PA</h2><p>Controle inteligente de validade</p></div>
+    </div>
+    <div style="padding:10px 12px;background:#f4f8ef;border-radius:10px;margin-bottom:14px;font-size:12px;color:#536b35;font-weight:700">☁️ Acesso online ativado. Entre com seu usuário para continuar.</div>
+    <label for="cloudEmail">E-mail</label>
+    <input id="cloudEmail" type="email" autocomplete="username" placeholder="seu@email.com">
+    <label for="cloudPassword">Senha</label>
+    <input id="cloudPassword" type="password" autocomplete="current-password" placeholder="Sua senha">
+    <button id="cloudLoginBtn" type="button">Entrar</button>
+    <div id="cloudAuthMsg"></div>
+  </div>
+</div>
+<header class="brand-header"><div class="brand-row"><div class="brand-mark logo-holder"><img src="logo-pa.png" alt="Pão de Açúcar"></div><div><h1>Vencimentos PA</h1><small>Controle inteligente de validade</small></div></div><div class="brand-slogan">Lugar de Gente Feliz</div><div class="brand-note">Organização • prevenção • agilidade no dia a dia</div></header>
+<nav id="nav"><button data-group="painel" class="active" onclick="setGroup('painel')">🏠 Painel</button><button data-group="operacao" onclick="setGroup('operacao')">📦 Operação</button><button data-group="fefo" onclick="setGroup('fefo')">🔄 FEFO</button><button data-group="promotores" onclick="setGroup('promotores')">🏪 Promotores</button><button data-group="acompanhamento" onclick="setGroup('acompanhamento')">📊 Acompanhamento</button><button data-group="admin" onclick="setGroup('admin')">⚙️ Administração</button></nav><nav id="subnav" hidden></nav>
+<div id="editModal" class="modal-overlay" aria-hidden="true">
+  <div class="edit-modal" role="dialog" aria-modal="true" aria-labelledby="editModalTitle">
+    <div class="edit-modal-head">
+      <h3 id="editModalTitle">✏️ Editar produto</h3>
+      <button type="button" class="secondary" onclick="closeEditModal()">✕ Fechar</button>
+    </div>
+    <div class="edit-modal-body form">
+      <div class="alert">✏️ <strong>Você pode alterar várias informações de uma vez.</strong><br><span class="muted">Nada é salvo até tocar em “Salvar alterações”.</span></div>
+      <div class="formgrid">
+        <div class="full"><label>Produto *</label><input id="editProduto"></div>
+        <div><label>Validade crítica *</label><input id="editValidade" type="date"></div>
+        <div><label>Quantidade encontrada *</label><input id="editQuantidade" type="number" min="1"></div>
+        <div><label>Quantidade separada</label><input id="editSeparada" type="number" min="0"></div>
+        <div><label>Status</label><select id="editStatus"><option>Ainda no corredor</option><option>Área de vencimento</option></select></div>
+        <div><label>Marca</label><input id="editMarca"></div>
+        <div><label>Peso/volume</label><input id="editTamanho"></div>
+        <div><label>▦ EAN</label><input id="editBarcode" inputmode="numeric"></div>
+        <div class="full"><label>📸 Foto</label><input id="editFoto" type="file" accept="image/*" capture="environment"><img id="editFotoPreview" class="edit-photo-preview" alt="Prévia da foto" hidden><div class="edit-help">Escolha uma nova foto somente se quiser substituir a atual.</div></div>
+        <div class="full"><label>📝 Observação</label><textarea id="editObs" rows="3"></textarea></div>
+      </div>
+    </div>
+    <div class="edit-modal-actions">
+      <button type="button" class="secondary" onclick="closeEditModal()">Cancelar</button>
+      <button type="button" class="primary" onclick="saveEditProduct()">💾 Salvar alterações</button>
+    </div>
+  </div>
+</div>
+<div id="statusModal" class="modal-overlay" aria-hidden="true">
+  <div class="edit-modal status-modal" role="dialog" aria-modal="true" aria-labelledby="statusModalTitle">
+    <div class="edit-modal-head">
+      <div><h3 id="statusModalTitle">📊 Alterar status</h3><div id="statusModalProduct" class="edit-help"></div></div>
+      <button type="button" class="secondary" onclick="closeStatusModal()">✕ Fechar</button>
+    </div>
+    <div class="edit-modal-body form">
+      <div class="alert">👆 <strong>Toque no status desejado.</strong><br><span class="muted">A alteração será registrada imediatamente no histórico.</span></div>
+      <div id="statusOptions" class="status-options"></div>
+    </div>
+    <div class="edit-modal-actions">
+      <button type="button" class="secondary" onclick="closeStatusModal()">Cancelar</button>
+    </div>
+  </div>
+</div>
+<div id="piqueModal" class="modal-overlay" aria-hidden="true">
+  <div class="edit-modal pique-modal" role="dialog" aria-modal="true" aria-labelledby="piqueModalTitle">
+    <div class="edit-modal-head">
+      <div><h3 id="piqueModalTitle">📸 Confirmar Retirada/PIQUE</h3><div id="piqueModalProduct" class="edit-help"></div></div>
+      <button type="button" class="secondary" onclick="closePiqueModal()">✕ Fechar</button>
+    </div>
+    <div class="edit-modal-body form">
+      <div class="alert">🚨 <strong>A confirmação exige uma foto.</strong><br>Fotografe o produto sendo retirado da área de venda e colocado no PIQUE. Sem a foto, a retirada não será registrada.</div>
+      <div class="pique-proof">
+        <label>📷 Foto obrigatória da retirada</label>
+        <input id="piqueFoto" type="file" accept="image/*" capture="environment">
+        <img id="piqueFotoPreview" class="pique-proof-preview" alt="Prévia da foto" hidden>
+      </div>
+    </div>
+    <div class="edit-modal-actions">
+      <button type="button" class="secondary" onclick="closePiqueModal()">Cancelar</button>
+      <button id="confirmPiqueBtn" type="button" class="primary" onclick="confirmarRetiradaPique()" disabled>📸 Confirmar PIQUE</button>
+    </div>
+  </div>
+</div>
+<div id="lembreteModal" class="modal-overlay" aria-hidden="true">
+  <div class="edit-modal reminder-modal" role="dialog" aria-modal="true" aria-labelledby="lembreteModalTitle">
+    <div class="edit-modal-head"><div><h3 id="lembreteModalTitle">📝 Novo lembrete</h3><div class="edit-help">Escreva o que você precisa lembrar no dia a dia.</div></div><button type="button" class="secondary" onclick="fecharNovoLembrete()">✕ Fechar</button></div>
+    <div class="edit-modal-body form"><label>✏️ Lembrete</label><textarea id="lembreteTexto" placeholder="Digite seu lembrete aqui..."></textarea></div>
+    <div class="edit-modal-actions"><button type="button" class="secondary" onclick="fecharNovoLembrete()">Cancelar</button><button id="salvarLembreteBtn" type="button" class="primary" onclick="salvarLembrete()">💾 Salvar lembrete</button></div>
+  </div>
+</div>
+<button id="fabNav" class="fab-nav" type="button" aria-label="Abrir navegação">+</button><div id="fabMenu" class="fab-menu" aria-hidden="true"></div>
+<main>
+<section id="painel" class="view active"><div class="welcome-card"><div><span class="welcome-kicker">VENCIMENTOS PA</span><h2>🏠 Painel inteligente</h2><p>Uma visão simples para saber <strong>o que fazer agora</strong>, o que está vencendo e como está a cobertura dos corredores.</p></div><div class="welcome-badge">✓ Operação organizada</div></div><div class="quick-guide"><div><strong>1. 🔎 Bata o corredor</strong><span>Siga a recomendação ou escolha outro.</span></div><div><strong>2. 📦 Registre os produtos</strong><span>EAN, validade e quantidade.</span></div><div><strong>3. 🚨 Resolva as pendências</strong><span>Separe, oferte e retire quando necessário.</span></div></div><div id="painelHero"></div><div class="grid" id="metrics" style="margin-top:12px"></div><div class="two" style="margin-top:12px"><div class="card"><div class="section-title"><h3>🔔 O que precisa de atenção</h3><button class="secondary" onclick="showView('vencimentos')">Vencimentos</button></div><div id="painelAlertas"></div></div><div class="card"><div class="section-title"><h3>📝 Lembretes</h3><button class="primary" type="button" onclick="abrirNovoLembrete()">＋</button></div><div id="lembretesPainel"></div></div></div><div class="card" style="margin-top:12px"><div class="section-title"><h3>📊 Progresso do mês</h3><button class="secondary" onclick="showView('relatorios')">Relatórios</button></div><div id="progressoHoje"></div></div></section>
+<section id="fefo" class="view"><div class="section-title"><h2>🔄 FEFO</h2><div class="actions"><button class="secondary" onclick="abrirImportadorFefo()">📋 Importar lista FEFO</button><button class="primary" onclick="abrirCadastroFefo()">＋ Novo produto FEFO</button></div></div><div class="alert">🔄 <strong>First Expired, First Out:</strong> cadastre a entrada e o vencimento. O sistema prioriza o produto que vence primeiro. No dia do vencimento, a retirada para o PIQUE passa a ser obrigatória.</div><div id="fefoList"></div></section>
+<div id="fefoModal" class="modal-overlay" aria-hidden="true"><div class="edit-modal" role="dialog" aria-modal="true"><div class="edit-modal-head"><h3>🔄 Cadastrar produto FEFO</h3><button type="button" class="secondary" onclick="fecharCadastroFefo()">✕ Fechar</button></div><div class="edit-modal-body form"><div class="alert">📌 O produto ficará identificado como <strong>FEFO</strong>. Quando chegar o vencimento, será necessária uma foto para confirmar a retirada no PIQUE.</div><div class="formgrid"><div class="full"><label>Produto *</label><input id="fefoProduto" placeholder="Nome do produto"></div><div class="full"><label>▦ Código de barras / EAN *</label><div style="display:flex;gap:8px;flex-wrap:wrap"><input id="fefoBarcode" inputmode="numeric" autocomplete="off" placeholder="Digite ou leia o EAN" style="flex:1;min-width:180px" oninput="this.value=this.value.replace(/\D/g,'')"><button type="button" class="secondary" onclick="consultarEANFefo()">🔎 Consultar</button><button type="button" class="secondary" onclick="lerEANFefo()">📷 Ler EAN</button></div><small class="muted">Ao ler um EAN já conhecido, o sistema aproveita automaticamente o nome e a foto cadastrados no catálogo.</small></div><div><label>📥 Data de entrada *</label><input id="fefoEntrada" type="date"></div><div><label>📅 Data de vencimento *</label><input id="fefoVencimento" type="date"></div><div class="full"><label>📷 Foto do produto</label><input id="fefoFoto" type="file" accept="image/*" capture="environment" onchange="if(this.files[0]){let r=new FileReader();r.onload=()=>{window._fefoFoto=r.result;$('fefoPreview').src=r.result;$('fefoPreview').hidden=false};r.readAsDataURL(this.files[0])}"><img id="fefoPreview" class="edit-photo-preview" alt="Prévia da foto" hidden></div></div></div><div class="edit-modal-actions"><button type="button" class="secondary" onclick="fecharCadastroFefo()">Cancelar</button><button type="button" class="primary" onclick="salvarFefo()">💾 Salvar FEFO</button></div></div></div>
+<section id="batida" class="view"><h2>🔎 Batida de hoje</h2><div id="batidaBox"></div></section>
+<section id="produtos" class="view"><div class="section-title"><h2>📦 Produtos</h2><button class="primary" onclick="showView('novo')">＋ Novo produto</button></div><div class="toolbar"><input id="busca" placeholder="🔎 Produto..." oninput="renderProdutos()"></div><div class="product-list" id="productList"></div></section>
+<section id="novo" class="view"><h2>＋ Registrar vencimento</h2><div class="card form"><div class="formgrid"><div><label>Produto *</label><input id="produto" placeholder="Ex.: Leite Ninho 750g"></div><div><label>Validade crítica *</label><input id="validade" type="date"></div><div><label>Quantidade encontrada *</label><input id="quantidade" type="number" min="1" placeholder="0"></div><div><label>Corredor *</label><select id="corredor"></select></div><div><label>Status inicial</label><select id="novoStatus"><option value="Ainda no corredor">Ainda no corredor</option><option value="Área de vencimento">Área de vencimento</option></select></div><div class="full"><label>🧠 Identificação inteligente</label>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:6px">
+<button type="button" class="secondary" onclick="abrirLeitorBarras()">▦ Escanear código</button>
+<button type="button" class="secondary" onclick="abrirIdentificadorFoto()">📸 Identificar pela foto</button>
+<button type="button" class="secondary" onclick="abrirFotoCodigo()">📷 Fotografar código</button>
+<button type="button" class="secondary" onclick="usarFotoNormal()">📎 Anexar foto</button>
+</div>
+<input id="fotoIdentificar" type="file" accept="image/*" capture="environment" style="display:none" onchange="identificarFoto(event)">
+<input id="fotoCodigo" type="file" accept="image/*" capture="environment" style="display:none" onchange="lerCodigoPorFoto(event)">
+<div style="display:flex;gap:8px;align-items:stretch;margin-top:8px">
+<input id="barcodeManual" inputmode="numeric" autocomplete="off" placeholder="Digite o código de barras" style="flex:1;padding:11px;border:1px solid #cbd5e1;border-radius:9px;display:none" oninput="this.value=this.value.replace(/\D/g,'')">
+<button id="barcodeManualBtn" type="button" class="secondary" style="display:none;white-space:nowrap" onclick="buscarCodigoManual()">🔎 Consultar</button>
+</div>
+<div id="barcodeScanner" style="display:none;margin-top:9px"><div class="card" style="padding:10px"><video id="barcodeVideo" playsinline muted style="width:100%;max-height:260px;object-fit:cover;border-radius:10px;background:#111"></video><div class="actions" style="margin-top:8px"><button type="button" class="secondary" onclick="fecharLeitorBarras()">Fechar leitor</button></div></div></div><div id="identificacaoBox" class="alert" style="display:none;margin-top:9px"></div>
+</div>
+<div><label>Foto</label><input id="foto" type="file" accept="image/*" capture="environment"></div><div class="full"><label>Observações</label><textarea id="obs" rows="3" placeholder="Observação opcional"></textarea></div></div><div style="margin-top:13px;display:flex;gap:8px"><button id="salvarProdutoBtn" class="primary" onclick="salvarProduto()">Registrar</button><button class="secondary" onclick="limparForm()">Limpar</button><button class="secondary" type="button" onclick="cancelarNovoProduto()">Cancelar</button></div></div><div class="alert">💡 Registre a validade mais crítica encontrada. Não é necessário cadastrar o lote com validade distante.</div></section>
+<section id="vencimentos" class="view"><div class="section-title"><h2>🔔 Vencimentos</h2><button class="secondary" onclick="renderVencimentos()">↻ Atualizar</button></div><div class="grid" id="vencKpis"></div><div class="card" style="margin-top:12px"><h3>🚨 Vence hoje</h3><div id="venceHoje"></div></div><div class="card" style="margin-top:12px"><h3>🔴 Vence amanhã</h3><div id="venceAmanha"></div></div><div class="card" style="margin-top:12px"><h3>🟡 Próximos 10 dias</h3><div id="vence10"></div></div><div class="card" style="margin-top:12px"><h3>⚠️ Vencidos</h3><div id="venceVencidos"></div></div></section>
+<section id="pendencias" class="view"><div class="section-title"><h2>🚨 Central de pendências</h2><button class="secondary" onclick="renderPendencias()">↻ Atualizar</button></div><div class="alert">💡 Aqui ficam somente os produtos que ainda precisam de retirada. <strong>Retirada obrigatória</strong> é para produtos normais com 1 dia restante ou vencendo hoje; <strong>Retirada FEFO</strong> é exclusiva dos produtos FEFO que chegaram à data de vencimento.</div><div class="grid" id="pendKpis"></div><div class="card" style="margin-top:12px;border:2px solid #c62828"><h3>🚨 Retirada obrigatória — 1 dia restante</h3><small class="muted">Ação: retirar do salão/corredor até o final do expediente e marcar <strong>Retirado/PIQUE</strong>.</small><div id="pendRetirada"></div></div><div class="card" style="margin-top:12px;border:2px solid #1565c0;background:#f8fbff"><h3>🔄 Retirada FEFO</h3><small class="muted">Produtos FEFO que vencem hoje ou já venceram. A confirmação do PIQUE exige foto.</small><div id="pendFefo"></div></div><div class="card" style="margin-top:12px"><h3>🔴 Ainda no corredor</h3><small class="muted">Ação: retirar do corredor e separar.</small><div id="pendCorredor"></div></div></section>
+<div id="fefoImportModal" class="modal-overlay" aria-hidden="true"><div class="edit-modal" role="dialog" aria-modal="true"><div class="edit-modal-head"><h3>📋 Importar lista FEFO</h3><button type="button" class="secondary" onclick="fecharImportadorFefo()">✕ Fechar</button></div><div class="edit-modal-body form"><div class="alert">📸 Tire uma foto nítida da lista da gerência. O sistema fará a leitura do texto, tentará reconhecer os produtos pelo EAN ou pelo nome e mostrará tudo para conferência antes de importar.</div><div class="full"><label>📷 Foto da lista</label><div style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" class="secondary" onclick="abrirCameraListaFefo()">📷 Tirar foto</button><button type="button" class="secondary" onclick="abrirGaleriaListaFefo()">🖼️ Escolher da galeria</button></div><input id="fefoListaCamera" type="file" accept="image/*" capture="environment" onchange="prepararFotoListaFefo(event)" style="display:none"><input id="fefoListaGaleria" type="file" accept="image/*" onchange="prepararFotoListaFefo(event)" style="display:none"><img id="fefoListaPreview" class="edit-photo-preview" alt="Prévia da lista" hidden style="width:100%;height:auto;max-height:260px;object-fit:contain"></div><div id="fefoImportStatus" class="muted" style="margin-top:10px"></div><div id="fefoImportResults" style="margin-top:10px"></div></div><div class="edit-modal-actions"><button type="button" class="secondary" onclick="fecharImportadorFefo()">Cancelar</button><button type="button" class="secondary" id="fefoOcrBtn" onclick="lerListaFefo()" disabled>🔎 Ler lista</button><button type="button" class="primary" id="fefoImportConfirmBtn" onclick="confirmarImportacaoFefo()" disabled>✅ Importar selecionados</button></div></div></div><div id="fefoScannerModal" class="modal-overlay" aria-hidden="true" style="display:none">
+  <div class="edit-modal" role="dialog" aria-modal="true" style="max-width:560px">
+    <div class="edit-modal-head"><h3>📷 Ler EAN do FEFO</h3><button type="button" class="secondary" onclick="fecharLeitorEANFefo()">✕ Fechar</button></div>
+    <div class="edit-modal-body">
+      <div class="alert">Aponte a câmera para o código de barras. A leitura será automática.</div>
+      <video id="fefoBarcodeVideo" playsinline muted style="width:100%;max-height:360px;object-fit:cover;border-radius:12px;background:#111"></video>
+      <div id="fefoScannerStatus" class="muted" style="margin-top:8px">Iniciando câmera...</div>
+    </div>
+  </div>
+</div>
+
+<section id="promotores" class="view">
+<div class="section-title"><h2>🏪 Promotores PA</h2><span class="badge b-blue">Área separada</span></div>
+<div class="alert">🏪 <strong>Produtos dos promotores ficam separados dos produtos da equipe de Prevenção de Vencimentos.</strong><br>Cada empresa/marca pode ser filtrada individualmente para acompanhar somente os produtos daquele promotor.</div>
+<div class="card"><div class="section-title"><h3>👥 Promotores cadastrados</h3><button class="primary" onclick="abrirNovoPromotor()">＋ Novo promotor</button></div><div id="promotoresList" class="product-list" style="margin-top:10px"></div></div>
+</section>
+<section id="promotorProdutos" class="view">
+<div class="section-title"><h2>📦 Produtos dos Promotores</h2><button class="secondary" onclick="renderPromotorProdutos()">↻ Atualizar</button></div>
+<div class="card"><div class="section-title"><h3>🔎 Filtrar por empresa/marca</h3><div class="actions"><button id="promotorEmpresaFiltroBtn" type="button" class="secondary" onclick="abrirFiltroPromotor('empresa')">Todas as empresas/marcas ▾</button></div></div><div id="promotorProdutosResumo" class="muted" style="margin:6px 0 10px"></div><div id="promotorProdutosList" class="product-list"></div></div>
+</section>
+<section id="promotorAtividade" class="view">
+<div class="section-title"><h2>📋 Atividade dos Promotores</h2><button class="secondary" onclick="renderPromotorAtividade()">↻ Atualizar</button></div>
+<div class="card"><div class="section-title"><h3>🔎 Filtrar atividade</h3><div class="actions"><button id="promotorAtividadeFiltroBtn" type="button" class="secondary" onclick="abrirFiltroPromotor('atividade')">Todos os promotores ▾</button></div></div><div id="promotorAtividadeResumo" class="muted" style="margin:6px 0 10px"></div><div id="promotorAtividadeList"></div></div>
+</section>
+<section id="hoje" class="view"><div class="section-title"><h2>🗓️ Registros de hoje</h2><button class="secondary" onclick="renderHoje()">↻ Atualizar</button></div><div class="toolbar"><select id="hojeUser" onchange="renderHoje()"><option value="">Todos responsáveis</option></select><select id="hojeOrigem" onchange="renderHoje()"><option value="">Todas as origens</option><option value="batida">Batida</option><option value="manual">Registro manual</option></select><select id="hojeStatus" onchange="renderHoje()"><option value="">Todos os status</option><option>Encontrado</option><option>Ainda no corredor</option><option>Separado</option><option>Aguardando oferta</option><option>Oferta solicitada</option><option>Oferta aplicada</option><option>Resolvido</option><option>Retirado/PIQUE</option><option>Área de vencimento</option><option>PLU/Etiqueta</option></select></div><div class="grid" id="hojeKpis"></div><div class="card" style="margin-top:12px"><div id="hojeList"></div></div></section>
+<section id="semana" class="view"><div class="section-title"><h2>📆 Controle semanal das batidas</h2><button class="secondary" onclick="renderSemana()">↻ Atualizar</button></div><div class="alert">💡 A semana considera <strong>segunda a domingo</strong>. Corredores já batidos nesta semana ficam marcados e os pendentes continuam visíveis como prioridade.</div><div class="grid" id="semanaKpis"></div><div class="card" style="margin-top:12px"><h3>📋 Situação dos corredores nesta semana</h3><div class="list-table"><table><thead><tr><th>Corredor</th><th>Última batida</th><th>Batidas na semana</th><th>Responsável mais recente</th><th>Situação</th></tr></thead><tbody id="semanaCorrBody"></tbody></table></div></div><div class="card" style="margin-top:12px"><h3>🗓️ Batidas por dia</h3><div id="semanaDias"></div></div></section><section id="historico" class="view"><h2>📅 Histórico de batidas</h2><div class="card"><div class="toolbar"><select id="histCor" onchange="renderHistorico()"></select><select id="histDias" onchange="renderHistorico()"><option value="30">Últimos 30 dias</option><option value="60">Últimos 60 dias</option><option value="90">Últimos 90 dias</option></select></div><div class="list-table"><table><thead><tr><th>Data/hora</th><th>Corredor</th><th>Responsável</th><th>Produtos</th><th>Observação</th></tr></thead><tbody id="histBody"></tbody></table></div></div></section>
+<section id="relatorios" class="view"><div class="section-title"><h2>📊 Relatório semanal</h2><div class="actions"><button class="primary" onclick="gerarPDF()">📄 PDF</button><button class="secondary" onclick="exportarRelatorioCSV()">📊 Excel (CSV)</button><button class="secondary" onclick="compartilharRelatorio()">📤 Compartilhar</button></div></div><div class="toolbar"><select id="reportPeriod" onchange="renderRelatorios()"><option value="today">Hoje</option><option value="week" selected>Esta semana</option><option value="all">Todos os registros</option></select><button class="secondary" onclick="renderRelatorios()">↻ Atualizar</button></div><div id="reportPrintable"><div class="card report-head"><h3>🛒 Vencimentos PA</h3><p id="reportPeriodLabel" class="muted"></p><p>Resumo das batidas, produtos, pendências e atividade da equipe.</p></div><div class="grid" id="reportKpis" style="margin-top:12px"></div><div class="grid" id="reportStatusKpis" style="margin-top:12px"></div><div class="card" style="margin-top:12px"><h3>👥 Atividade da equipe</h3><div id="reportTeam"></div></div><div class="card" style="margin-top:12px"><h3>📍 Situação dos corredores</h3><div id="reportCorr"></div></div><div class="card" style="margin-top:12px"><h3>📦 Produtos registrados no período</h3><div id="reportProducts"></div></div><div class="card" style="margin-top:12px"><h3>📸 Meu movimento PIQUE</h3><p id="reportPiqueLabel" class="muted"></p><div id="reportPique"></div></div><div class="card" style="margin-top:12px;border:2px solid #1565c0;background:#f8fbff"><h3>🔄 Histórico FEFO / PIQUE</h3><p id="reportFefoLabel" class="muted"></p><div id="reportFefoHistorico"></div></div></div><div class="alert">💡 O PDF usa a impressão do navegador. “Excel (CSV)” gera uma planilha que abre no Excel/Google Planilhas. “Compartilhar” usa o compartilhamento do Android quando disponível.</div></section>
+<section id="config" class="view"><h2>⚙️ Configurações</h2><div class="card"><h3>Equipe</h3><div id="usersConfig"></div><div class="alert">O administrador pode alterar a estrutura e usuários. A escala serve para notificações; não bloqueia o trabalho.</div><div class="card" style="margin-top:12px;border:2px solid #1565c0;background:#f8fbff"><h3>🔔 Notificações neste aparelho</h3><p id="notifStatus" class="muted">Verificando permissão…</p><button class="primary" onclick="requestNotifications()">🔔 Ativar notificações</button><small class="muted" style="display:block;margin-top:8px">Notificações entre usuários só são enviadas para registros com até 30 dias para vencer. O próprio responsável não recebe a própria notificação.</small></div></div><div class="card password-panel" style="margin-top:12px"><h3>🔐 Alterar senha do aplicativo</h3><p class="muted">Altere a senha do seu próprio acesso. A nova senha será usada no próximo login.</p><div class="formgrid"><div><label>Nova senha *</label><input id="novaSenhaApp" type="password" autocomplete="new-password" placeholder="Mínimo de 6 caracteres"></div><div><label>Confirmar nova senha *</label><input id="confirmaSenhaApp" type="password" autocomplete="new-password" placeholder="Digite novamente"></div></div><button class="primary" type="button" onclick="alterarSenhaApp()" style="margin-top:10px">🔐 Salvar nova senha</button><div id="senhaAppMsg" class="password-msg"></div></div>
+<div class="card" style="margin-top:12px"><h3>Corredores</h3><div id="corrConfig"></div><button class="primary" onclick="addCorridor()" style="margin-top:10px">＋ Adicionar corredor</button></div><div class="card" style="margin-top:12px"><h3>Regras</h3><div class="formgrid"><div><label>Em dia até (dias)</label><input id="rGreen" type="number" min="0"></div><div><label>Atenção até (dias)</label><input id="rYellow" type="number" min="1"></div><div><label>Horário do alerta da manhã</label><input id="notifTime" type="time"></div><div><label>Horário do aviso de retirada/PIQUE</label><input id="retiradaNotifTime" type="time"></div></div><button class="primary" onclick="saveRules()" style="margin-top:10px">Salvar regras</button></div></section>
+<section id="backup" class="view"><h2>💾 Backup e atualização</h2><div class="card"><p><strong>A versão atual mantém os dados separados da interface.</strong> Exporte um backup antes de qualquer atualização.</p><button class="primary" onclick="exportar()">Exportar backup atual</button> <button class="secondary" onclick="document.getElementById('importFile').click()">Importar backup</button><input id="importFile" type="file" accept=".json" style="display:none" onchange="importar(event)"><p class="muted" style="margin-top:12px">O backup inclui produtos, batidas, corredores, equipe, escala, FEFO e regras.</p></div><div class="card" style="margin-top:12px"><h3>Versão</h3><p>Vencimentos PA <strong>V3.21</strong></p><p class="muted">Base V3.19: eventos em tempo real e notificações de atenção. Os dados operacionais continuam locais nesta etapa.</p></div></section>
+<div id="photoModal" class="modal-overlay" aria-hidden="true" onclick="fecharFotoProduto(event)">
+  <div class="edit-modal photo-modal-content" role="dialog" aria-modal="true" aria-label="Foto do produto" style="background:#111" onclick="event.stopPropagation()">
+    <div class="edit-modal-head" style="background:#111;color:#fff;border-color:#333"><h3>📸 Foto do produto</h3><button type="button" class="secondary" onclick="fecharFotoProduto()">✕ Fechar</button></div>
+    <div class="edit-modal-body photo-modal-body" style="background:#111;padding:10px;display:flex;align-items:center;justify-content:center;min-height:40vh"><img id="photoModalImg" alt="Foto ampliada do produto"></div>
+  </div>
+</div>
+<div id="filterChoiceModal" class="modal-overlay" aria-hidden="true" onclick="fecharFiltroPromotor(event)"><div class="edit-modal filter-choice-modal" role="dialog" aria-modal="true" onclick="event.stopPropagation()"><div class="edit-modal-head"><h3 id="filterChoiceTitle">🔎 Selecionar filtro</h3><button type="button" class="secondary" onclick="fecharFiltroPromotor()">✕ Fechar</button></div><div id="filterChoiceList" class="filter-choice-list"></div></div></div>
+<div id="promotorModal" class="modal-overlay" aria-hidden="true"><div class="edit-modal" role="dialog" aria-modal="true"><div class="edit-modal-head"><h3>🏪 Cadastrar promotor</h3><button type="button" class="secondary" onclick="fecharNovoPromotor()">✕ Fechar</button></div><div class="edit-modal-body form"><div class="formgrid"><div><label>Nome do promotor *</label><input id="promotorNome" placeholder="Ex.: Felipe"></div><div><label>Empresa / marca *</label><input id="promotorEmpresa" placeholder="Ex.: Coca-Cola"></div></div></div><div class="edit-modal-actions"><button type="button" class="secondary" onclick="fecharNovoPromotor()">Cancelar</button><button type="button" class="primary" onclick="salvarNovoPromotor()">Salvar promotor</button></div></div></div>
+</main><div id="toast"></div>
+<script>/* V3.15.1: subnavegação não é mais fixa nem reaparece ao subir o scroll. */</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+// Supabase: Publishable key é apropriada para uso no navegador; nunca usar secret/service_role aqui.
+const SUPABASE_URL='https://xvscoenubcxvycerzobv.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY='sb_publishable_RaEJLcAcVCV2CKmKSG12-A_NL7JZLij';
+const supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+window.vencimentosCloud={supabase:supabaseClient,currentUser:null,currentProfile:null};
+
+(function cloudAuthGate(){
+  const gate=document.getElementById('cloudAuthGate');
+  // V3.19.5: cada nova abertura do aplicativo exige novo login.
+  // O signOut local remove apenas a sessão persistida neste dispositivo;
+  // não desativa nem remove o usuário do Supabase.
+
+  const email=document.getElementById('cloudEmail');
+  const password=document.getElementById('cloudPassword');
+  const btn=document.getElementById('cloudLoginBtn');
+  const msg=document.getElementById('cloudAuthMsg');
+  const setMsg=(text,ok=false)=>{msg.textContent=text;msg.className=ok?'cloud-auth-ok':'cloud-auth-error'};
+  const setBusy=v=>{btn.disabled=v;btn.textContent=v?'Entrando…':'Entrar'};
+  btn.disabled=true;
+  btn.textContent='Preparando…';
+  let inactivityTimer=null;
+  const INACTIVITY_LIMIT=60*60*1000;
+  function clearInactivityTimer(){if(inactivityTimer){clearTimeout(inactivityTimer);inactivityTimer=null}}
+  function armInactivityTimer(){clearInactivityTimer();if(!window.vencimentosCloud.currentUser)return;inactivityTimer=setTimeout(async()=>{clearInactivityTimer();await supabaseClient.auth.signOut();gate.hidden=false;password.value='';setMsg('Sessão encerrada após 1 hora sem atividade. Entre novamente para continuar.');},INACTIVITY_LIMIT)}
+  function registerActivity(){if(window.vencimentosCloud.currentUser)armInactivityTimer()}
+  ['pointerdown','keydown','touchstart','scroll','mousemove'].forEach(ev=>window.addEventListener(ev,registerActivity,{passive:true}));
+  async function finishSession(session){
+    clearInactivityTimer();
+    window.vencimentosCloud.currentUser=session?.user||null;
+    if(!session?.user){gate.hidden=false;return}
+    try{
+      const {data,error}=await supabaseClient.from('profiles').select('id,nome,cargo,role,ativo').eq('id',session.user.id).maybeSingle();
+      if(error)throw error;
+      if(data&&!data.ativo){await supabaseClient.auth.signOut();setMsg('Usuário desativado.');return}
+      window.vencimentosCloud.currentProfile=data||null;
+      gate.hidden=true;
+      armInactivityTimer();
+    }catch(e){
+      console.error(e);
+      setMsg('Login realizado, mas não foi possível carregar seu perfil.');
+      await supabaseClient.auth.signOut();
+    }
+  }
+  btn.addEventListener('click',async()=>{
+    const em=email.value.trim(),pw=password.value;
+    if(!em||!pw){setMsg('Informe e-mail e senha.');return}
+    setBusy(true);setMsg('');
+    const {data,error}=await supabaseClient.auth.signInWithPassword({email:em,password:pw});
+    if(error){setBusy(false);setMsg('E-mail ou senha inválidos.');return}
+    setBusy(false);await finishSession(data.session);
+  });
+  password.addEventListener('keydown',e=>{if(e.key==='Enter')btn.click()});
+  // Ao iniciar/reabrir o PWA, descarta a sessão local anterior antes de consultar a sessão.
+  // Assim, o aplicativo sempre volta para a tela de login em uma nova abertura.
+  (async()=>{
+    try{
+      await supabaseClient.auth.signOut({scope:'local'});
+    }catch(e){
+      console.warn('Não foi possível limpar a sessão local na abertura:',e);
+    }finally{
+      gate.hidden=false;
+      btn.disabled=false;
+      btn.textContent='Entrar';
+      setMsg('Entre para iniciar sua sessão.');
+    }
+  })();
+
+  supabaseClient.auth.onAuthStateChange((_event,session)=>{
+    // O SIGNED_OUT disparado pela limpeza inicial não deve fazer nada além de manter o login visível.
+    if(!session?.user){
+      clearInactivityTimer();
+      window.vencimentosCloud.currentUser=null;
+      window.vencimentosCloud.currentProfile=null;
+      gate.hidden=false;
+      return;
+    }
+    setTimeout(()=>finishSession(session),0);
+  });
+})();
+</script>
+<script>
+const KEY='prevencao_vencimentos_v3';const OLD='prevencao_vencimentos_v2';let db=loadDB();let batidaAtual=null;let identificacaoFoto=null;let ocrBusy=false;let identificacaoCatalogo=null;
+function defaults(){return{version:3,products:[],fefo:[],batidas:[],corridors:Array.from({length:18},(_,i)=>({id:i+1,nome:'Corredor '+(i+1),ativo:true})),users:[{id:'ramon',nome:'Ramon',funcao:'Pleno 2',admin:true,trabalhando:true},{id:'luan',nome:'Luan',funcao:'Pleno 1',admin:false,trabalhando:true},{id:'wagner',nome:'Wagner',funcao:'Chefe',admin:false,trabalhando:true}],rules:{greenMax:4,yellowMax:9,notifTime:'08:00',retiradaNotifTime:'18:00'},lembretes:[],promotorProducts:[],promotores:[{id:'pr-felipe',nome:'Felipe',empresa:'Coca-Cola',ativo:true},{id:'pr-lana',nome:'Lana',empresa:'Pilão',ativo:true},{id:'pr-carlos',nome:'Carlos',empresa:'Nestlé',ativo:true},{id:'pr-adriano',nome:'Adriano',empresa:'Qualitá',ativo:true},{id:'pr-val',nome:'Val',empresa:'AmBev',ativo:true},{id:'pr-joyce',nome:'Joyce',empresa:'Heineken',ativo:true}]}}
+function loadDB(){let x=localStorage.getItem(KEY);if(x){try{return normalize(JSON.parse(x))}catch{}}let d=defaults();let old=localStorage.getItem(OLD);if(old)try{let arr=JSON.parse(old);d.products=arr.map(x=>({id:String(x.id||Date.now()+Math.random()),produto:x.produto||'',marca:x.marca||'',categoria:x.categoria||'',validade:x.validade,quantidade:+x.quantidade||0,corredor:+x.corredor||1,status:x.status==='Separado'?'Separado':x.status==='Oferta solicitada'?'Oferta solicitada':x.status==='Oferta aplicada'?'Oferta aplicada':'Encontrado',foto:x.foto||'',obs:x.obs||'',criado:x.criado||new Date().toISOString(),criadoPor:'importado V2',separada:0}))}catch{}localStorage.setItem(KEY,JSON.stringify(d));return d}
+function normalize(d){let z=defaults();let products=(d.products||[]).map(x=>({...x,barcode:x.barcode||x.codigoBarras||'',quantidade:+x.quantidade||0,pluEtiqueta:!!x.pluEtiqueta,separada:Math.max(0,Math.min(+x.separada||0,+x.quantidade||0)),historico:x.historico||[]}));let catalog=Array.isArray(d.catalog)?d.catalog:[];catalog=catalog.map(c=>({...c,barcode:String(c.barcode||'').replace(/\D/g,''),marca:c.marca||'',quantidadeProduto:c.quantidadeProduto||c.quantity||'',foto:c.foto||'',imagemFonte:c.imagemFonte||c.fonte||''}));products.forEach(p=>{let code=String(p.barcode||'').replace(/\D/g,'');if(code&&p.produto&&!catalog.some(c=>String(c.barcode||'')===code)){catalog.push({barcode:code,produto:p.produto,marca:p.marca||'',quantidadeProduto:p.quantidadeProduto||'',foto:p.foto||'',atualizado:p.atualizado||p.criado||new Date().toISOString(),fonte:'cadastro-local'});}});if(!Array.isArray(d.promotores)||!d.promotores.length)d.promotores=z.promotores;if(!Array.isArray(d.lembretes))d.lembretes=[];if(!Array.isArray(d.promotorProducts))d.promotorProducts=[]; return{...z,...d,products,fefo:Array.isArray(d.fefo)?d.fefo:[],catalog,batidas:d.batidas||[],corridors:d.corridors||z.corridors,users:d.users||z.users,rules:{...z.rules,...(d.rules||{})},promotores:d.promotores}}
+function save(){localStorage.setItem(KEY,JSON.stringify(db))}function $ (id){return document.getElementById(id)}function toast(t){$('toast').textContent=t;$('toast').style.display='block';clearTimeout(window._t);window._t=setTimeout(()=>$('toast').style.display='none',2400)}
+function now(){return new Date()}function fmtDateTime(v){if(!v)return'—';const d=new Date(v);if(Number.isNaN(d.getTime()))return'—';return d.toLocaleDateString('pt-BR')+' '+d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}function today0(){let d=new Date();d.setHours(0,0,0,0);return d}function days(v){if(!v)return null;return Math.ceil((new Date(v+'T00:00:00')-today0())/86400000)}function fmt(v){if(!v)return'';let [y,m,d]=v.split('-');return d+'/'+m+'/'+y}function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
+function statusBadge(s){let c={
+'Encontrado':'b-gray',
+'Ainda no corredor':'b-red',
+'Separado':'b-green',
+'Aguardando oferta':'b-yellow',
+'Oferta solicitada':'b-green',
+'Oferta aplicada':'b-green',
+'Resolvido':'b-green',
+'Retirado/PIQUE':'b-green',
+'Área de vencimento':'b-blue',
+'PLU/Etiqueta':'b-green'
+}[s]||'b-gray';return `<span class="badge ${c}">${esc(s)}</span>`}
+function priority(n){if(n<0)return'VENCIDO';if(n<=db.rules.greenMax)return'CRITICO';if(n<=db.rules.yellowMax)return'ATENCAO';return'PRIORIDADE'}function daysBadge(n){let c=n<=db.rules.greenMax?'b-red':n<=db.rules.yellowMax?'b-yellow':'b-orange';let t=n<0?'Vencido há '+Math.abs(n)+' dia(s)':n===0?'Vence hoje':n===1?'1 dia restante':n+' dias restantes';return`<span class="badge ${c}">${t}</span>`}function badge(p){let c=p==='VENCIDO'||p==='CRITICO'?'b-red':p==='ATENCAO'?'b-yellow':p==='PRIORIDADE'?'b-orange':'b-gray';let t={VENCIDO:'Vencido',CRITICO:'0–4 dias',ATENCAO:'5–9 dias',PRIORIDADE:'10+ dias'}[p]||p;return`<span class="badge ${c}">${t}</span>`}
+function activeCorr(){return db.corridors.filter(c=>c.ativo)}function user(){return db.users.find(u=>u.trabalhando)||db.users[0]}function userName(id){return db.users.find(u=>u.id===id)?.nome||id||'—'}
+const GROUPS={fefo:[['fefo','🔄 FEFO']],promotores:[['promotores','🏪 Promotores'],['promotorProdutos','📦 Produtos'],['promotorAtividade','📋 Atividade']],operacao:[['batida','🔎 Batida'],['produtos','📦 Produtos'],['vencimentos','🔔 Vencimentos'],['pendencias','🚨 Pendências']],acompanhamento:[['hoje','🗓️ Hoje'],['semana','📆 Semana'],['historico','📅 Histórico'],['relatorios','📊 Relatórios']],admin:[['config','⚙️ Configuração'],['backup','💾 Backup']]};
+const VIEW_GROUP={painel:'painel',fefo:'fefo',promotores:'promotores',promotorProdutos:'promotores',promotorAtividade:'promotores',novo:'operacao',batida:'operacao',produtos:'operacao',vencimentos:'operacao',pendencias:'operacao',hoje:'acompanhamento',semana:'acompanhamento',historico:'acompanhamento',relatorios:'acompanhamento',config:'admin',backup:'admin'};
+function saveNavigation(view){try{localStorage.setItem('pv_last_view',view);localStorage.setItem('pv_scroll_'+view,String(window.scrollY||0))}catch(e){}}
+function setGroup(group,openFirst=true){let sub=$('subnav');if(group==='painel'){sub.hidden=true;sub.innerHTML='';document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.group==='painel'));if(openFirst)showView('painel');return}sub.hidden=false;sub.innerHTML=GROUPS[group].map(([id,label])=>`<button data-view="${id}" class="${$(id)?.classList.contains('active')?'active':''}">${label}</button>`).join('');document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.group===group));sub.querySelectorAll('button').forEach(b=>b.onclick=()=>showView(b.dataset.view));if(openFirst){let current=document.querySelector('.view.active')?.id;let first=GROUPS[group][0][0];showView(current&&VIEW_GROUP[current]===group?current:first)}}
+function renderPromotores(){
+  const list=$('promotoresList'); if(!list)return;
+  const arr=Array.isArray(db.promotores)?db.promotores:[];
+  list.innerHTML=arr.length?arr.map(p=>`<div class="item"><div class="thumb" style="display:grid;place-items:center;font-size:25px">🏪</div><div class="item-main"><strong>${esc(p.nome)}</strong><small>Empresa/marca: <strong>${esc(p.empresa)}</strong></small><div style="margin-top:6px"><span class="badge ${p.ativo!==false?'b-green':'b-gray'}">${p.ativo!==false?'🟢 Ativo':'⚪ Inativo'}</span></div></div><div class="actions"><button class="secondary" onclick="togglePromotor('${p.id}')">${p.ativo!==false?'Desativar':'Ativar'}</button></div></div>`).join(''):'<div class="empty">Nenhum promotor cadastrado.</div>';
+}
+let promotorFiltroEmpresa='';
+let promotorFiltroAtividade='';
+let filtroPromotorTipo='';
+function atualizarBotaoFiltroPromotor(tipo){const btn=$(tipo==='empresa'?'promotorEmpresaFiltroBtn':'promotorAtividadeFiltroBtn');if(!btn)return;const valor=tipo==='empresa'?promotorFiltroEmpresa:promotorFiltroAtividade;btn.textContent=(valor|| (tipo==='empresa'?'Todas as empresas/marcas':'Todos os promotores'))+' ▾';}
+function abrirFiltroPromotor(tipo){filtroPromotorTipo=tipo;const modal=$('filterChoiceModal'),list=$('filterChoiceList');if(!modal||!list)return;const promotores=Array.isArray(db.promotores)?db.promotores:[];let opcoes=[];if(tipo==='empresa'){const empresas=[...new Set(promotores.map(p=>String(p.empresa||'').trim()).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt-BR'));opcoes=[{value:'',label:'Todas as empresas/marcas'},...empresas.map(e=>({value:e,label:e}))];$('filterChoiceTitle').textContent='🔎 Filtrar por empresa/marca';}else{opcoes=[{value:'',label:'Todos os promotores'},...promotores.map(p=>({value:p.id,label:p.nome+' • '+p.empresa}))];$('filterChoiceTitle').textContent='🔎 Filtrar por promotor';}const atual=tipo==='empresa'?promotorFiltroEmpresa:promotorFiltroAtividade;list.innerHTML=opcoes.map(o=>`<button type="button" class="filter-choice ${String(o.value)===String(atual)?'selected':''}" onclick='selecionarFiltroPromotor(${JSON.stringify(tipo)},${JSON.stringify(o.value)})'><span>${esc(o.label)}</span><span class="choice-radio"></span></button>`).join('');closeFabNav();modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';syncFabNavVisibility();}
+function selecionarFiltroPromotor(tipo,valor){if(tipo==='empresa')promotorFiltroEmpresa=valor;else promotorFiltroAtividade=valor;atualizarBotaoFiltroPromotor(tipo);fecharFiltroPromotor();if(tipo==='empresa')renderPromotorProdutos();else renderPromotorAtividade();}
+function fecharFiltroPromotor(event){if(event&&event.target!==event.currentTarget)return;const modal=$('filterChoiceModal');if(!modal)return;modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';syncFabNavVisibility();}
+function renderPromotorProdutos(){
+  const arrProm=Array.isArray(db.promotores)?db.promotores:[];
+  const empresas=[...new Set(arrProm.filter(p=>p.empresa).map(p=>String(p.empresa).trim()))].sort((a,b)=>a.localeCompare(b,'pt-BR'));
+  if(promotorFiltroEmpresa&&!empresas.includes(promotorFiltroEmpresa))promotorFiltroEmpresa='';
+  atualizarBotaoFiltroPromotor('empresa');
+  const selecionada=promotorFiltroEmpresa;const produtos=Array.isArray(db.promotorProducts)?db.promotorProducts:[];const arr=produtos.filter(x=>!selecionada||String(x.empresa||x.marca||'').trim()===selecionada).sort((a,b)=>new Date(b.criado||0)-new Date(a.criado||0));
+  const resumo=$('promotorProdutosResumo');if(resumo)resumo.textContent=`${arr.length} produto(s)${selecionada?' • '+selecionada:''}`;
+  const list=$('promotorProdutosList');if(!list)return;
+  list.innerHTML=arr.length?arr.map(x=>{const img=x.foto||'';return `<div class="product-clean-card"><img class="thumb photo-click" src="${escapeAttr(img||'./icon-192.png')}" alt="" ${img?`onclick="abrirFotoPromotorProduto('${x.id}')" title="Clique para ampliar"`:''}><div class="product-clean-main"><strong>${esc(x.produto||'Produto sem nome')}</strong><div class="product-clean-line">Empresa/marca: <b>${esc(x.empresa||x.marca||'Não informada')}</b></div><div class="product-clean-line">Promotor: <b>${esc(x.promotorNome||x.promotor||'Não informado')}</b></div><div class="product-clean-line">Validade: <b>${x.validade?fmt(x.validade):'—'}</b></div><div class="product-clean-line">EAN: <b>${esc(x.barcode||x.ean||'Não cadastrado')}</b></div></div></div>`;}).join(''):'<div class="card empty">Nenhum produto encontrado para este filtro.</div>';
+}
+function promotorActivityDateKey(x){return registroDateKey({criado:x.criado||x.data||Date.now()});}
+function renderPromotorAtividade(){
+  const promotores=Array.isArray(db.promotores)?db.promotores:[];
+  const produtos=Array.isArray(db.promotorProducts)?db.promotorProducts:[];
+  if(promotorFiltroAtividade&&!promotores.some(p=>p.id===promotorFiltroAtividade))promotorFiltroAtividade='';
+  atualizarBotaoFiltroPromotor('atividade');
+  const selecionado=promotorFiltroAtividade;
+  const arr=produtos.filter(x=>!selecionado||String(x.promotorId||x.promotor_id||'')===selecionado||String(x.promotorNome||x.promotor||'')===String(promotores.find(p=>p.id===selecionado)?.nome||'')).sort((a,b)=>new Date(b.criado||0)-new Date(a.criado||0));
+  const resumo=$('promotorAtividadeResumo');if(resumo)resumo.textContent=`${arr.length} atividade(s) registrada(s)${selecionado ? ' • ' + (promotores.find(p=>p.id===selecionado)?.nome || 'Promotor') : ''}`;
+  const el=$('promotorAtividadeList');if(!el)return;
+  const groups={};arr.forEach(x=>{const k=promotorActivityDateKey(x);(groups[k]??=[]).push(x)});
+  const keys=Object.keys(groups).sort((a,b)=>b.localeCompare(a));
+  el.innerHTML=keys.length?keys.map(k=>`<section class="products-date-group"><div class="products-date-head"><strong>📅 ${esc(registroDateLabel(k))}</strong><span>${groups[k].length} produto(s) adicionado(s)</span></div>${groups[k].map(x=>`<div class="item"><div class="item-main"><strong>${esc(x.produto||'Produto sem nome')}</strong><small>Promotor: <strong>${esc(x.promotorNome||x.promotor||'—')}</strong> • Empresa/marca: <strong>${esc(x.empresa||x.marca||'—')}</strong></small>${x.validade?`<small>Validade: ${fmt(x.validade)}</small>`:''}${x.barcode?`<small>▦ EAN: ${esc(x.barcode)}</small>`:''}<small>Registrado em: ${fmtDateTime(x.criado||x.data)}</small></div></div>`).join('')}</section>`).join(''):'<div class="empty">Nenhuma atividade encontrada para este filtro.</div>';
+}
+function abrirFotoPromotorProduto(id){const x=(db.promotorProducts||[]).find(p=>p.id===id);if(!x||!x.foto){toast('Este produto não possui foto cadastrada.');return}const m=$('photoModal'),img=$('photoModalImg');if(!m||!img)return;closeFabNav();img.src=x.foto;m.classList.add('open');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';syncFabNavVisibility()}
+function abrirNovoPromotor(){const m=$('promotorModal');if(!m)return;closeFabNav();m.classList.add('open');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';syncFabNavVisibility();$('promotorNome').value='';$('promotorEmpresa').value='';}
+function fecharNovoPromotor(){const m=$('promotorModal');if(!m)return;m.classList.remove('open');m.setAttribute('aria-hidden','true');document.body.style.overflow='';syncFabNavVisibility();}
+function salvarNovoPromotor(){const nome=$('promotorNome').value.trim(),empresa=$('promotorEmpresa').value.trim();if(!nome||!empresa){toast('Informe o nome e a empresa/marca.');return}db.promotores=db.promotores||[];db.promotores.push({id:'pr-'+Date.now(),nome,empresa,ativo:true});save();fecharNovoPromotor();renderPromotores();toast('Promotor cadastrado.');}
+function togglePromotor(id){const p=(db.promotores||[]).find(x=>x.id===id);if(!p)return;p.ativo=p.ativo===false;save();renderPromotores();toast(p.ativo?'Promotor ativado.':'Promotor desativado.');}
+function abrirFotoProduto(id){const x=(db.products||[]).find(p=>p.id===id);if(!x||!x.foto){toast('Este produto não possui foto cadastrada.');return}const m=$('photoModal'),img=$('photoModalImg');if(!m||!img)return;closeFabNav();img.src=x.foto;m.classList.add('open');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';syncFabNavVisibility();}
+function fecharFotoProduto(event){if(event&&event.target!==event.currentTarget)return;const m=$('photoModal'),img=$('photoModalImg');if(!m)return;m.classList.remove('open');m.setAttribute('aria-hidden','true');if(img)img.removeAttribute('src');document.body.style.overflow='';syncFabNavVisibility();}
+function syncFabNavVisibility(){let fab=$('fabNav'),menu=$('fabMenu');if(!fab||!menu)return;let hasModal=[...document.querySelectorAll('.modal-overlay')].some(m=>{let cs=getComputedStyle(m);return m.classList.contains('open')||cs.display!=='none'});fab.classList.toggle('modal-hidden',hasModal);menu.classList.toggle('modal-hidden',hasModal);if(hasModal){menu.classList.remove('open');fab.classList.remove('open');menu.setAttribute('aria-hidden','true')}}
+function showView(id){let current=document.querySelector('.view.active')?.id;if(current)saveNavigation(current);document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));$(id).classList.add('active');let group=VIEW_GROUP[id]||'painel';if(group==='painel'){setGroup('painel',false)}else{setGroup(group,false);$('subnav').querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.view===id));}saveNavigation(id);renderAll(id);renderFabMenu();requestAnimationFrame(()=>{try{let y=parseInt(localStorage.getItem('pv_scroll_'+id)||'0',10);window.scrollTo(0,y)}catch(e){}})}
+function goVencimentosSection(sectionId){showView('vencimentos');requestAnimationFrame(()=>requestAnimationFrame(()=>{const el=$(sectionId);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}));}
+const FAB_GROUP_LABELS={fefo:'FEFO',operacao:'Operação',acompanhamento:'Acompanhamento',admin:'Administração'};
+function renderFabMenu(){let menu=$('fabMenu'),fab=$('fabNav');if(!menu||!fab)return;let current=document.querySelector('.view.active')?.id||'painel',group=VIEW_GROUP[current]||'painel';if(group==='painel'){menu.innerHTML='<small>Navegação rápida</small><button type="button" onclick="closeFabNav()">🏠 Painel</button>';return}let items=GROUPS[group]||[];menu.innerHTML=`<small>${FAB_GROUP_LABELS[group]||group}</small>`+items.map(([id,label])=>`<button type="button" onclick="fabGo('${id}')">${label}</button>`).join('')}
+function toggleFabNav(){let menu=$('fabMenu'),fab=$('fabNav');if(!menu||!fab)return;let open=!menu.classList.contains('open');renderFabMenu();menu.classList.toggle('open',open);fab.classList.toggle('open',open);menu.setAttribute('aria-hidden',String(!open))}
+function closeFabNav(){let menu=$('fabMenu'),fab=$('fabNav');if(!menu||!fab)return;menu.classList.remove('open');fab.classList.remove('open');menu.setAttribute('aria-hidden','true')}
+function fabGo(id){closeFabNav();showView(id)}
+function renderAll(id){if(id==='painel'){renderPainel();renderLembretes();}if(id==='fefo')renderFefo();if(id==='promotores')renderPromotores();if(id==='promotorProdutos')renderPromotorProdutos();if(id==='promotorAtividade')renderPromotorAtividade();if(id==='batida')renderBatida();if(id==='produtos')renderProdutos();if(id==='vencimentos')renderVencimentos();if(id==='pendencias')renderPendencias();if(id==='hoje')renderHoje();if(id==='semana')renderSemana();if(id==='historico')renderHistorico();if(id==='relatorios')renderRelatorios();if(id==='config')renderConfig();if(id==='novo')fillCorridors();if(id==='backup'){} }
+setGroup('painel',false);
+function restoreNavigation(){let id='painel';try{let saved=localStorage.getItem('pv_last_view');if(saved&&$(saved))id=saved}catch(e){}showView(id)}
+function fillCorridors(){let html='<option value="">Selecione</option>'+activeCorr().map(c=>`<option value="${c.id}">${esc(c.nome)}</option>`).join('');$('corredor').innerHTML=html;let f='<option value="">Todos corredores</option>'+activeCorr().map(c=>`<option value="${c.id}">${esc(c.nome)}</option>`).join('');$('fCor').innerHTML=f}
+function acaoStatus(s){return {'Encontrado':'Verificar e separar o produto','Ainda no corredor':'Separar o produto do corredor','Separado':'Encaminhar para oferta','Aguardando oferta':'Solicitar/aplicar oferta','Oferta solicitada':'Acompanhar aplicação da oferta','Oferta aplicada':'Confirmar exposição/saída do produto','Resolvido':'Concluído','Retirado/PIQUE':'Produto retirado da área de venda'}[s]||'Verificar produto'}
+function lastBatida(c){let a=db.batidas.filter(b=>b.corredorId==c.id).sort((x,y)=>new Date(y.data)-new Date(x.data));return a[0]||null}function daysSince(c){let b=lastBatida(c);return b?Math.floor((today0()-new Date(b.data).setHours(0,0,0,0))/86400000):9999}
+function recommended(){let arr=activeCorr().map(c=>({c,d:daysSince(c),last:lastBatida(c),week:lastBatidaSinceWeek(c)}));let agora=new Date(),inicioMes=new Date(agora.getFullYear(),agora.getMonth(),1);let mes=db.batidas.filter(b=>new Date(b.data)>=inicioMes),feitos=new Set(mes.map(b=>String(b.corredorId)));let pendMes=arr.filter(x=>!feitos.has(String(x.c.id)));if(pendMes.length){pendMes.sort((a,b)=>{if(a.d===9999&&b.d!==9999)return -1;if(b.d===9999&&a.d!==9999)return 1;return b.d-a.d||a.c.id-b.c.id});return pendMes[0]}let atrasados=arr.filter(x=>x.d>15);if(atrasados.length){atrasados.sort((a,b)=>b.d-a.d||a.c.id-b.c.id);return atrasados[0]}let semSemana=arr.filter(x=>!x.week);if(semSemana.length)arr=semSemana;arr.sort((a,b)=>b.d-a.d||a.c.id-b.c.id);return arr[0]||{c:activeCorr()[0],d:9999,last:null,week:null}}
+function lastBatidaSinceWeek(c){let w=startOfWeek();return db.batidas.filter(b=>b.corredorId==c.id&&new Date(b.data)>=w).sort((a,b)=>new Date(b.data)-new Date(a.data))[0]||null}
+function batidasHoje(){let t=today0();return db.batidas.filter(b=>new Date(b.data)>=t)}
+function produtosHoje(){let t=today0();return db.products.filter(x=>new Date(x.criado)>=t)}
+let lembreteEditId=null;
+let lembreteSalvando=false;
+function abrirNovoLembrete(id=null){const m=$('lembreteModal');if(!m)return;closeFabNav();lembreteEditId=id;const item=id?(db.lembretes||[]).find(x=>x.id===id):null;$('lembreteModalTitle').textContent=item?'📝 Editar lembrete':'📝 Novo lembrete';$('lembreteTexto').value=item?.texto||'';const btn=$('salvarLembreteBtn');if(btn){btn.disabled=false;btn.textContent='💾 Salvar lembrete';}m.classList.add('open');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';syncFabNavVisibility();setTimeout(()=>$('lembreteTexto')?.focus(),50);}
+function fecharNovoLembrete(){const m=$('lembreteModal');if(!m)return;lembreteEditId=null;m.classList.remove('open');m.setAttribute('aria-hidden','true');document.body.style.overflow='';syncFabNavVisibility();}
+function salvarLembrete(){
+  if(lembreteSalvando)return;
+  const campo=$('lembreteTexto');
+  const texto=campo?.value.trim()||'';
+  if(!texto){toast('Digite um lembrete antes de salvar.');return;}
+  lembreteSalvando=true;
+  const btn=$('salvarLembreteBtn');
+  if(btn){btn.disabled=true;btn.textContent='💾 Salvando...';}
+  const foiEdicao=!!lembreteEditId;
+  try{
+    db.lembretes=Array.isArray(db.lembretes)?db.lembretes:[];
+    if(foiEdicao){
+      const item=db.lembretes.find(x=>x.id===lembreteEditId);
+      if(!item){toast('Lembrete não encontrado.');return;}
+      item.texto=texto;
+      item.atualizado=now().toISOString();
+    }else{
+      db.lembretes.unshift({id:'l'+Date.now()+Math.random().toString(16).slice(2),texto,criado:now().toISOString(),criadoPor:user()?.id||'ramon',feito:false});
+    }
+    save();
+    // Fecha primeiro para impedir novos cliques e evitar que uma falha de renderização deixe a janela aberta.
+    fecharNovoLembrete();
+    try{renderLembretes();renderPainel();}catch(renderError){console.error('Lembrete salvo, mas houve falha ao atualizar o painel:',renderError);}
+    toast(foiEdicao?'Lembrete atualizado.':'Lembrete salvo.');
+  }catch(e){
+    console.error('Falha ao salvar lembrete:',e);
+    toast('Não foi possível salvar o lembrete. Tente novamente.');
+  }finally{
+    lembreteSalvando=false;
+    if(btn){btn.disabled=false;btn.textContent='💾 Salvar lembrete';}
+  }
+}
+function editarLembrete(id){abrirNovoLembrete(id);}
+function marcarLembreteFeito(id){const item=(db.lembretes||[]).find(x=>x.id===id);if(!item)return;item.feito=!item.feito;item.concluidoEm=item.feito?now().toISOString():null;save();renderLembretes();toast(item.feito?'Lembrete marcado como feito.':'Lembrete reaberto.');}
+function excluirLembrete(id){let idx=(db.lembretes||[]).findIndex(x=>x.id===id);if(idx<0)return;if(!confirm('Excluir este lembrete?'))return;db.lembretes.splice(idx,1);save();renderLembretes();toast('Lembrete excluído.');}
+function renderLembretes(){
+  const el=$('lembretesPainel');if(!el)return;
+  const arr=Array.isArray(db.lembretes)?db.lembretes:[];
+  el.innerHTML=arr.length?`<div class="reminder-list">${arr.map(x=>{
+    const titulo=String(x.texto||'').split(/\r?\n/).map(v=>v.trim()).find(Boolean)||'Sem título';
+    return `<div class="reminder-item ${x.feito?'reminder-done':''}">
+      <input class="reminder-check" type="checkbox" ${x.feito?'checked':''} aria-label="Marcar lembrete como feito" onclick="marcarLembreteFeito('${x.id}')">
+      <button class="reminder-title" type="button" onclick="editarLembrete('${x.id}')" title="Abrir lembrete">${esc(titulo)}</button>
+      <div class="actions">
+        <button class="secondary" type="button" onclick="editarLembrete('${x.id}')">✏️ Editar</button>
+        <button class="secondary" type="button" onclick="marcarLembreteFeito('${x.id}')">${x.feito?'↩️ Reabrir':'✅ Feito'}</button>
+        <button class="danger" type="button" onclick="excluirLembrete('${x.id}')">🗑️ Apagar</button>
+      </div>
+    </div>`;
+  }).join('')}</div>`:'<div class="empty">Nenhum lembrete cadastrado. Use o ＋ para criar um.</div>';
+}
+function renderPromotorProdutos(){
+  const el=$('promotorProdutosList'); if(!el)return;
+  const filtroEl=$('promotorEmpresaFiltro');
+  const all=Array.isArray(db.promotorProducts)?db.promotorProducts:[];
+  const empresas=[...new Set([...(db.promotores||[]).map(p=>p.empresa).filter(Boolean), ...all.map(x=>x.empresa).filter(Boolean)])].sort((a,b)=>a.localeCompare(b,'pt-BR'));
+  if(filtroEl){const cur=filtroEl.value;filtroEl.innerHTML='<option value="">Todas as empresas/marcas</option>'+empresas.map(e=>`<option value="${esc(e)}">${esc(e)}</option>`).join('');filtroEl.value=empresas.includes(cur)?cur:'';}
+  const filtro=filtroEl?.value||'';
+  const arr=all.filter(x=>!filtro||String(x.empresa||'').toLowerCase()===filtro.toLowerCase());
+  const resumo=$('promotorProdutosResumo'); if(resumo)resumo.textContent=`${arr.length} produto(s)${filtro?' • '+filtro:''}`;
+  el.innerHTML=arr.length?arr.map(x=>`<div class="item"><div class="item-main"><strong>${esc(x.produto||'Produto')}</strong><small>Promotor: <strong>${esc(x.promotorNome||'—')}</strong> • Empresa/marca: <strong>${esc(x.empresa||'—')}</strong></small>${x.validade?`<small>Validade: ${fmt(x.validade)}</small>`:''}${x.barcode?`<small>▦ EAN: ${esc(x.barcode)}</small>`:''}</div></div>`).join(''):'<div class="empty">Nenhum produto encontrado para este filtro.</div>';
+}
+function renderPainel(){let r=recommended(),p=db.products;let counts={total:p.length,v:0,c:0,a:0,sep:0,agu:0,sol:0,ap:0,cor:0};p.forEach(x=>{let n=days(x.validade),q=priority(n);if(q==='VENCIDO')counts.v++;if(q==='CRITICO')counts.c++;if(q==='ATENCAO')counts.a++;if(x.status==='Separado')counts.sep++;if(x.status==='Aguardando oferta')counts.agu++;if(x.status==='Oferta solicitada')counts.sol++;if(x.status==='Oferta aplicada')counts.ap++;if(x.status==='Ainda no corredor')counts.cor});let bh=batidasHoje(),ph=produtosHoje(),amanha=p.filter(isOpenProduct).filter(x=>days(x.validade)===1),hoje=p.filter(isOpenProduct).filter(x=>days(x.validade)===0),venc=p.filter(isOpenProduct).filter(x=>days(x.validade)<0),pend=p.filter(x=>x.status==='Ainda no corredor'||x.status==='Aguardando oferta'||x.status==='Separado'||days(x.validade)<=9);$('painelHero').innerHTML=`<div class="hero"><small>🧠 PRÓXIMA BATIDA RECOMENDADA</small><h2 style="margin:5px 0">${esc(r.c.nome)}</h2><p style="margin:4px 0">${r.d===9999?'Nunca realizada':r.d+' dia(s) desde a última batida'}${r.week?' • Já batido nesta semana':''}<br><small>Meta mensal: ${(() => {let z=new Date(),i=new Date(z.getFullYear(),z.getMonth(),1),s=new Set(db.batidas.filter(b=>new Date(b.data)>=i).map(b=>String(b.corredorId)));return s.size+' de '+activeCorr().length+' corredores cobertos';})()}</small></p><div class="actions"><button class="primary" onclick="startBatida(${r.c.id})">▶️ Iniciar batida</button><button class="secondary" onclick="showView('batida')">Escolher outro</button></div></div>`;$('metrics').innerHTML=[['🚨 Vencem hoje',hoje.length,'red','vencimentos','venceHoje'],['🔴 Vencem amanhã',amanha.length,'red','vencimentos','venceAmanha'],['⚠️ Vencidos',venc.length,'red','vencimentos','venceVencidos'],['📊 Acompanhamento',0,'','acompanhamento','hoje']].map(a=>{let count=a[4]==='venceHoje'?hoje.length:a[4]==='venceAmanha'?amanha.length:a[4]==='venceVencidos'?venc.length:'→';return `<div class="card metric" role="button" tabindex="0" style="cursor:pointer" onclick="${a[3]==='vencimentos'?`goVencimentosSection('${a[4]}')`: `setGroup('acompanhamento',true)` }" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}"><span>${a[0]}</span><strong class="${a[2]}">${count}</strong></div>`}).join('');let alertas=[...hoje.map(x=>({x,t:'🚨 Vence hoje'})),...amanha.map(x=>({x,t:'🔴 Vence amanhã'}))];$('painelAlertas').innerHTML=alertas.length?alertas.slice(0,6).map(a=>`<div style="padding:9px 0;border-bottom:1px solid var(--line)"><strong>${a.t}</strong><br>${esc(a.x.produto)} • ${esc(corridorName(a.x.corredor))} • ${remaining(a.x)} restante(s)</div>`).join(''):`<div class="empty">Nenhum vencimento crítico para hoje ou amanhã.</div>`;let working=db.users.filter(u=>u.trabalhando);$('equipeHoje').innerHTML=working.length?working.map(u=>{let bb=bh.filter(b=>b.usuarioId===u.id).length,pp=ph.filter(x=>x.criadoPor===u.id).length;return`<p style="margin:8px 0">🟢 <strong>${esc(u.nome)}</strong> — ${esc(u.funcao)}<br><small>${bb} batida(s) • ${pp} produto(s) registrado(s)</small></p>`}).join(''):'<div class="empty">Nenhum membro marcado como trabalhando.</div>';let totalCorr=activeCorr().length,mesAgora=new Date(),inicioMes=new Date(mesAgora.getFullYear(),mesAgora.getMonth(),1);let batidasMes=db.batidas.filter(b=>new Date(b.data)>=inicioMes),corredoresMes=new Set(batidasMes.map(b=>String(b.corredorId))),feitosMes=corredoresMes.size,pctMes=totalCorr?Math.round(Math.min(100,(feitosMes/totalCorr)*100)):0;let atrasados15=activeCorr().filter(c=>daysSince(c)>15),pendentesMes=activeCorr().filter(c=>!corredoresMes.has(String(c.id)));let cicloTxt=atrasados15.length?`<span class="badge red">⚠️ ${atrasados15.length} corredor(es) há mais de 15 dias sem batida</span>`:'<span class="badge green">✅ Nenhum corredor passou de 15 dias sem batida</span>';let metaTxt=pendentesMes.length?`<span class="badge red">🎯 Faltam ${pendentesMes.length} corredor(es) para completar a meta mensal</span>`:'<span class="badge green">🎯 Meta mensal completa: todos os ${totalCorr} corredores já tiveram batida</span>';let mesNome=mesAgora.toLocaleDateString('pt-BR',{month:'long',year:'numeric'});$('progressoHoje').innerHTML=`<div class="kpi"><strong>📅 ${mesNome}</strong><br><strong>${feitosMes} de ${totalCorr}</strong> corredor(es) trabalhado(s) no mês • <strong>${pctMes}%</strong> de cobertura</div><div style="margin-top:10px;height:14px;background:#e8eef5;border-radius:99px;overflow:hidden"><div style="height:100%;width:${pctMes}%;background:var(--blue)"></div></div><div style="margin-top:10px">${metaTxt}</div><div style="margin-top:8px">${cicloTxt}</div><small class="muted" style="display:block;margin-top:8px"><strong>Regra da batida:</strong> primeiro completar os ${totalCorr} corredores no mês. Depois, priorizar quem estiver há mais de 15 dias sem batida; se ninguém estiver nessa situação, seguir pelo maior tempo sem batida, evitando repetir na mesma semana quando possível.</small>`}
+function fefoDays(v){return days(v)}
+let fefoEditId=null;
+function abrirCadastroFefo(){
+  fefoEditId=null;
+  const m=$('fefoModal'); if(!m)return;
+  $('fefoModal').querySelector('h3').textContent='🔄 Cadastrar produto FEFO';
+  $('fefoProduto').value='';$('fefoBarcode').value='';$('fefoEntrada').value=new Date().toISOString().slice(0,10);$('fefoVencimento').value='';$('fefoFoto').value='';window._fefoFoto='';$('fefoPreview').hidden=true;$('fefoPreview').src='';
+  closeFabNav();m.style.display='flex';m.setAttribute('aria-hidden','false');syncFabNavVisibility();setTimeout(()=>$('fefoProduto')?.focus(),50);
+}
+function editarFefo(id){
+  const x=(db.fefo||[]).find(p=>p.id===id); if(!x||x.retirado)return;
+  fefoEditId=id;
+  const m=$('fefoModal'); if(!m)return;
+  $('fefoModal').querySelector('h3').textContent='✏️ Editar FEFO';
+  $('fefoProduto').value=x.produto||'';$('fefoBarcode').value=String(x.barcode||'').replace(/\D/g,'');
+  $('fefoEntrada').value=x.entrada||'';$('fefoVencimento').value=x.vencimento||'';
+  $('fefoFoto').value='';window._fefoFoto=x.foto||'';$('fefoPreview').src=x.foto||'';$('fefoPreview').hidden=!x.foto;
+  closeFabNav();m.style.display='flex';m.setAttribute('aria-hidden','false');syncFabNavVisibility();
+}
+function fecharCadastroFefo(){const m=$('fefoModal');if(!m)return;m.style.display='none';m.setAttribute('aria-hidden','true');window._fefoFoto='';fefoEditId=null;syncFabNavVisibility();}
+async function lerEANFefo(){
+  const modal=$('fefoScannerModal'),video=$('fefoBarcodeVideo'),status=$('fefoScannerStatus');
+  if(!modal||!video||!navigator.mediaDevices?.getUserMedia){toast('A câmera não está disponível neste dispositivo.');return;}
+  fecharLeitorEANFefo(); closeFabNav(); modal.style.display='flex';modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';syncFabNavVisibility();status.textContent='Abrindo câmera...';
+  try{
+    barcodeStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'},width:{ideal:1280},height:{ideal:720}},audio:false});
+    video.srcObject=barcodeStream;video.muted=true;video.setAttribute('playsinline','');await video.play();
+    if('BarcodeDetector' in window){try{barcodeDetector=new BarcodeDetector({formats:['ean_13','ean_8','upc_a','upc_e','code_128','itf','codabar']});}catch(e){barcodeDetector=null;}}
+    const aceitar=async(code)=>{if(!code||barcodeBusy)return;barcodeBusy=true;fecharLeitorEANFefo();$('fefoBarcode').value=String(code).replace(/\D/g,'');await consultarEANFefo();barcodeBusy=false;};
+    if(barcodeDetector){
+      status.textContent='🟢 Câmera ativa. Aponte para o código de barras.';
+      const loop=async()=>{
+        if(!barcodeStream||video.readyState<2)return;
+        try{const codes=await barcodeDetector.detect(video);if(codes?.[0]?.rawValue){await aceitar(codes[0].rawValue);return;}}catch(e){}
+        if(barcodeStream)barcodeTimer=requestAnimationFrame(loop);
+      };
+      barcodeTimer=requestAnimationFrame(loop);return;
+    }
+    try{await carregarZXingOpcional();}catch(e){}
+    if(window.ZXingBrowser?.BrowserMultiFormatReader){
+      const devices=await ZXingBrowser.BrowserCodeReader.listVideoInputDevices();
+      const back=devices.find(d=>/back|rear|environment|traseira/i.test(d.label))||devices[0];
+      barcodeReader=new ZXingBrowser.BrowserMultiFormatReader();
+      barcodeControls=await barcodeReader.decodeFromVideoDevice(back?.deviceId,video,(result)=>{if(result?.text)aceitar(result.text);});
+      status.textContent='🟢 Leitor ativo. Aponte para o código de barras.';return;
+    }
+    throw new Error('Nenhum leitor disponível');
+  }catch(e){
+    console.error(e);fecharLeitorEANFefo();let msg='Não foi possível abrir a câmera.';if(e?.name==='NotAllowedError')msg='A câmera foi bloqueada. Permita a câmera para este site e tente novamente.';toast(msg);
+  }
+}
+function fecharLeitorEANFefo(){
+  if(barcodeControls){try{barcodeControls.stop()}catch(e){}barcodeControls=null;}
+  if(barcodeReader){try{barcodeReader.reset()}catch(e){}barcodeReader=null;}
+  if(barcodeTimer)cancelAnimationFrame(barcodeTimer);barcodeTimer=null;barcodeDetector=null;
+  if(barcodeStream){barcodeStream.getTracks().forEach(t=>t.stop());barcodeStream=null;}
+  const v=$('fefoBarcodeVideo');if(v){try{v.pause()}catch(e){}v.srcObject=null;}
+  const m=$('fefoScannerModal');if(m){m.style.display='none';m.setAttribute('aria-hidden','true');}
+  if(document.querySelector('.modal-overlay.open')==null)document.body.style.overflow='';
+  syncFabNavVisibility();
+}
+
+function abrirImportadorFefo(){const m=$('fefoImportModal');if(!m)return;closeFabNav();m.style.display='flex';m.setAttribute('aria-hidden','false');window._fefoListaFile=null;$('fefoListaCamera').value='';$('fefoListaGaleria').value='';$('fefoListaPreview').hidden=true;$('fefoListaPreview').removeAttribute('src');$('fefoImportStatus').textContent='Escolha se quer tirar uma foto ou usar uma foto da galeria.';$('fefoImportResults').innerHTML='';$('fefoOcrBtn').disabled=true;$('fefoImportConfirmBtn').disabled=true;syncFabNavVisibility();}
+function fecharImportadorFefo(){const m=$('fefoImportModal');if(!m)return;m.style.display='none';m.setAttribute('aria-hidden','true');window._fefoListaFile=null;$('fefoListaCamera').value='';$('fefoListaGaleria').value='';$('fefoListaPreview').hidden=true;$('fefoListaPreview').removeAttribute('src');$('fefoImportResults').innerHTML='';syncFabNavVisibility();}
+function abrirCameraListaFefo(){const el=$('fefoListaCamera');if(el)el.click();}
+function abrirGaleriaListaFefo(){const el=$('fefoListaGaleria');if(el)el.click();}
+function prepararFotoListaFefo(e){const file=e.target.files?.[0];if(!file)return;window._fefoListaFile=file;const r=new FileReader();r.onload=()=>{$('fefoListaPreview').src=r.result;$('fefoListaPreview').hidden=false;$('fefoImportStatus').textContent='Foto carregada. Toque em “Ler lista” para iniciar a identificação.';$('fefoOcrBtn').disabled=false;$('fefoImportConfirmBtn').disabled=true};r.readAsDataURL(file);}
+async function carregarTesseract(){if(window.Tesseract)return window.Tesseract;return await new Promise((resolve,reject)=>{const old=document.getElementById('tesseractScript');if(old){old.addEventListener('load',()=>resolve(window.Tesseract));old.addEventListener('error',reject);return;}const sc=document.createElement('script');sc.id='tesseractScript';sc.src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';sc.onload=()=>resolve(window.Tesseract);sc.onerror=()=>reject(new Error('Não foi possível carregar o leitor de texto.'));document.head.appendChild(sc);});}
+function normTxt(v){return String(v||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();}
+function tokenScore(a,b){const A=new Set(normTxt(a).split(/\s+/).filter(w=>w.length>2)),B=new Set(normTxt(b).split(/\s+/).filter(w=>w.length>2));if(!A.size||!B.size)return 0;let hit=0;A.forEach(w=>{if(B.has(w))hit++});return hit/Math.max(A.size,B.size);}
+function extrairEANLinha(line){const m=String(line||'').match(/\b\d{8,14}\b/g);return m?m.sort((a,b)=>b.length-a.length)[0]:'';}
+function extrairDataLinha(line){const m=String(line||'').match(/\b(\d{1,2}[\/-]\d{1,2}[\/-]\d{2,4})\b/);if(!m)return '';const p=m[1].replace(/-/g,'/').split('/');let y=p[2];if(y.length===2)y='20'+y;return `${y}-${p[1].padStart(2,'0')}-${p[0].padStart(2,'0')}`;}
+function melhorProdutoListaFefo(nome,ean){const cat=[...(db.catalog||[])];if(ean){const exact=cat.find(x=>String(x.barcode||'').replace(/\D/g,'')===ean);if(exact)return {item:exact,score:1,modo:'EAN'};}let best=null;for(const c of cat){const score=tokenScore(nome,c.produto||'');if(!best||score>best.score)best={item:c,score,modo:'nome'};}return best&&best.score>=0.45?best:null;}
+function renderImportRows(rows){const box=$('fefoImportResults');if(!box)return;box.innerHTML=rows.length?`<div class="card" style="padding:10px"><strong>${rows.length} produto(s) identificado(s)</strong><small class="muted" style="display:block;margin-top:4px">Somente PLU, produto e vencimento são considerados. Estoque e preço são ignorados.</small><div class="product-list" style="margin-top:8px">${rows.map((r,i)=>`<div class="item" style="align-items:flex-start"><input type="checkbox" id="fefoImp_${i}" ${r.checked?'checked':''} onchange="window._fefoImportRows[${i}].checked=this.checked" style="margin-top:5px"><div class="item-main"><strong>${esc(r.produto||r.ocr||'Produto não identificado')}</strong><small style="display:block">🏷️ PLU: ${esc(r.plu||'Não identificado')}</small><small style="display:block">📅 Vencimento: ${r.vencimento?fmt(r.vencimento):'⚠️ Conferir data'}</small>${r.ean?`<small style="display:block">▦ EAN catálogo: ${esc(r.ean)}</small>`:''}<small style="display:block">${r.dataSuspeita?'🔴 Data rejeitada para importação — a lista FEFO não deve conter vencidos.':r.modo==='EAN'?'✅ Encontrado no catálogo':r.modo==='nome'?'🟡 Associado pelo nome':'⚠️ Conferir produto'}</small></div></div>`).join('')}</div></div>`:'<div class="empty">Nenhum produto foi identificado na foto.</div>';}
+
+function prepararImagensTabelaFefo(file){return new Promise((resolve,reject)=>{const img=new Image(),fr=new FileReader();fr.onload=()=>{img.onload=()=>{const w=img.naturalWidth||img.width,h=img.naturalHeight||img.height,scale=Math.min(1.5,1800/Math.max(w,1)),W=Math.round(w*scale),H=Math.round(h*scale),leftEnd=Math.round(W*.63),dateStart=Math.round(W*.58),dateEnd=Math.round(W*.93),mk=(sx,sw)=>{const c=document.createElement('canvas');c.width=Math.round(sw*scale);c.height=H;const ctx=c.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,c.width,c.height);ctx.drawImage(img,sx,0,sw,h,0,0,c.width,H);const data=ctx.getImageData(0,0,c.width,H),d=data.data;for(let i=0;i<d.length;i+=4){const g=.299*d[i]+.587*d[i+1]+.114*d[i+2],v=g<185?Math.max(0,Math.min(255,(g-128)*1.65+128)):255;d[i]=d[i+1]=d[i+2]=v}ctx.putImageData(data,0,0);return c};const leftCanvas=mk(0,W*.63),dateCanvas=mk(W*(.55),W*.42);Promise.all([new Promise((res,rej)=>leftCanvas.toBlob(b=>b?res(b):rej(new Error('Falha ao preparar produtos')),'image/jpeg',.84)),new Promise((res,rej)=>dateCanvas.toBlob(b=>b?res(b):rej(new Error('Falha ao preparar datas')),'image/jpeg',.84))]).then(([left,date])=>resolve({left,date})).catch(reject)};img.onerror=()=>reject(new Error('Imagem inválida'));img.src=fr.result};fr.onerror=reject;fr.readAsDataURL(file)})}
+function extrairLinhaTabelaFefo(line){const clean=String(line||'').replace(/[|¦]/g,' ').replace(/\s+/g,' ').trim(),dm=clean.match(/(\d{1,2}[\/-]\d{1,2}[\/-]\d{2,4})/);if(!dm)return null;const before=clean.slice(0,dm.index).trim(),pm=before.match(/^(\d{1,5})\s+(.*)$/);if(!pm)return null;let nome=pm[2].replace(/\s+/g,' ').trim();const estoqueFinal=nome.match(/\s+(?:\d{1,3}(?:\.\d{3})*|\d+)$/);if(estoqueFinal)nome=nome.slice(0,estoqueFinal.index).trim();if(nome.length<3)return null;const p=dm[1].replace(/-/g,'/').split('/');let y=p[2];if(y.length===2)y='20'+y;return {plu:pm[1],nome,vencimento:`${y}-${p[1].padStart(2,'0')}-${p[0].padStart(2,'0')}`}}
+async function lerListaFefo(){const file=window._fefoListaFile;if(!file){toast('Escolha uma foto da lista primeiro.');return;}$('fefoOcrBtn').disabled=true;$('fefoImportConfirmBtn').disabled=true;$('fefoImportStatus').textContent='⏳ Preparando leitura por colunas...';try{const T=await carregarTesseract(),imgs=await prepararImagensTabelaFefo(file);$('fefoImportStatus').textContent='⏳ Lendo produtos e datas...';const [prodResult,dateResult]=await Promise.all([T.recognize(imgs.left,'por',{logger:m=>{if(m.status==='recognizing text'&&m.progress)$('fefoImportStatus').textContent=`⏳ Lendo produtos... ${Math.round(m.progress*100)}%`}}),T.recognize(imgs.date,'eng',{tessedit_pageseg_mode:6,tessedit_char_whitelist:'0123456789/',logger:m=>{if(m.status==='recognizing text'&&m.progress)$('fefoImportStatus').textContent=`⏳ Lendo datas... ${Math.round(m.progress*100)}%`}})]);const prodRaw=(prodResult?.data?.text||'').split(/\r?\n/).map(x=>x.trim()).filter(x=>x.length>=3);const dateText=dateResult?.data?.text||'';const dateList=[...dateText.matchAll(/\b\d{1,2}[\/-]\d{1,2}[\/-]\d{2,4}\b/g)].map(m=>m[0]);const rows=[],seen=new Set();let dateIndex=0;for(const line of prodRaw){if(/^(produto|descricao|descrição|ean|codigo|código|estoque|vencimento|validade|data|preço|preco|lista|fefo|plu)$/i.test(line))continue;const parsed=extrairLinhaTabelaFefo(line);if(!parsed)continue;let dateRaw=dateList[dateIndex++]||'';let vencimento=extrairDataLinha(dateRaw);if(!vencimento)vencimento=parsed.vencimento;const match=melhorProdutoListaFefo(parsed.nome,'');const produto=match?.item?.produto||parsed.nome;const key=parsed.plu+'|'+normTxt(produto)+'|'+vencimento;if(seen.has(key))continue;seen.add(key);const hoje=new Date();hoje.setHours(0,0,0,0);const dv=vencimento?new Date(vencimento+'T00:00:00'):null;const dataSuspeita=!vencimento||!dv||Number.isNaN(dv.getTime())||dv<hoje;rows.push({ocr:line,produto,plu:parsed.plu,ean:match?.item?.barcode||'',vencimento:dataSuspeita?'':vencimento,entrada:new Date().toISOString().slice(0,10),foto:match?.item?.foto||'',modo:match?.modo||'',checked:!dataSuspeita,dataSuspeita})}window._fefoImportRows=rows;const suspeitas=rows.filter(r=>r.dataSuspeita).length;$('fefoImportStatus').textContent=`✅ Leitura concluída. ${rows.length} produto(s) identificado(s). ${suspeitas?`⚠️ ${suspeitas} vencimento(s) precisam de conferência.`:'Datas conferidas: nenhum vencimento passado foi aceito.'}`;renderImportRows(rows);$('fefoImportConfirmBtn').disabled=!rows.some(r=>r.checked&&r.produto&&r.vencimento);$('fefoOcrBtn').disabled=false}catch(e){console.error(e);$('fefoImportStatus').textContent='❌ Não foi possível ler a lista. Tente uma foto mais nítida e reta.';$('fefoOcrBtn').disabled=false;toast('Falha na leitura da lista.')}}
+
+function confirmarImportacaoFefo(){const rows=(window._fefoImportRows||[]).filter(r=>r.checked);if(!rows.length){toast('Selecione pelo menos um item para importar.');return;}const valid=rows.filter(r=>r.produto&&r.vencimento);if(!valid.length){toast('Os itens selecionados precisam ter produto e vencimento.');return;}db.fefo=db.fefo||[];db.catalog=db.catalog||[];let n=0;valid.forEach(r=>{const item={id:'f'+Date.now()+Math.random().toString(16).slice(2),produto:r.produto,barcode:r.ean||'',plu:r.plu||'',entrada:r.entrada||new Date().toISOString().slice(0,10),vencimento:r.vencimento,foto:r.foto||'',status:'FEFO',criado:now().toISOString(),criadoPor:user().id,retirado:false,piquefoto:'',origem:'lista_fefo_importada'};db.fefo.push(item);if(r.ean){const c=db.catalog.find(x=>String(x.barcode||'').replace(/\D/g,'')===r.ean);if(!c)db.catalog.push({barcode:r.ean,produto:r.produto,foto:r.foto||'',atualizado:now().toISOString(),fonte:'lista_fefo_importada'});}n++;});save();emitCloudEvent('FEFO_LISTA_ATUALIZADA',{quantidade:n,produtos:valid.map(r=>r.produto).slice(0,20)});fecharImportadorFefo();renderFefo();renderPendencias();renderPainel();renderRelatorios();toast(`${n} produto(s) FEFO importado(s) com sucesso.`);}
+async function consultarEANFefo(){
+  const code=String($('fefoBarcode').value||'').replace(/\D/g,'').trim();
+  if(code.length<8){toast('Digite um EAN válido antes de consultar.');return;}
+  $('fefoBarcode').value=code;
+  $('fefoProduto').value='';
+  window._fefoFoto='';
+  $('fefoPreview').removeAttribute('src');
+  $('fefoPreview').hidden=true;
+  toast('Consultando produto pelo EAN...');
+
+  const local=(db.catalog||[]).find(x=>String(x.barcode||'').replace(/\D/g,'')===code);
+  if(local){
+    $('fefoProduto').value=local.produto||'';
+    if(local.foto){window._fefoFoto=local.foto;$('fefoPreview').src=local.foto;$('fefoPreview').hidden=false;}
+    toast('EAN reconhecido no catálogo local.');
+    return;
+  }
+
+  let achado=null;
+  const fontes=['https://world.openfoodfacts.org','https://world.openbeautyfacts.org'];
+  for(const base of fontes){
+    achado=await consultarOpenFacts(code,base);
+    if(!achado) achado=await consultarOpenFactsV2(code,base);
+    if(achado) break;
+  }
+  if(!achado){
+    const upc=await consultarUPCItemDB(code);
+    if(upc) achado={nome:upc.nome,imagem:'',fonte:upc.fonte};
+  }
+  if(achado){
+    $('fefoProduto').value=achado.nome||'';
+    if(achado.imagem){window._fefoFoto=achado.imagem;$('fefoPreview').src=achado.imagem;$('fefoPreview').hidden=false;}
+    toast(achado.imagem?'Produto e foto encontrados pelo EAN.':'Produto encontrado pelo EAN.');
+    return;
+  }
+  const img=await consultarImagemPorEAN(code);
+  if(img){window._fefoFoto=img.imagem;$('fefoPreview').src=img.imagem;$('fefoPreview').hidden=false;}
+  toast('EAN não encontrado automaticamente. Informe o nome manualmente.');
+}
+async function salvarFefo(){
+  const produto=$('fefoProduto').value.trim(),barcode=$('fefoBarcode').value.replace(/\D/g,''),entrada=$('fefoEntrada').value,venc=$('fefoVencimento').value;
+  if(!produto||barcode.length<8||!entrada||!venc){toast('Preencha produto, EAN, data de entrada e vencimento.');return;}
+  if(venc<entrada){toast('A data de vencimento não pode ser anterior à data de entrada.');return;}
+  let foto=window._fefoFoto||'';const file=$('fefoFoto').files?.[0];if(file)foto=await compressImage(file);
+  if(fefoEditId){
+    const item=(db.fefo||[]).find(p=>p.id===fefoEditId);
+    if(!item){fecharCadastroFefo();return;}
+    item.produto=produto;item.barcode=barcode;item.entrada=entrada;item.vencimento=venc;item.foto=foto||item.foto||'';item.atualizado=now().toISOString();
+    if(barcode){db.catalog=db.catalog||[];let c=db.catalog.find(x=>String(x.barcode||'').replace(/\D/g,'')===barcode);if(c){c.produto=produto;c.foto=item.foto||c.foto||'';c.atualizado=now().toISOString();}else db.catalog.push({barcode,produto,foto:item.foto||'',atualizado:now().toISOString(),fonte:'fefo'});}
+    save();fecharCadastroFefo();renderFefo();renderPendencias();renderRelatorios();toast('FEFO atualizado com sucesso!');return;
+  }
+  const item={id:'f'+Date.now()+Math.random().toString(16).slice(2),produto,barcode,entrada,vencimento:venc,foto,status:'FEFO',criado:now().toISOString(),criadoPor:user().id,retirado:false,piquefoto:''};
+  db.fefo=db.fefo||[];db.fefo.push(item);
+  if(barcode){db.catalog=db.catalog||[];let c=db.catalog.find(x=>String(x.barcode||'').replace(/\D/g,'')===barcode);if(!c)db.catalog.push({barcode,produto,foto,atualizado:now().toISOString(),fonte:'fefo'});else{c.produto=produto;c.foto=foto||c.foto||'';c.atualizado=now().toISOString();}}
+  save();fecharCadastroFefo();renderFefo();renderPendencias();renderRelatorios();toast('Produto FEFO cadastrado com sucesso!');
+}
+function excluirFefo(id){
+  const idx=(db.fefo||[]).findIndex(p=>p.id===id);
+  if(idx<0)return;
+  const x=db.fefo[idx];
+  if(x.retirado||x.status==='Retirado/PIQUE'){toast('Este FEFO já foi retirado e permanece no histórico.');return;}
+  if(!confirm('Excluir '+(x.produto||'este produto FEFO')+'?\n\nEle será removido dos FEFOs ativos e, se estiver vencido, também deixará de aparecer em Retirada FEFO.'))return;
+  db.deletedFefo=Array.isArray(db.deletedFefo)?db.deletedFefo:[];
+  const t=now().toISOString();
+  db.deletedFefo.push({...x,excluidoEm:t,excluidoPor:currentActorId(),excluidoPorNome:currentActorName()});
+  db.fefo.splice(idx,1);
+  save();
+  renderFefo();
+  renderPendencias();
+  renderPainel();
+  renderRelatorios();
+  toast('Produto FEFO excluído.');
+}
+function renderFefo(){
+  const el=$('fefoList');if(!el)return;
+  const all=(db.fefo||[]).filter(x=>!x.retirado && x.status!=='Retirado/PIQUE');
+  const ativos=all.sort((a,b)=>new Date(a.vencimento)-new Date(b.vencimento));
+  const card=x=>{const n=fefoDays(x.vencimento),img=x.foto||"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect width='100%25' height='100%25' fill='%23eef3f8'/%3E%3Ctext x='50%25' y='55%25' text-anchor='middle' font-size='28'%3E%F0%9F%93%A6%3C/text%3E%3C/svg%3E";const prazo=n<0?'Vencido há '+Math.abs(n)+' dia(s)':n===0?'Vence hoje':n===1?'1 dia restante':n+' dias restantes';return `<div class="item" style="border:1px solid #dfe5d9;background:#fff;align-items:flex-start"><img class="thumb" src="${escapeAttr(img)}" alt="Foto do produto FEFO" style="width:72px;height:72px;object-fit:cover;border-radius:10px"><div class="item-main"><strong>${esc(x.produto)}</strong><small style="display:block;margin-top:4px">▦ Código de barras: <strong>${esc(x.barcode||'EAN não cadastrado')}</strong></small><small style="display:block;margin-top:4px">📥 Entrada: <strong>${fmt(x.entrada)}</strong> • 📅 Vencimento: <strong>${fmt(x.vencimento)}</strong></small><div style="margin-top:7px">${daysBadge(n)} <span class="badge fefo-status">🔄 FEFO</span></div><small style="display:block;margin-top:5px">${prazo}</small><div class="fefo-clean-actions"><button type="button" class="secondary" onclick="editarFefo('${x.id}')">✏️ Editar FEFO</button><button type="button" class="danger" onclick="excluirFefo('${x.id}')">🗑️ Excluir FEFO</button></div></div></div>`};
+  let html=ativos.length?`<section class="card"><h3 style="margin-top:0">🔄 Produtos FEFO ativos</h3><div class="product-list">${ativos.map(card).join('')}</div></section>`:`<div class="card empty">Nenhum produto FEFO cadastrado.</div>`;
+  html+=`<div class="card alert" style="margin-top:16px">🔄 <strong>First Expired, First Out:</strong> cadastre a entrada e o vencimento. O sistema prioriza o produto que vence primeiro.</div>`;
+  html+=`<div class="card alert" style="margin-top:10px">📌 <strong>Retirada FEFO:</strong> quando chegar a data de vencimento, o produto será encaminhado para <strong>Operação → Pendências → Retirada FEFO</strong> e permanecerá lá até o PIQUE ser confirmado com foto.</div>`;
+  el.innerHTML=html;
+}
+function productMini(x){let n=days(x.validade);return`<div style="padding:9px 0;border-bottom:1px solid var(--line)"><strong>${esc(x.produto)}</strong> <small>• ${fmt(x.validade)} • ${x.quantidade} un.</small><br>${badge(priority(n))} ${statusBadge(x.status)} • ${esc(corridorName(x.corredor))}</div>`}
+function corridorName(id){return db.corridors.find(c=>c.id==id)?.nome||'Corredor '+id}
+function startBatida(id,motivo=''){batidaAtual={id:'b'+Date.now(),corredorId:id,inicio:now().toISOString(),produtos:[],usuarioId:user().id,motivo};showView('batida')}
+function renderVencimentos(){
+ let base=db.products.filter(x=>x.validade&&!x.retirado&&!x.piqueConfirmado&&!x.piqueEm&&x.status!=='Retirado/PIQUE');
+ let hoje=base.filter(x=>days(x.validade)===0&&x.status!=='Resolvido').sort((a,b)=>String(a.validade).localeCompare(String(b.validade)));
+ let amanha=base.filter(x=>days(x.validade)===1&&x.status!=='Resolvido').sort((a,b)=>String(a.validade).localeCompare(String(b.validade)));
+ let prox10=base.filter(x=>{let n=days(x.validade);return n>=2&&n<=10&&x.status!=='Resolvido'}).sort((a,b)=>days(a.validade)-days(b.validade));
+ let venc=base.filter(x=>days(x.validade)<0&&x.status!=='Resolvido').sort((a,b)=>days(a.validade)-days(b.validade));
+ let card=x=>`<div class="item"><img class="thumb" src="${x.foto||''}" alt=""><div class="item-main"><strong>${esc(x.produto)}</strong><small>Validade: ${fmt(x.validade)} • ${esc(corridorName(x.corredor))} • ${remaining(x)} restante(s)</small><br><small>▦ EAN: <strong>${esc(x.barcode||'EAN não cadastrado')}</strong></small><br>${daysBadge(days(x.validade))} ${statusBadge(x.status)}<br><small>Registrado por ${esc(userName(x.criadoPor))}</small></div></div>`;
+ let card10=x=>`<div class="item"><img class="thumb" src="${x.foto||''}" alt=""><div class="item-main"><strong>${esc(x.produto)}</strong><small>Validade: ${fmt(x.validade)} • ${esc(corridorName(x.corredor))} • ${remaining(x)} restante(s)</small><br><small>▦ EAN: <strong>${esc(x.barcode||'EAN não cadastrado')}</strong></small><br>${daysBadge(days(x.validade))} ${statusBadge(x.status)}<br><small>Registrado por ${esc(userName(x.criadoPor))}</small></div><div class="actions"><button class="secondary" onclick="actionNext10('${x.id}')">⚙️ Ação</button></div></div>`;
+ let fill=(id,arr,empty,renderer=card)=>$(id).innerHTML=arr.length?`<div class="product-list">${arr.map(renderer).join('')}</div>`:`<div class="empty">${empty}</div>`;
+ $('vencKpis').innerHTML=[['🚨 Vence hoje',hoje.length,'red'],['🔴 Vence amanhã',amanha.length,'red'],['🟡 Próximos 10 dias',prox10.length,'yellow'],['⚠️ Vencidos',venc.length,'red']].map(a=>`<div class="card metric"><span>${a[0]}</span><strong class="${a[2]}">${a[1]}</strong></div>`).join('');
+ fill('venceHoje',hoje,'Nenhum produto vence hoje.');
+ fill('venceAmanha',amanha,'Nenhum produto vence amanhã.');
+ fill('vence10',prox10,'Nenhum produto vence nos próximos 10 dias.',card10);
+ fill('venceVencidos',venc,'Nenhum produto vencido.');
+}
+function renderPendencias(){
+ let base=db.products.filter(x=>x.status!=='Retirado/PIQUE');
+ let retirada=base.filter(x=>x.validade&&(days(x.validade)===0||days(x.validade)===1)).sort((a,b)=>days(a.validade)-days(b.validade));
+ let fefoObrig=(db.fefo||[]).filter(x=>!x.retirado&&x.status!=='Retirado/PIQUE'&&x.vencimento&&fefoDays(x.vencimento)<=0).sort((a,b)=>fefoDays(a.vencimento)-fefoDays(b.vencimento));
+ let noCor=base.filter(x=>x.status==='Ainda no corredor'&&x.validade&&days(x.validade)<=30).sort((a,b)=>days(a.validade)-days(b.validade));
+ let retiradaCard=x=>{let thumb=x.foto||"data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2296%22 height=%2296%3E%3Crect width=%22100%25%22 height=%22100%25%22 rx=%2212%22 fill=%22%23eef3f8%22/%3E%3Ctext x=%2250%25%22 y=%2258%25%22 text-anchor=%22middle%22 font-size=%2234%22%3E%F0%9F%93%A6%3C/text%3E%3C/svg%3E";return `<div class="item" style="border:2px solid #c62828;background:#fffafa;align-items:center"><img class="thumb" src="${escapeAttr(thumb)}" alt="Foto do produto" style="width:88px;height:88px;object-fit:cover;border-radius:12px"><div class="item-main"><strong>${esc(x.produto)}</strong><small style="display:block;margin-top:5px">▦ EAN: <strong>${esc(x.barcode||'EAN não cadastrado')}</strong></small><div style="margin-top:7px">${daysBadge(days(x.validade))}</div><small style="display:block;margin-top:5px">${days(x.validade)<0?'⚠️ Vencido':days(x.validade)===0?'🚨 Vence hoje':days(x.validade)+' dia(s) restantes'}</small></div><div class="actions"><button class="primary" onclick="marcarRetiradoPique('${x.id}')">📸 Retirado/PIQUE</button></div></div>`};
+ let fefoCardPend=x=>{let n=fefoDays(x.vencimento),thumb=x.foto||"data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2296%22 height=%2296%3E%3Crect width=%22100%25%22 height=%22100%25%22 rx=%2212%22 fill=%22%23eef3f8%22/%3E%3Ctext x=%2250%25%22 y=%2258%25%22 text-anchor=%22middle%22 font-size=%2234%22%3E%F0%9F%94%84%3C/text%3E%3C/svg%3E";return `<div class="item" style="border:2px solid #1565c0;background:#f8fbff;align-items:center"><img class="thumb" src="${escapeAttr(thumb)}" alt="Foto do produto FEFO" style="width:88px;height:88px;object-fit:cover;border-radius:12px"><div class="item-main"><strong>${esc(x.produto)}</strong><small style="display:block;margin-top:5px">🔄 <strong>Produto FEFO</strong></small><small style="display:block;margin-top:5px">▦ EAN: <strong>${esc(x.barcode||'EAN não cadastrado')}</strong></small><small style="display:block;margin-top:5px">📅 Vencimento: <strong>${fmt(x.vencimento)}</strong></small><div style="margin-top:7px">${daysBadge(n)} <span class="badge fefo-status">🔄 FEFO</span></div><small style="display:block;margin-top:5px">${n<0?'⚠️ Vencido há '+Math.abs(n)+' dia(s)':'🚨 Vence hoje'}</small></div><div class="actions"><button class="primary" onclick="marcarFefoPique('${x.id}')">📸 Retirar FEFO/PIQUE</button></div></div>`};
+ let noCorCard=x=>{let thumb=x.foto||"data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2296%22 height=%2296%3E%3Crect width=%22100%25%22 height=%22100%25%22 rx=%2212%22 fill=%22%23eef3f8%22/%3E%3Ctext x=%2250%25%22 y=%2258%25%22 text-anchor=%22middle%22 font-size=%2234%22%3E%F0%9F%93%A6%3C/text%3E%3C/svg%3E";return `<div class="item" style="border:2px solid #c62828;background:#fffafa;align-items:center"><img class="thumb" src="${escapeAttr(thumb)}" alt="Foto do produto" style="width:88px;height:88px;object-fit:cover;border-radius:12px"><div class="item-main"><strong>${esc(x.produto)}</strong><small style="display:block;margin-top:5px">${esc(x.marca||'Produto')} • ${esc(x.quantidadeProduto||'')}</small><small style="display:block;margin-top:5px">▦ EAN: <strong>${esc(x.barcode||'EAN não cadastrado')}</strong></small><div style="margin-top:7px">${daysBadge(days(x.validade))}</div><small style="display:block;margin-top:5px">${days(x.validade)<0?'⚠️ Vencido':days(x.validade)===0?'🚨 Vence hoje':days(x.validade)+' dia(s) restantes'}</small></div><div class="actions"><button class="secondary" onclick="editStatus('${x.id}')">Status</button></div></div>`};
+ $('pendKpis').innerHTML=[['🚨 Retirada em 1 dia',retirada.length,'red'],['🔄 FEFO para retirada',fefoObrig.length,'red'],['🔴 Ainda no corredor',noCor.length,'red']].map(a=>`<div class="card metric"><span>${a[0]}</span><strong class="${a[2]}">${a[1]}</strong></div>`).join('');
+ $('pendRetirada').innerHTML=retirada.length?`<div class="product-list">${retirada.map(retiradaCard).join('')}</div>`:'<div class="empty">Nenhum produto com 1 dia restante pendente de retirada.</div>';
+ $('pendFefo').innerHTML=fefoObrig.length?`<div class="product-list">${fefoObrig.map(fefoCardPend).join('')}</div>`:'<div class="empty">Nenhum produto FEFO aguardando retirada.</div>';
+ $('pendCorredor').innerHTML=noCor.length?`<div class="product-list">${noCor.map(noCorCard).join('')}</div>`:'<div class="empty">Nenhum produto nesta situação.</div>';
+}
+function resetPiquePhotoInput(){let old=$('piqueFoto');if(!old)return;let fresh=old.cloneNode(true);old.replaceWith(fresh);fresh.addEventListener('change',handlePiquePhotoChange)}
+function handlePiquePhotoChange(e){let f=e.target.files[0],pr=$('piqueFotoPreview'),btn=$('confirmPiqueBtn');pr.removeAttribute('src');pr.hidden=true;btn.disabled=true;if(!f)return;let r=new FileReader();r.onload=()=>{pr.src=r.result;pr.hidden=false;btn.disabled=false};r.readAsDataURL(f)}
+function marcarRetiradoPique(id){let x=db.products.find(p=>p.id===id);if(!x)return;if(x.status==='Retirado/PIQUE'){toast('Produto já está marcado como Retirado/PIQUE.');return}piqueProductId=id;$('piqueModalProduct').textContent='Produto: '+(x.produto||'—')+' • '+(days(x.validade)<0?'Vencido':days(x.validade)===0?'Vence hoje':days(x.validade)+' dia(s) restantes');resetPiquePhotoInput();openPiqueModal()}
+function marcarFefoPique(id){let x=(db.fefo||[]).find(p=>p.id===id);if(!x)return;if(x.retirado||x.status==='Retirado/PIQUE'){toast('Produto FEFO já foi retirado.');return}piqueMode='fefo';piqueFefoId=id;piqueProductId=null;$('piqueModalTitle').textContent='📸 Confirmar Retirada FEFO/PIQUE';$('piqueModalProduct').textContent='Produto FEFO: '+(x.produto||'—')+' • '+(fefoDays(x.vencimento)<0?'Vencido':fefoDays(x.vencimento)===0?'Vence hoje':fefoDays(x.vencimento)+' dia(s) restantes');resetPiquePhotoInput();openPiqueModal()}
+function renderBatida(){if(!batidaAtual){let r=recommended();$('batidaBox').innerHTML=`<div class="hero"><small>CORREDOR RECOMENDADO</small><h2>${esc(r.c.nome)}</h2><p>${r.d===9999?'Nunca realizado':r.d+' dia(s) sem batida'}${r.week?' • já realizado nesta semana':''}</p><div class="actions"><button class="primary" onclick="startBatida(${r.c.id})">▶️ Iniciar corredor recomendado</button><button class="secondary" onclick="chooseOther()">Fazer outro corredor</button></div></div><div class="card" style="margin-top:12px"><h3>Prioridade dos corredores</h3>${activeCorr().map(c=>({c,d:daysSince(c),week:lastBatidaSinceWeek(c)})).sort((a,b)=>{if(a.d===9999&&b.d!==9999)return -1;if(b.d===9999&&a.d!==9999)return 1;return b.d-a.d||a.c.id-b.c.id}).map(o=>{let c=o.c,d=o.d;return`<div class="corridor-row"><strong>${c.id}</strong><span>${esc(c.nome)}<br><small>${d===9999?'Nunca realizado':d+' dia(s) sem batida'}</small></span><span>${o.week?'📅':d>=10?'🔴':d>=5?'🟡':'🟢'}</span></div>`}).join('')}</div><div class="alert">💡 O sistema evita recomendar novamente um corredor já batido nesta semana enquanto houver outro corredor pendente.</div>`;return}let c=db.corridors.find(x=>x.id==batidaAtual.corredorId);$('batidaBox').innerHTML=`<div class="card"><h3>🔎 ${esc(c.nome)}</h3><p>Iniciada por <strong>${esc(userName(batidaAtual.usuarioId))}</strong> às ${new Date(batidaAtual.inicio).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}</p><div class="actions"><button class="primary" onclick="quickProduct()">＋ Registrar produto</button>${batidaAtual.produtos.length?'<button class="secondary" onclick="finishBatida()">✅ Finalizar batida</button>':'<button class="secondary" disabled title="Registre pelo menos um produto antes de finalizar">🔒 Finalizar batida</button>'}<button class="secondary" onclick="cancelBatida()">Cancelar</button></div>${batidaAtual.produtos.length?'':'<p class="muted" style="margin-top:8px">Para evitar registros acidentais, a batida só pode ser finalizada depois que pelo menos um produto for registrado. Se entrou no corredor e não realizou a atividade, use <strong>Cancelar</strong>.</p>'}</div><div class="card" style="margin-top:12px"><h3>Produtos desta batida (${batidaAtual.produtos.length})</h3><div class="product-list">${batidaAtual.produtos.length?batidaAtual.produtos.map(id=>{let x=db.products.find(p=>p.id===id);return x?productCard(x,false):''}).join(''):'<div class="empty">Nenhum produto registrado nesta batida.</div>'}</div></div>`}
+function chooseOther(){let opts=activeCorr().map(c=>`${c.id} — ${c.nome}`).join('\n');let s=prompt('Digite o número do corredor indicado:\n\n'+opts);let id=Number((s||'').split('—')[0].trim()||s);if(!activeCorr().some(c=>c.id===id)){toast('Corredor inválido.');return}let m=prompt('Motivo (ex.: Orientação da gerência, Prioridade operacional, Corredor indisponível):','Orientação da gerência');if(m===null)return;startBatida(id,m.trim()||'Outro');toast('Outro corredor selecionado. A recomendação original continua pendente.')}
+async function finishBatida(){if(!batidaAtual)return;let ev={id:batidaAtual.id,data:now().toISOString(),corredorId:batidaAtual.corredorId,usuarioId:currentActorId(),produtos:batidaAtual.produtos.length,observacao:batidaAtual.motivo||''};db.batidas.push(ev);save();await emitCloudEvent('BATIDA_FINALIZADA',{corredorId:ev.corredorId,corredor:corredorName(ev.corredorId),produtos:ev.produtos});notifyLocal('🛒 Batida finalizada',`${corredorName(ev.corredorId)} • ${ev.produtos} produto(s) registrado(s).`,'batida');toast('Batida registrada com sucesso.');batidaAtual=null;renderBatida();renderPainel();renderSemana();renderHistorico();renderRelatorios()}
+function cancelBatida(){batidaAtual=null;renderBatida()}
+function quickProduct(){showView('novo');window._returnBatida=true;$('corredor').value=batidaAtual.corredorId}
+
+function abrirIdentificadorFoto(){
+  if(ocrBusy){toast('A identificação já está em andamento.');return}
+  $('fotoIdentificar').value='';
+  $('fotoIdentificar').click();
+}
+function usarFotoNormal(){
+  $('foto').click();
+}
+function mostrarIdentificacao(msg,kind='info'){
+  let b=$('identificacaoBox'); if(!b)return;
+  b.style.display='block';
+  b.innerHTML=msg;
+}
+function escapeAttr(s){return esc(s).replace(/`/g,'&#096;')}
+function limparOCRTexto(t){
+  return String(t||'')
+    .replace(/\r/g,'\n')
+    .split(/\n+/)
+    .map(x=>x.replace(/[|•▪●]+/g,' ').replace(/\s+/g,' ').trim())
+    .filter(x=>x.length>=3)
+    .filter(x=>/[A-Za-zÀ-ÿ]{2,}/.test(x))
+    .slice(0,18);
+}
+function sugerirNomePorOCR(texto){
+  let linhas=limparOCRTexto(texto);
+  let catalog=db.products.map(p=>p.produto).filter(Boolean);
+  // Primeiro tenta reaproveitar um produto já cadastrado, usando palavras relevantes.
+  let low=String(texto||'').toLowerCase();
+  let melhor=null,score=0;
+  catalog.forEach(nome=>{
+    let toks=nome.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').split(/[^a-z0-9]+/).filter(x=>x.length>=3);
+    let hits=toks.filter(t=>low.normalize('NFD').replace(/[\u0300-\u036f]/g,'').includes(t)).length;
+    if(hits>score){score=hits;melhor=nome}
+  });
+  if(melhor && score>=2) return melhor;
+  // Remove linhas muito genéricas e privilegia linhas com números (peso/volume) ou várias palavras.
+  let candidatas=linhas.filter(x=>!/(ingredientes|informação nutricional|informacoes nutricionais|fabricado|indústria|industria|sac\b|cnpj|conservar|cont[eé]m|valor energ[eé]tico|carboidrato|prote[ií]na|gordura|sódio|sodio)/i.test(x));
+  candidatas.sort((a,b)=>{
+    let sa=(a.match(/\d+\s*(g|kg|ml|l)\b/i)?5:0)+(a.split(/\s+/).length>=2?2:0)+Math.min(a.length,45)/100;
+    let sb=(b.match(/\d+\s*(g|kg|ml|l)\b/i)?5:0)+(b.split(/\s+/).length>=2?2:0)+Math.min(b.length,45)/100;
+    return sb-sa;
+  });
+  return candidatas[0]||linhas[0]||'';
+}
+async function carregarTesseract(){
+  if(window.Tesseract)return window.Tesseract;
+  await new Promise((resolve,reject)=>{
+    let sc=document.createElement('script');
+    sc.src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';
+    sc.onload=resolve; sc.onerror=()=>reject(new Error('Não foi possível carregar o leitor de texto.'));
+    document.head.appendChild(sc);
+  });
+  return window.Tesseract;
+}
+async function identificarFoto(ev){
+  let file=ev.target.files&&ev.target.files[0];
+  if(!file)return;
+  ocrBusy=true;
+  identificacaoFoto=file;
+  mostrarIdentificacao('⏳ <strong>Lendo a embalagem...</strong><br><small>Estou procurando o nome, marca e tamanho visíveis na foto. Isso pode levar alguns segundos na primeira vez.</small>');
+  try{
+    let T=await carregarTesseract();
+    let result=await T.recognize(file,'por',{logger:m=>{
+      if(m&&m.status==='recognizing text'&&typeof m.progress==='number'){
+        mostrarIdentificacao('⏳ <strong>Lendo a embalagem...</strong> '+Math.round(m.progress*100)+'%');
+      }
+    }});
+    let texto=result&&result.data?result.data.text:'';
+    let conf=Number(result&&result.data&&result.data.confidence||0);
+    let sugestao=sugerirNomePorOCR(texto);
+    // OCR de embalagem pode devolver ruído. Não vamos sugerir texto sem confiança mínima.
+    if(conf<45 || !sugestao || sugestao.length<4){
+      mostrarIdentificacao('⚠️ <strong>Não consegui identificar o produto com segurança.</strong><br><small>A leitura por foto é mais lenta e pode errar textos de embalagens. Para agilizar a rotina, prefira o <strong>código de barras</strong> quando disponível.</small>');
+      return;
+    }
+    if(sugestao){
+      $('produto').value=sugestao;
+      mostrarIdentificacao(
+        '<strong>🔎 Sugestão encontrada</strong><br>'+
+        '<span style="font-size:17px"><strong>'+esc(sugestao)+'</strong></span><br>'+
+        '<small>Confira o nome antes de registrar. A foto ficará disponível para anexar ao produto.</small>'+
+        '<div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">'+
+        '<button type="button" class="primary" onclick="confirmarIdentificacao()">✅ Usar esta sugestão</button>'+
+        '<button type="button" class="secondary" onclick="editarIdentificacao()">✏️ Corrigir</button></div>'
+      );
+    }else{
+      mostrarIdentificacao(
+        '⚠️ <strong>Não consegui identificar com segurança.</strong><br>'+
+        '<small>Digite o nome manualmente ou tente novamente com a embalagem mais próxima e bem iluminada.</small>'
+      );
+    }
+  }catch(e){
+    console.error(e);
+    mostrarIdentificacao('⚠️ <strong>Não foi possível fazer a identificação pela foto.</strong><br><small>Verifique a internet e tente novamente. Você também pode preencher o nome manualmente.</small>');
+  }finally{ocrBusy=false}
+}
+function confirmarIdentificacao(){
+  let v=$('produto').value.trim();
+  if(v){mostrarIdentificacao('✅ <strong>Identificação confirmada.</strong><br><small>Revise validade, quantidade e corredor e depois toque em Registrar.</small>');toast('Sugestão confirmada.')}
+}
+function editarIdentificacao(){
+  $('produto').focus();
+  $('produto').select();
+  mostrarIdentificacao('✏️ <strong>Edite o nome acima</strong> e depois confira os demais campos antes de registrar.');
+}
+let barcodeStream=null,barcodeTimer=null,barcodeBusy=false,barcodeControls=null,barcodeReader=null,barcodeDetector=null;
+function abrirLeitorBarras(){
+  $('barcodeScanner').style.display='block'; $('barcodeManual').style.display='block'; $('barcodeManualBtn').style.display='block';
+  const secure=window.isSecureContext || location.protocol==='https:' || location.hostname==='localhost';
+  if(!secure || !navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){
+    mostrarIdentificacao('⚠️ <strong>Câmera ao vivo indisponível neste modo.</strong><br><small>O arquivo foi aberto fora de um contexto seguro. Para usar o leitor pela câmera, abra a versão publicada no <strong>GitHub Pages (HTTPS)</strong>. Enquanto isso, use <strong>Fotografar código</strong> ou digite o EAN e toque em <strong>Consultar</strong>.</small>');
+    return;
+  }
+  mostrarIdentificacao('▦ <strong>Leitor ativo</strong><br><small>Permita o acesso à câmera e aponte para o código de barras. A leitura é automática.</small>');
+  iniciarCameraV393();
+}
+async function carregarZXingOpcional(){
+  if(window.ZXingBrowser && window.ZXingBrowser.BrowserMultiFormatReader) return window.ZXingBrowser;
+  if(window.__zxingLoadPromise) return window.__zxingLoadPromise;
+  window.__zxingLoadPromise=new Promise((resolve,reject)=>{
+    const sc=document.createElement('script');
+    let done=false;
+    const finish=(ok)=>{if(done)return;done=true;ok?resolve(window.ZXingBrowser||null):reject(new Error('ZXing indisponível'));};
+    sc.src='https://unpkg.com/@zxing/browser@0.2.1';
+    sc.async=true;
+    sc.onload=()=>finish(true);
+    sc.onerror=()=>finish(false);
+    document.head.appendChild(sc);
+    setTimeout(()=>finish(false),5000);
+  });
+  return window.__zxingLoadPromise;
+}
+
+async function iniciarCameraV393(){
+  fecharCameraSomente();
+  const video=$('barcodeVideo');
+  try{
+    barcodeStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'},width:{ideal:1280},height:{ideal:720}},audio:false});
+    video.srcObject=barcodeStream; video.muted=true; video.setAttribute('playsinline','');
+    await video.play();
+    if('BarcodeDetector' in window){
+      try{ barcodeDetector=new BarcodeDetector({formats:['ean_13','ean_8','upc_a','upc_e','code_128','itf','codabar']}); }catch(e){ barcodeDetector=null; }
+    }
+    if(barcodeDetector){
+      const loop=async()=>{
+        if(!barcodeStream || video.readyState<2)return;
+        try{
+          const codes=await barcodeDetector.detect(video);
+          const code=codes&&codes[0]&&codes[0].rawValue;
+          if(code && !barcodeBusy){barcodeBusy=true;await processarCodigo(code).catch(console.error);barcodeBusy=false;}
+        }catch(e){}
+        if(barcodeStream) barcodeTimer=requestAnimationFrame(loop);
+      };
+      barcodeTimer=requestAnimationFrame(loop);
+      mostrarIdentificacao('🟢 <strong>Câmera aberta.</strong><br><small>Procure o código de barras dentro da área da câmera.</small>');
+      return;
+    }
+    // Fallback ZXing: carregado somente se o navegador não oferecer BarcodeDetector.
+    try{ await carregarZXingOpcional(); }catch(e){}
+    if(window.ZXingBrowser && window.ZXingBrowser.BrowserMultiFormatReader){
+      const devices=await ZXingBrowser.BrowserCodeReader.listVideoInputDevices();
+      const back=devices.find(d=>/back|rear|environment|traseira/i.test(d.label))||devices[0];
+      barcodeReader=new ZXingBrowser.BrowserMultiFormatReader();
+      barcodeControls=await barcodeReader.decodeFromVideoDevice(back?.deviceId,video,(result)=>{
+        if(result && result.text && !barcodeBusy){barcodeBusy=true;processarCodigo(result.text).catch(console.error).finally(()=>barcodeBusy=false);}
+      });
+      mostrarIdentificacao('🟢 <strong>Câmera aberta.</strong><br><small>Leitor ZXing ativo. Aponte para o EAN.</small>');
+      return;
+    }
+    throw new Error('Leitor nativo e ZXing indisponíveis');
+  }catch(e){
+    console.error(e);
+    fecharCameraSomente();
+    let msg='Não foi possível abrir a câmera.';
+    if(e&&e.name==='NotAllowedError')msg='A câmera foi bloqueada. Permita a câmera para este site e tente novamente.';
+    else if(e&&e.name==='NotFoundError')msg='Nenhuma câmera compatível foi encontrada.';
+    else if(e&&e.name==='NotReadableError')msg='A câmera está ocupada por outro aplicativo ou navegador.';
+    mostrarIdentificacao('⚠️ <strong>'+msg+'</strong><br><small>Se estiver no GitHub Pages, confira a permissão da câmera do Chrome. Se estiver usando o arquivo ZIP, use <strong>Fotografar código</strong> ou o campo manual.</small>');
+  }
+}
+function abrirFotoCodigo(){ $('fotoCodigo').value=''; $('fotoCodigo').click(); }
+async function lerCodigoPorFoto(event){
+  const file=event.target.files&&event.target.files[0]; if(!file)return;
+  mostrarIdentificacao('⏳ <strong>Lendo o código da foto...</strong><br><small>Segure o código inteiro e bem focado na imagem.</small>');
+  try{
+    try{await carregarZXingOpcional();}catch(e){}
+    if(window.ZXingBrowser && window.ZXingBrowser.BrowserMultiFormatReader){
+      const reader=new ZXingBrowser.BrowserMultiFormatReader(); const url=URL.createObjectURL(file);
+      try{const result=await reader.decodeFromImageUrl(url); if(result&&result.text){await processarCodigo(result.text);return;}}finally{URL.revokeObjectURL(url);}
+    }
+    if('BarcodeDetector' in window){const detector=new BarcodeDetector({formats:['ean_13','ean_8','upc_a','upc_e','code_128','itf','codabar']});const bmp=await createImageBitmap(file);const codes=await detector.detect(bmp);if(bmp.close)bmp.close();if(codes&&codes[0]&&codes[0].rawValue){await processarCodigo(codes[0].rawValue);return;}}
+    mostrarIdentificacao('⚠️ <strong>Não consegui ler o código nesta foto.</strong><br><small>Tente outra foto, mais próxima e com boa iluminação, ou digite o número abaixo.</small>');
+  }catch(e){console.error(e);mostrarIdentificacao('⚠️ <strong>Não consegui ler o código desta foto.</strong><br><small>Digite o número no campo e toque em <strong>Consultar</strong>.</small>');}
+}
+function fecharCameraSomente(){
+  if(barcodeControls){try{barcodeControls.stop()}catch(e){} barcodeControls=null;}
+  if(barcodeReader){try{barcodeReader.reset()}catch(e){} barcodeReader=null;}
+  if(barcodeTimer)cancelAnimationFrame(barcodeTimer); barcodeTimer=null; barcodeDetector=null;
+  if(barcodeStream){barcodeStream.getTracks().forEach(t=>t.stop());barcodeStream=null;}
+  const v=$('barcodeVideo'); if(v){try{v.pause()}catch(e){} v.srcObject=null;}
+}
+function fecharLeitorBarras(){fecharCameraSomente();$('barcodeScanner').style.display='none';barcodeBusy=false}
+async function buscarCodigoManual(){let code=$('barcodeManual').value.replace(/\D/g,'');if(code.length<8){toast('Digite um código de barras válido.');return}await processarCodigo(code)}
+function normalizarNomeExterno(p){let n=p?.product_name_pt||p?.product_name||p?.generic_name_pt||p?.generic_name||'';let b=p?.brands||'';let q=p?.quantity||'';let out=[b,n].filter(Boolean).join(' ').trim();if(q&&!new RegExp('\\b'+String(q).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b','i').test(out))out+=(out?' ':'')+q;return {nome:out,marca:b,quantidadeProduto:q}}
+function extrairImagemExterna(p){try{let si=p?.selected_images?.front;if(si){for(const lang of ['pt','pt-br','en','fr']){let z=si?.[lang];if(z?.display?.url)return z.display.url;if(typeof z?.display==='string')return z.display;if(z?.small?.url)return z.small.url;if(z?.thumb?.url)return z.thumb.url;if(typeof z?.small==='string')return z.small;if(typeof z?.thumb==='string')return z.thumb;}}let u=p?.image_small_url||p?.image_thumb_url||p?.image_url||p?.image_front_small_url||p?.image_front_url;return u||''}catch(e){return ''}}
+
+async function consultarOpenFacts(code,base){
+  try{
+    // A API v3 retorna o produto dentro de `product` e não usa o mesmo
+    // campo status=1 da API v2. O código anterior descartava produtos válidos.
+    let url=base+'/api/v3/product/'+encodeURIComponent(code)+'?product_type=all&cc=br&lc=pt&fields=code,product_name,product_name_pt,generic_name,generic_name_pt,brands,quantity,image_url,image_small_url,image_thumb_url,image_front_url,image_front_small_url,selected_images';
+    let r=await fetch(url,{headers:{'Accept':'application/json'}});
+    if(!r.ok)return null;
+    let j=await r.json();
+    if(j&&j.product){
+      let nome=normalizarNomeExterno(j.product);
+      if(nome&&nome.nome)return {...nome,imagem:extrairImagemExterna(j.product),fonte:base.includes('beauty')?'Open Beauty Facts':'Open Food Facts'};
+    }
+  }catch(e){console.warn('Open Facts:',e)}
+  return null;
+}
+async function consultarOpenFactsV2(code,base){
+  try{
+    let url=base+'/api/v2/product/'+encodeURIComponent(code)+'.json?fields=code,product_name,product_name_pt,generic_name,generic_name_pt,brands,quantity,image_url,image_small_url,image_thumb_url,image_front_url,image_front_small_url&lc=pt';
+    let r=await fetch(url,{headers:{'Accept':'application/json'}});
+    if(!r.ok)return null;
+    let j=await r.json();
+    if(j&&j.status===1&&j.product){
+      let nome=normalizarNomeExterno(j.product);
+      if(nome&&nome.nome)return {...nome,imagem:extrairImagemExterna(j.product),fonte:base.includes('beauty')?'Open Beauty Facts':'Open Food Facts'};
+    }
+  }catch(e){console.warn('Open Facts v2:',e)}
+  return null;
+}
+
+async function consultarUPCItemDB(code){
+  try{let r=await fetch('https://api.upcitemdb.com/prod/trial/lookup?upc='+encodeURIComponent(code),{headers:{'Accept':'application/json'}});if(!r.ok)return null;let j=await r.json();let p=j&&j.items&&j.items[0];if(!p)return null;let nome=[p.brand,p.title].filter(Boolean).join(' ').trim();if(p.size&&!new RegExp('\\b'+String(p.size).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b','i').test(nome))nome+=(nome?' ':'')+p.size;return nome?{nome,fonte:'UPCitemdb'}:null}catch(e){return null}
+}
+async function consultarImagemPorEAN(code){
+  let fontes=['https://world.openfoodfacts.org','https://world.openbeautyfacts.org'];
+  for(const base of fontes){
+    try{
+      let url=base+'/api/v3/product/'+encodeURIComponent(code)+'?product_type=all&cc=br&lc=pt&fields=code,image_url,image_small_url,image_thumb_url,image_front_url,image_front_small_url,selected_images';
+      let r=await fetch(url,{headers:{'Accept':'application/json'}});
+      if(!r.ok)continue;
+      let j=await r.json();
+      let img=extrairImagemExterna(j?.product);
+      if(img)return {imagem:img,fonte:base.includes('beauty')?'Open Beauty Facts':'Open Food Facts'};
+    }catch(e){console.warn('Imagem por EAN:',e)}
+  }
+  return null;
+}
+function imagemIdentificacaoHtml(url,fonte){
+  if(!url)return '';
+  return '<div style="margin-top:10px;display:flex;align-items:center;gap:10px"><img src="'+escapeAttr(url)+'" class="thumb" style="width:72px;height:72px;object-fit:cover" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=&apos;data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'80\' height=\'80\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%23eef3f8\'/%3E%3Ctext x=\'50%25\' y=\'55%25\' text-anchor=\'middle\' font-size=\'28\'%3E%F0%9F%93%A6%3C/text%3E%3C/svg%3E&apos;" alt="Imagem do produto"><div><strong>🖼️ Imagem encontrada automaticamente</strong><br><small>Ela será usada na miniatura ao registrar. Uma foto própria, se escolhida, terá prioridade.</small>'+(fonte?'<br><small>Fonte: '+esc(fonte)+'</small>':'')+'</div></div>';
+}
+async function processarCodigo(raw){let code=String(raw||'').replace(/\D/g,'');if(!code){return} $('barcodeManual').value=code;
+  fecharCameraSomente(); $('barcodeScanner').style.display='none'; identificacaoFoto=null;
+  let local=(db.catalog||[]).find(c=>String(c.barcode||'').replace(/\D/g,'')===code);
+  if(!local) local=db.products.find(p=>String(p.barcode||'').replace(/\D/g,'')===code);
+  if(local){
+    identificacaoCatalogo={...local,fonte:'catalogo-local',imagemFonte:local.imagemFonte||local.fonte||'catálogo local'}; $('produto').value=local.produto||'';
+    if(local.foto){identificacaoFoto=local.foto; mostrarIdentificacao('⚡ <strong>Código reconhecido no catálogo local</strong><br><span style="font-size:17px"><strong>'+esc(local.produto||'')+'</strong></span>'+(local.marca?'<br><small>Marca: '+esc(local.marca)+'</small>':'')+(local.quantidadeProduto?'<br><small>Conteúdo: '+esc(local.quantidadeProduto)+'</small>':'')+imagemIdentificacaoHtml(local.foto, local.imagemFonte||'catálogo local')+'<br><small>Resposta imediata, sem consulta externa. Confira antes de registrar.</small>'); toast('Produto reconhecido pelo catálogo local.'); return;}
+    mostrarIdentificacao('⚡ <strong>Código reconhecido no catálogo local</strong><br><span style="font-size:17px"><strong>'+esc(local.produto||'')+'</strong></span><br><small>Buscando uma imagem para completar o cadastro...</small>');
+    let img=await consultarImagemPorEAN(code);
+    if(img){identificacaoFoto=img.imagem;identificacaoCatalogo.imagem=img.imagem; identificacaoCatalogo.imagemFonte=img.fonte;mostrarIdentificacao('⚡ <strong>Código reconhecido no catálogo local</strong><br><span style="font-size:17px"><strong>'+esc(local.produto||'')+'</strong></span>'+imagemIdentificacaoHtml(img.imagem,img.fonte)+'<br><small>Imagem encontrada em '+esc(img.fonte)+'. Confira antes de registrar.</small>');}else{mostrarIdentificacao('⚡ <strong>Código reconhecido no catálogo local</strong><br><span style="font-size:17px"><strong>'+esc(local.produto||'')+'</strong></span><br><small>Produto reconhecido. Não foi encontrada imagem automática para este EAN.</small>');}
+    toast('Produto reconhecido pelo catálogo local.'); return;
+  }
+  mostrarIdentificacao('🔎 <strong>Consultando produto e imagem...</strong><br><small>Código '+esc(code)+' • tentando bases públicas.</small>');
+  let fontes=[['https://world.openfoodfacts.org',false],['https://world.openbeautyfacts.org',true]];
+  for(const [base] of fontes){
+    let achado=await consultarOpenFacts(code,base);
+    if(!achado) achado=await consultarOpenFactsV2(code,base);
+    if(achado){identificacaoCatalogo={barcode:code,produto:achado.nome,marca:achado.marca||'',quantidadeProduto:achado.quantidadeProduto||'',imagem:achado.imagem||'',fonte:achado.fonte,imagemFonte:achado.fonte,imagemFonte:achado.fonte}; identificacaoFoto=achado.imagem||null; $('produto').value=achado.nome;
+      mostrarIdentificacao('✅ <strong>Produto encontrado pelo EAN</strong><br><span style="font-size:17px"><strong>'+esc(achado.nome)+'</strong></span>'+(achado.marca?'<br><small>Marca: '+esc(achado.marca)+'</small>':'')+(achado.quantidadeProduto?'<br><small>Conteúdo: '+esc(achado.quantidadeProduto)+'</small>':'')+imagemIdentificacaoHtml(achado.imagem,achado.fonte)+'<br><small>Fonte: '+esc(achado.fonte)+'. Confira antes de registrar. O código e a imagem serão salvos no catálogo local.</small>'); toast(achado.imagem?'Produto e imagem encontrados pelo EAN.':'Produto encontrado; não foi encontrada imagem para este EAN.'); return}
+  }
+  let upc=await consultarUPCItemDB(code);if(upc){identificacaoCatalogo={barcode:code,produto:upc.nome,marca:'',quantidadeProduto:'',imagem:'',fonte:upc.fonte}; $('produto').value=upc.nome; mostrarIdentificacao('✅ <strong>Produto encontrado</strong><br><span style="font-size:17px"><strong>'+esc(upc.nome)+'</strong></span><br><small>Fonte: UPCitemdb. Confira antes de registrar. Não foi encontrada imagem automática nesta consulta.</small>'); toast('Produto encontrado pelo código.'); return}
+  mostrarIdentificacao('⚠️ <strong>Código não encontrado automaticamente.</strong><br><small>O código foi mantido. Digite o nome manualmente e registre; depois ele ficará disponível no catálogo local.</small>');
+}
+function cancelarNovoProduto(){try{fecharLeitorBarras?.();}catch(e){}limparForm();if(window._returnBatida){window._returnBatida=false;showView('batida');}else{showView('produtos');}toast('Cadastro cancelado.');}
+async function salvarProduto(){
+  if(window._salvandoProduto)return;
+  const produto=$('produto').value.trim(),validade=$('validade').value,q=+$('quantidade').value,c=+$('corredor').value;
+  if(!produto||!validade||!q||!c){toast('Preencha produto, validade, quantidade e corredor.');return}
+  window._salvandoProduto=true;
+  const btn=$('salvarProdutoBtn');
+  if(btn){btn.disabled=true;btn.textContent='⏳ Salvando…';}
+  let x=null;
+  try{
+    let file=$('foto').files[0],foto=identificacaoFoto||'';
+    if(file)foto=await compressImage(file);
+    let barcode=($('barcodeManual')?.value||'').replace(/\D/g,'').trim();
+    let meta=(identificacaoCatalogo&&String(identificacaoCatalogo.barcode||'').replace(/\D/g,'')===barcode)?identificacaoCatalogo:null;
+    const status=$('novoStatus')?.value||'Ainda no corredor';
+    x={id:'p'+Date.now()+Math.random().toString(16).slice(2),produto,marca:meta?.marca||'',quantidadeProduto:meta?.quantidadeProduto||'',validade,quantidade:q,corredor:c,status,foto,imagemFonte:meta?.imagemFonte||meta?.fonte||'',obs:$('obs').value.trim(),criado:now().toISOString(),criadoPor:user().id,separada:0,barcode,batidaId:(batidaAtual&&batidaAtual.corredorId===c)?batidaAtual.id:null,atualizado:now().toISOString(),historico:[{data:now().toISOString(),status,usuarioId:user().id}]};
+    db.products.push(x);
+    if(barcode){db.catalog=Array.isArray(db.catalog)?db.catalog:[];let item=db.catalog.find(c=>String(c.barcode||'').replace(/\D/g,'')===barcode);if(item){item.produto=produto;item.marca=meta?.marca||item.marca||'';item.quantidadeProduto=meta?.quantidadeProduto||item.quantidadeProduto||'';item.foto=foto||item.foto||'';item.imagemFonte=(foto&&file)?'foto-própria':(x.imagemFonte||item.imagemFonte||item.fonte||'');item.atualizado=now().toISOString();item.fonte=item.fonte||'confirmado-pelo-usuario'}else db.catalog.push({barcode,produto,marca:meta?.marca||'',quantidadeProduto:meta?.quantidadeProduto||'',foto:foto||meta?.imagem||'',imagemFonte:(file?'foto-própria':(meta?.imagemFonte||meta?.fonte||'')),atualizado:now().toISOString(),fonte:'confirmado-pelo-usuario'});}
+    if(batidaAtual&&batidaAtual.corredorId===c)batidaAtual.produtos.push(x.id);
+    save();
+  }catch(e){console.error('Falha ao persistir produto:',e);toast('Não foi possível salvar o produto. Tente novamente.');return;}
+  // A partir daqui o produto já foi persistido. Falhas de atualização visual não devem mostrar erro de salvamento.
+  try{
+    const diasRestantes=days(validade);
+    if(diasRestantes>=0&&diasRestantes<=30)void emitCloudEvent('PRODUTO_ATENCAO_30_DIAS',{productId:x.id,produto:x.produto,validade:x.validade,diasRestantes,corredorId:x.corredor,corredor:corredorName(x.corredor),ean:x.barcode||'',status:x.status});
+  }catch(e){console.warn('Falha ao preparar notificação do produto:',e);}
+  try{limparForm();window._returnBatida=false;showView('produtos');}catch(e){console.warn('Produto salvo, mas houve falha ao atualizar a tela:',e);document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));const pv=$('produtos');if(pv)pv.classList.add('active');}
+  toast(x.barcode?'Produto registrado e código salvo no catálogo local!':'Produto registrado!');
+  window._salvandoProduto=false;if(btn){btn.disabled=false;btn.textContent='Registrar';}
+}
+
+function limparForm(){['produto','validade','quantidade','obs','barcodeManual'].forEach(id=>{const el=$(id);if(el)el.value=''});['foto','fotoIdentificar'].forEach(id=>{const el=$(id);if(el)el.value=''});identificacaoFoto=null;identificacaoCatalogo=null;const box=$('identificacaoBox');if(box)box.style.display='none';if($('novoStatus'))$('novoStatus').value='Ainda no corredor';fillCorridors()}
+function compressImage(file){return new Promise(res=>{let r=new FileReader();r.onload=()=>{let im=new Image();im.onload=()=>{let max=500,s=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext('2d').drawImage(im,0,0,c.width,c.height);res(c.toDataURL('image/jpeg',.72))};im.src=r.result};r.readAsDataURL(file)})}
+function registroDateKey(x){let d=new Date(x.criado||x.atualizado||Date.now());return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+function registroDateLabel(key){let [y,m,d]=key.split('-').map(Number);return new Date(y,m-1,d).toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'2-digit',year:'numeric'})}
+function renderProdutos(){let q=($('busca').value||'').toLowerCase();let arr=db.products.filter(x=>x.status!=='Retirado/PIQUE'&&x.retirado!==true&&x.piqueConfirmado!==true&&(!q||String(x.produto||'').toLowerCase().includes(q))).sort((a,b)=>new Date(b.criado||0)-new Date(a.criado||0));if(!arr.length){$('productList').innerHTML='<div class="card empty">Nenhum produto encontrado.</div>';return}let groups={};arr.forEach(x=>{let k=registroDateKey(x);(groups[k]??=[]).push(x)});let keys=Object.keys(groups).sort((a,b)=>b.localeCompare(a));let head=`<div class="stickybar"><strong>${arr.length} item(ns)</strong><button id="selectAllBtn" class="secondary" onclick="toggleSelectAllVisible()">☑ Marcar todos</button><select id="bulkStatus"><option value="">Status</option><option>Ainda no corredor</option><option>Área de vencimento</option></select><button class="primary" onclick="applyBulk()">Aplicar</button><button class="danger" onclick="excluirSelecionados()">🗑️ Excluir</button><button class="secondary" onclick="tagSelecionadosPLU()">🏷️ PLU/ETIQUETA</button></div>`;let html=head+keys.map(k=>`<section class="products-date-group"><div class="products-date-head"><strong>📅 ${esc(registroDateLabel(k))}</strong><span>${groups[k].length} produto(s) registrado(s)</span></div>${groups[k].map(x=>productCard(x,true)).join('')}</section>`).join('');$('productList').innerHTML=html}
+function productCard(x,selectable){let n=days(x.validade);let img=x.foto||"data:image/svg+xml,%3Csvg xmlns='%22http://www.w3.org/2000/svg%22' width='%2280%22' height='%2280%22'%3E%3Crect width='%22100%25%22' height='%22100%25%22' fill='%23eef3f8'/%3E%3Ctext x='%2250%25%22' y='%2255%25%22' text-anchor='%22middle%22' font-size='%2228%22'%3E%F0%9F%93%A6%3C/text%3E%3C/svg%3E";return`<div class="product-clean-card"><input type="checkbox" class="sel" data-id="${x.id}" onchange="syncSelectAllButton()" ${selectable?'':'style="display:none"'}><img class="thumb photo-click" src="${escapeAttr(img)}" alt="" ${x.foto?`onclick="abrirFotoProduto('${x.id}')" title="Clique para ampliar"`:""}><div class="product-clean-main"><strong>${esc(x.produto)}</strong><div class="product-clean-line">Validade: <b>${fmt(x.validade)}</b> • Corredor: <b>${esc(corridorName(x.corredor))}</b></div><div class="product-clean-line">▦ EAN: <b>${esc(x.barcode||'EAN não cadastrado')}</b></div><div class="product-clean-badges">${daysBadge(n)} ${statusBadge(x.status)} ${x.pluEtiqueta?`<span class="tag-plu">🏷️ PLU/ETIQUETA</span>`:""}</div></div><div class="product-clean-actions"><button class="secondary" onclick="editProduct('${x.id}')">✏️ Editar</button><button class="secondary" onclick="editStatus('${x.id}')">Status</button><button class="danger" onclick="excluirProduto('${x.id}')">🗑️ Excluir</button><button class="secondary" onclick="tagPLUProduto('${x.id}')">🏷️ PLU/ETIQUETA</button></div></div>`}
+function excluirProduto(id){let idx=db.products.findIndex(p=>p.id===id);if(idx<0)return;let x=db.products[idx],nome=x.produto||'este produto';if(!confirm('Excluir '+nome+'?\n\nO produto será removido de Produtos, Vencimentos, Pendências e Acompanhamento.'))return;db.deletedProducts=Array.isArray(db.deletedProducts)?db.deletedProducts:[];let t=now().toISOString();db.deletedProducts.push({...x,excluidoEm:t,excluidoPor:currentActorId(),excluidoPorNome:currentActorName()});db.products.splice(idx,1);save();renderProdutos();renderPainel();renderVencimentos();renderPendencias();renderHoje();renderSemana();renderHistorico();renderRelatorios();toast('Produto excluído das áreas operacionais.')}
+function tagPLUProduto(id){let x=db.products.find(p=>p.id===id);if(!x)return;x.pluEtiqueta=!x.pluEtiqueta;x.atualizado=now().toISOString();save();renderProdutos();renderPainel();toast(x.pluEtiqueta?'Produto marcado com PLU/ETIQUETA.':'Tag PLU/ETIQUETA removida.');}
+function selectedIds(){return [...document.querySelectorAll('.sel:checked')].map(x=>x.dataset.id)}function syncSelectAllButton(){let boxes=[...document.querySelectorAll('.sel')],btn=$('selectAllBtn');if(!btn||!boxes.length)return;let all=boxes.every(x=>x.checked);btn.textContent=all?'☐ Desmarcar todos':'☑ Marcar todos'}function toggleSelectAllVisible(){let boxes=[...document.querySelectorAll('.sel')];if(!boxes.length)return;let all=boxes.every(x=>x.checked);boxes.forEach(x=>x.checked=!all);syncSelectAllButton()}function applyBulk(){let s=$('bulkStatus').value,ids=selectedIds();if(!s||!ids.length){toast('Selecione produtos e um status.');return}ids.forEach(id=>changeStatus(id,s,false));save();toast(ids.length+' produto(s) atualizado(s).');renderProdutos();renderPainel();renderVencimentos();renderPendencias();}
+function tagSelecionadosPLU(){let ids=selectedIds();if(!ids.length){toast('Selecione os produtos que já receberam PLU/ETIQUETA.');return}ids.forEach(id=>{let x=db.products.find(p=>p.id===id);if(x){x.pluEtiqueta=true;x.atualizado=now().toISOString()}});save();renderProdutos();renderPainel();toast(ids.length+' produto(s) marcados com PLU/ETIQUETA.');}
+function excluirSelecionados(){let ids=selectedIds();if(!ids.length){toast('Selecione os produtos que deseja excluir.');return}if(!confirm('Excluir '+ids.length+' produto(s) selecionado(s)?\n\nEles serão removidos das áreas operacionais e registrados no histórico interno de exclusão.'))return;db.deletedProducts=Array.isArray(db.deletedProducts)?db.deletedProducts:[];const t=now().toISOString();ids.forEach(id=>{let idx=db.products.findIndex(p=>p.id===id);if(idx>=0){let x=db.products[idx];db.deletedProducts.push({...x,excluidoEm:t,excluidoPor:currentActorId(),excluidoPorNome:currentActorName()});db.products.splice(idx,1)}});save();renderProdutos();renderPainel();renderVencimentos();renderPendencias();renderHoje();renderSemana();renderHistorico();renderRelatorios();toast(ids.length+' produto(s) excluído(s).');}
+let editProductId=null;
+function openEditModal(){let m=$('editModal');closeFabNav();m.classList.add('open');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';syncFabNavVisibility()}
+function closeEditModal(){let m=$('editModal');m.classList.remove('open');m.setAttribute('aria-hidden','true');document.body.style.overflow='';editProductId=null;syncFabNavVisibility()}
+function editProduct(id){
+ let x=db.products.find(p=>p.id===id); if(!x)return;
+ editProductId=id;
+ $('editProduto').value=x.produto||''; $('editValidade').value=x.validade||''; $('editQuantidade').value=+x.quantidade||0; $('editSeparada').value=+x.separada||0;
+ $('editStatus').value=x.status||'Encontrado'; $('editMarca').value=x.marca||''; $('editTamanho').value=x.quantidadeProduto||''; $('editBarcode').value=String(x.barcode||'').replace(/\D/g,''); $('editObs').value=x.obs||'';
+ let pr=$('editFotoPreview'); if(x.foto){pr.src=x.foto;pr.hidden=false}else{pr.removeAttribute('src');pr.hidden=true} $('editFoto').value='';
+ openEditModal();
+}
+$('editFoto')?.addEventListener('change',e=>{let f=e.target.files[0],pr=$('editFotoPreview');if(!f){pr.hidden=true;return}let r=new FileReader();r.onload=()=>{pr.src=r.result;pr.hidden=false};r.readAsDataURL(f)});
+async function saveEditProduct(){
+ let id=editProductId,x=db.products.find(p=>p.id===id);if(!x)return;
+ let produto=$('editProduto').value.trim(),validade=$('editValidade').value,q=Math.floor(+$('editQuantidade').value),sep=Math.floor(+$('editSeparada').value||0),status=['Ainda no corredor','Área de vencimento'].includes($('editStatus').value)?$('editStatus').value:(x.status==='Área de vencimento'?'Área de vencimento':'Ainda no corredor'),marca=$('editMarca').value.trim(),tam=$('editTamanho').value.trim(),barcode=$('editBarcode').value.replace(/\D/g,''),obs=$('editObs').value.trim();
+ if(!produto||!validade||!/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(validade)){toast('Preencha produto e uma validade válida.');return}
+ if(!Number.isFinite(q)||q<1){toast('Quantidade encontrada inválida.');return}
+ if(!Number.isFinite(sep)||sep<0||sep>q){toast('Quantidade separada deve ficar entre 0 e a quantidade encontrada.');return}
+ let old={produto:x.produto||'',validade:x.validade||'',quantidade:+x.quantidade||0,separada:+x.separada||0,status:x.status||'Encontrado',marca:x.marca||'',quantidadeProduto:x.quantidadeProduto||'',barcode:String(x.barcode||''),obs:x.obs||'',foto:x.foto||''};
+ let changed=[];const add=(campo,a,b)=>{if(String(a)!==String(b))changed.push({campo,antes:a,depois:b})};
+ add('produto',old.produto,produto);add('validade',old.validade,validade);add('quantidade',old.quantidade,q);add('separada',old.separada,sep);add('status',old.status,status);add('marca',old.marca,marca);add('peso/volume',old.quantidadeProduto,tam);add('EAN',old.barcode,barcode);add('observação',old.obs,obs);
+ let foto=old.foto,file=$('editFoto').files[0];if(file){foto=await compressImage(file);changed.push({campo:'foto',antes:old.foto?'Foto cadastrada':'Sem foto',depois:'Nova foto'})}
+ x.produto=produto;x.validade=validade;x.quantidade=q;x.separada=sep;x.status=status;x.marca=marca;x.quantidadeProduto=tam;x.barcode=barcode;x.obs=obs;x.foto=foto;x.imagemFonte=file?'foto-própria':(x.imagemFonte||'');x.atualizado=now().toISOString();
+ x.historico=x.historico||[];if(changed.length)x.historico.push({data:x.atualizado,tipo:'edicao',usuarioId:user().id,alteracoes:changed});
+ if(barcode){db.catalog=Array.isArray(db.catalog)?db.catalog:[];let item=db.catalog.find(c=>String(c.barcode||'').replace(/\D/g,'')===barcode);if(item){item.produto=produto;item.marca=marca||item.marca||'';item.quantidadeProduto=tam||item.quantidadeProduto||'';item.foto=foto||item.foto||'';item.imagemFonte=(foto&&file)?'foto-própria':(x.imagemFonte||item.imagemFonte||item.fonte||'');item.atualizado=x.atualizado}else db.catalog.push({barcode,produto,marca,quantidadeProduto:tam,foto,imagemFonte:file?'foto-própria':(x.imagemFonte||''),atualizado:x.atualizado,fonte:'edicao-pelo-usuario'})}
+ save();closeEditModal();renderProdutos();renderPainel();renderVencimentos();renderPendencias();if(batidaAtual)renderBatida();toast(changed.length?'Produto atualizado e histórico registrado.':'Nenhuma alteração feita.');
+}
+let piqueProductId=null, piqueFefoId=null, piqueMode='product';
+function openPiqueModal(){let m=$('piqueModal');closeFabNav();m.classList.add('open');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';syncFabNavVisibility()}
+function closePiqueModal(){let m=$('piqueModal');m.classList.remove('open');m.setAttribute('aria-hidden','true');document.body.style.overflow='';piqueProductId=null;piqueFefoId=null;piqueMode='product';$('piqueModalTitle').textContent='📸 Confirmar Retirada/PIQUE';resetPiquePhotoInput();$('piqueFotoPreview').removeAttribute('src');$('piqueFotoPreview').hidden=true;$('confirmPiqueBtn').disabled=true;$('confirmPiqueBtn').textContent='📸 Confirmar PIQUE';syncFabNavVisibility()}
+function setupPiquePhotoInput(){let el=$('piqueFoto');if(el)el.addEventListener('change',handlePiquePhotoChange)}
+setupPiquePhotoInput();
+async function confirmarRetiradaPique(){
+  let x=null;
+  if(piqueMode==='fefo') x=(db.fefo||[]).find(p=>p.id===piqueFefoId);
+  else x=db.products.find(p=>p.id===piqueProductId);
+  const file=$('piqueFoto')?.files?.[0];
+  if(!x||!file){toast('A foto da retirada é obrigatória.');return}
+  let btn=$('confirmPiqueBtn');btn.disabled=true;btn.textContent='Salvando…';
+  try{
+    let foto=await compressImage(file),actorId=currentActorId(),actorName=currentActorName(),t=now().toISOString();
+    if(piqueMode==='fefo'){
+      x.piquefoto=foto;x.fotoPique=foto;x.piqueEm=t;x.piquePor=actorId;x.piquePorNome=actorName;x.retirado=true;x.status='Retirado/PIQUE';x.atualizado=t;
+      x.historico=x.historico||[];x.historico.push({data:t,tipo:'PIQUE_FEFO',status:'Retirado/PIQUE',usuarioId:actorId,usuarioNome:actorName,fotoPique:true});
+      save();
+      await emitCloudEvent('PIQUE_FEFO_CONFIRMADO',{fefoId:x.id,produto:x.produto,ean:x.barcode||'',vencimento:x.vencimento});
+      notifyLocal('🗑️ Retirada FEFO/PIQUE confirmada',`${x.produto} • ${fefoDays(x.vencimento)<0?'Vencido':fefoDays(x.vencimento)===0?'Vence hoje':fefoDays(x.vencimento)+' dia(s) restantes'}`,'pique');
+      closePiqueModal();renderFefo();renderPendencias();renderRelatorios();toast('Retirada FEFO/PIQUE confirmada com foto e registrada no histórico.');
+    }else{
+      x.fotoPique=foto;x.piqueEm=t;x.piquePor=actorId;x.piquePorNome=actorName;x.status='Retirado/PIQUE';x.atualizado=t;x.historico=x.historico||[];x.historico.push({data:t,tipo:'PIQUE',status:'Retirado/PIQUE',usuarioId:actorId,usuarioNome:actorName,fotoPique:true});save();
+      await emitCloudEvent('PIQUE_CONFIRMADO',{productId:x.id,produto:x.produto,corredorId:x.corredor,ean:x.barcode||'',validade:x.validade});
+      notifyLocal('🗑️ Retirada/PIQUE confirmada',`${x.produto} • ${days(x.validade)<0?'Vencido':days(x.validade)===0?'Vence hoje':days(x.validade)+' dia(s) restantes'}`,'pique');
+      closePiqueModal();renderProdutos();renderPainel();renderVencimentos();renderPendencias();renderRelatorios();if(batidaAtual)renderBatida();toast('Retirada/PIQUE confirmada com foto e registrada no histórico.');
+    }
+  }catch(e){console.error(e);btn.disabled=false;btn.textContent='📸 Confirmar PIQUE';toast('Não foi possível salvar a foto. Tente novamente.')}
+}
+
+
+let statusProductId=null;
+function openStatusModal(){let m=$('statusModal');closeFabNav();m.classList.add('open');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';syncFabNavVisibility()}
+function closeStatusModal(){let m=$('statusModal');m.classList.remove('open');m.setAttribute('aria-hidden','true');document.body.style.overflow='';statusProductId=null;syncFabNavVisibility()}
+function editStatus(id){let x=db.products.find(p=>p.id===id);if(!x)return;statusProductId=id;let opts=['Ainda no corredor','Área de vencimento'];let icons={'Ainda no corredor':'🔴','Área de vencimento':'🔵'};let dots={'Ainda no corredor':'dot-corridor','Área de vencimento':'dot-area'};$('statusModalProduct').textContent='Produto: '+(x.produto||'—')+' • Atual: '+(x.status||'Encontrado');$('statusOptions').innerHTML=opts.map((st,i)=>`<button type="button" class="status-option ${st===x.status?'current':''}" data-status-index="${i}"><span class="status-dot ${dots[st]}"></span><span>${icons[st]} ${esc(st)}</span>${st===x.status?'<span class="muted" style="margin-left:auto">Atual</span>':''}</button>`).join('');openStatusModal()}
+function actionNext10(id){let x=db.products.find(p=>p.id===id);if(!x)return;statusProductId=id;let opts=['Ainda no corredor','Área de vencimento'];let icons={'Ainda no corredor':'🔴','Área de vencimento':'🔵'};let dots={'Ainda no corredor':'dot-corridor','Área de vencimento':'dot-area'};$('statusModalProduct').textContent='Produto: '+(x.produto||'—')+' • Ação dos próximos 10 dias';$('statusOptions').innerHTML=opts.map((st,i)=>`<button type="button" class="status-option ${st===x.status?'current':''}" data-status-index="${i}" data-status-context="next10"><span class="status-dot ${dots[st]}"></span><span>${icons[st]} ${esc(st)}</span>${st===x.status?'<span class="muted" style="margin-left:auto">Atual</span>':''}</button>`).join('');window._statusContext='next10';openStatusModal()}
+
+function selectStatusOption(id,s){let x=db.products.find(p=>p.id===id);if(!x)return;if(x.status===s){closeStatusModal();toast('Esse já é o status atual.');return}changeStatus(id,s,true);closeStatusModal();renderProdutos();renderPainel();renderVencimentos();renderPendencias();if(batidaAtual)renderBatida()}function changeStatus(id,s,notify=true){let x=db.products.find(p=>p.id===id);if(!x)return;x.status=s;x.atualizado=now().toISOString();x.historico=x.historico||[];x.historico.push({data:now().toISOString(),status:s,usuarioId:user().id});if(s==='Separado' && (+x.separada||0)<(+x.quantidade||0)){x.separada=+x.quantidade||0;x.historico.push({data:now().toISOString(),tipo:'quantidade',quantidadeEncontrada:x.quantidade,quantidadeSeparada:x.separada,usuarioId:user().id})}save();if(notify)toast('Status atualizado.')}
+function editQty(id){let x=db.products.find(p=>p.id===id);if(!x)return;closeFabNav();let fab=$('fabNav'),menu=$('fabMenu');fab?.classList.add('modal-hidden');menu?.classList.add('modal-hidden');try{let q=prompt('Quantidade encontrada:',String(x.quantidade));if(q===null)return;q=Math.floor(+q);if(!Number.isFinite(q)||q<1){toast('Quantidade encontrada inválida.');return}let maxSep=q;let sep=prompt('Quantidade separada (0 a '+maxSep+'):',String(Math.min(+x.separada||0,maxSep)));if(sep===null)return;sep=Math.floor(+sep);if(!Number.isFinite(sep)||sep<0||sep>maxSep){toast('Quantidade separada inválida.');return}x.quantidade=q;x.separada=sep;x.atualizado=now().toISOString();x.historico=x.historico||[];x.historico.push({data:now().toISOString(),tipo:'quantidade',quantidadeEncontrada:q,quantidadeSeparada:sep,restante:q-sep,usuarioId:user().id});save();renderProdutos();renderPainel();if(batidaAtual)renderBatida();toast('Quantidades atualizadas. Restante: '+(q-sep)+' un.')}finally{syncFabNavVisibility()}}
+function weekStart(){return startOfWeek()}
+function weekEnd(){let d=weekStart();d.setDate(d.getDate()+7);return d}
+function batidasSemana(){let a=weekStart(),b=weekEnd();return db.batidas.filter(x=>{let d=new Date(x.data);return d>=a&&d<b}).sort((x,y)=>new Date(y.data)-new Date(x.data))}
+function renderSemana(){let bs=batidasSemana(), total=activeCorr().length, feitos=new Set(bs.map(x=>String(x.corredorId))), pend=Math.max(0,total-feitos.size);$('semanaKpis').innerHTML=[['🔎 Batidas na semana',bs.length,''],['📍 Corredores feitos',feitos.size,'green'],['⏳ Corredores pendentes',pend,'red'],['👥 Responsáveis ativos',new Set(bs.map(x=>x.usuarioId)).size,'']].map(a=>`<div class="card metric"><span>${a[0]}</span><strong class="${a[2]}">${a[1]}</strong></div>`).join('');let rows=activeCorr().map(c=>{let arr=bs.filter(x=>String(x.corredorId)===String(c.id));let last=db.batidas.filter(x=>String(x.corredorId)===String(c.id)).sort((a,b)=>new Date(b.data)-new Date(a.data))[0];let lastWeek=arr[0];let situ=lastWeek?'🟢 Feito nesta semana':'🔴 Pendente';let semLast=last?daysSince(c):9999;let tempo=semLast===9999?'Nunca realizado':semLast===0?'Feito hoje':semLast+' dia(s) sem batida';return`<tr><td><strong>${esc(c.nome)}</strong></td><td>${last?new Date(last.data).toLocaleString('pt-BR'):'Nunca'}</td><td>${arr.length}</td><td>${last?esc(userName(last.usuarioId)):'—'}</td><td><strong>${situ}</strong><br><small>${tempo}</small></td></tr>`}).join('');$('semanaCorrBody').innerHTML=rows||'<tr><td colspan="5"><div class="empty">Nenhum corredor ativo.</div></td></tr>';let names=['Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'];let ws=weekStart();$('semanaDias').innerHTML=names.map((name,i)=>{let d=new Date(ws);d.setDate(ws.getDate()+i);let dayBs=bs.filter(x=>{let bd=new Date(x.data);return bd.getFullYear()===d.getFullYear()&&bd.getMonth()===d.getMonth()&&bd.getDate()===d.getDate()});return`<div class="card" style="margin:8px 0;padding:11px"><strong>${name} • ${d.toLocaleDateString('pt-BR')}</strong><div style="margin-top:7px">${dayBs.length?dayBs.map(x=>`<div style="padding:7px 0;border-bottom:1px solid var(--line)">🔎 <strong>${esc(corridorName(x.corredorId))}</strong> • ${esc(userName(x.usuarioId))} • ${new Date(x.data).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})} • ${x.produtos} produto(s)</div>`).join(''):'<span class="muted">Nenhuma batida registrada.</span>'}</div></div>`}).join('')}
+function renderHistorico(){let opts='<option value="">Todos corredores</option>'+activeCorr().map(c=>`<option value="${c.id}">${esc(c.nome)}</option>`).join('');$('histCor').innerHTML=opts;let fc=$('histCor').value,d=+$('histDias').value,cut=Date.now()-d*86400000;let a=db.batidas.filter(b=>new Date(b.data).getTime()>=cut&&(!fc||String(b.corredorId)===fc)).sort((a,b)=>new Date(b.data)-new Date(a.data));$('histBody').innerHTML=a.length?a.map(b=>`<tr><td>${new Date(b.data).toLocaleString('pt-BR')}</td><td>${esc(corridorName(b.corredorId))}</td><td>${esc(userName(b.usuarioId))}</td><td>${b.produtos}</td><td>${esc(b.observacao||'—')}</td></tr>`).join(''):'<tr><td colspan="5"><div class="empty">Nenhuma batida encontrada.</div></td></tr>'}
+function remaining(x){return Math.max(0,(+x.quantidade||0)-Math.max(0,Math.min(+x.separada||0,+x.quantidade||0)))}
+function isOpenProduct(x){return remaining(x)>0 && x.status!=='Resolvido' && x.status!=='Retirado/PIQUE'}
+function origemProduto(x){return x.batidaId?'batida':'manual'}
+function miniVenc(x,label){let r=remaining(x),n=days(x.validade);return `<div class="item"><img class="thumb" src="${x.foto||''}" alt=""><div class="item-main"><strong>${esc(x.produto)}</strong><small>Validade: ${fmt(x.validade)} • ${esc(corridorName(x.corredor))} • ${r} restante(s)</small><br>${badge(priority(n))} ${statusBadge(x.status)}<br><small>Registrado por ${esc(userName(x.criadoPor))}</small></div><div class="actions"><button class="secondary" disabled title="Ação futura">⚙️ Ação</button></div></div>`}
+function startOfWeek(){let d=today0(),day=d.getDay();d.setDate(d.getDate()-(day===0?6:day-1));return d}
+function inPeriod(iso,period){let t=new Date(iso);if(period==='all')return true;if(period==='today')return t>=today0();return t>=startOfWeek()}
+function renderHoje(){let u=$('hojeUser'),cur=u.value;u.innerHTML='<option value="">Todos responsáveis</option>'+db.users.map(x=>`<option value="${x.id}">${esc(x.nome)}</option>`).join('');u.value=cur;let ou=$('hojeOrigem').value,st=$('hojeStatus').value;let a=db.products.filter(x=>{let d=new Date(x.criado);return d>=today0()&&(!u.value||x.criadoPor===u.value)&&(!ou||origemProduto(x)===ou)&&(!st||x.status===st)}).sort((a,b)=>new Date(b.criado)-new Date(a.criado));let bat=a.filter(x=>x.batidaId).length,manual=a.length-bat;let critical=a.filter(x=>{let n=days(x.validade);return n<0||n<=9}).length;$('hojeKpis').innerHTML=[['📦 Registrados',a.length,''],['🔎 De batida',bat,''],['📝 Manuais',manual,'orange'],['🚨 Críticos/atenção',critical,'red']].map(x=>`<div class="card metric"><span>${x[0]}</span><strong class="${x[2]}">${x[1]}</strong></div>`).join('');$('hojeList').innerHTML=a.length?a.map(x=>`<div class="item"><div class="thumb-wrap" style="flex:0 0 auto"><img class="thumb" src="${escapeAttr(x.foto||'')}" alt="Foto de ${esc(x.produto)}" ${x.foto?`onclick="abrirFotoProduto('${x.id}')" style="cursor:zoom-in" title="Clique para ampliar"`:''}></div><div class="item-main"><strong>${esc(x.produto)}</strong><small>${fmt(x.validade)} • ${esc(corridorName(x.corredor))} • ${remaining(x)} restante(s)</small><br>${daysBadge(days(x.validade))} ${statusBadge(x.status)}<br><small>👤 ${esc(userName(x.criadoPor))} • 🕐 ${new Date(x.criado).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})} • ${x.batidaId?'🟢 Batida':'⚠️ Registro manual'}</small></div></div>`).join(''):'<div class="empty">Nenhum produto foi registrado hoje com esses filtros.</div>'}
+function reportProductsForPeriod(period){return db.products.filter(x=>inPeriod(x.criado,period))}
+function reportLabel(period){if(period==='today')return 'Hoje • '+today0().toLocaleDateString('pt-BR');if(period==='week')return 'Esta semana • '+weekStart().toLocaleDateString('pt-BR')+' a '+new Date(weekEnd().getTime()-86400000).toLocaleDateString('pt-BR');return 'Todos os registros'}
+function reportData(period){let p=reportProductsForPeriod(period),b=db.batidas.filter(x=>inPeriod(x.data,period));return {p,b}}
+function renderRelatorios(){let period=$('reportPeriod')?.value||'week',d=reportData(period),p=d.p,b=d.b;let totalCorr=activeCorr().length,feitos=new Set(b.map(x=>String(x.corredorId))).size,pend=Math.max(0,totalCorr-feitos),pct=totalCorr?Math.round(feitos/totalCorr*100):0;let vencHoje=p.filter(x=>isOpenProduct(x)&&days(x.validade)===0).length,vencAmanha=p.filter(x=>isOpenProduct(x)&&days(x.validade)===1).length,vencidos=p.filter(x=>isOpenProduct(x)&&days(x.validade)<0).length;let sep=p.filter(x=>x.status==='Separado').length,noCorr=p.filter(x=>x.status==='Ainda no corredor').length,agu=p.filter(x=>x.status==='Aguardando oferta').length,sol=p.filter(x=>x.status==='Oferta solicitada').length,ap=p.filter(x=>x.status==='Oferta aplicada').length,res=p.filter(x=>x.status==='Resolvido').length;$('reportPeriodLabel').textContent=reportLabel(period);$('reportKpis').innerHTML=[['🔎 Batidas',b.length,''],['📦 Produtos encontrados',p.length,''],['🚨 Críticos/atenção',p.filter(x=>days(x.validade)<=9&&isOpenProduct(x)).length,'red'],['📍 Corredores feitos',feitos+' / '+totalCorr,'green'],['⏳ Corredores pendentes',pend,'red'],['📊 Cobertura',pct+'%','']].map(a=>`<div class="card metric"><span>${a[0]}</span><strong class="${a[2]}">${a[1]}</strong></div>`).join('');$('reportStatusKpis').innerHTML=[['🟢 Separados',sep],['🔴 Ainda no corredor',noCorr],['🟡 Aguardando oferta',agu],['🟢 Oferta solicitada',sol],['🟢 Oferta aplicada',ap],['✅ Resolvidos',res],['🔴 Vence hoje',vencHoje],['🔴 Vence amanhã',vencAmanha],['⚠️ Vencidos',vencidos]].map(a=>`<div class="card metric"><span>${a[0]}</span><strong>${a[1]}</strong></div>`).join('');$('reportTeam').innerHTML=db.users.map(u=>{let bb=b.filter(x=>x.usuarioId===u.id).length,pp=p.filter(x=>x.criadoPor===u.id).length,ps=p.filter(x=>x.criadoPor===u.id&&x.status!=='Resolvido').length;return`<div style="padding:9px 0;border-bottom:1px solid var(--line)"><strong>${esc(u.nome)}</strong> — ${esc(u.funcao)}<br><small>${bb} batida(s) • ${pp} produto(s) registrado(s) • ${ps} pendência(s) em aberto</small></div>`}).join('');$('reportCorr').innerHTML=activeCorr().map(c=>{let arr=b.filter(x=>String(x.corredorId)===String(c.id)),d=daysSince(c),situ=arr.length?'🟢 Feito no período':'🔴 Pendente';return`<div style="padding:8px 0;border-bottom:1px solid var(--line)"><strong>${esc(c.nome)}</strong> — ${situ}<br><small>Última batida: ${arr.length?new Date(arr[0].data).toLocaleString('pt-BR'):(d===9999?'Nunca':d+' dia(s) atrás')} • ${arr.length} no período</small></div>`}).join('');$('reportProducts').innerHTML=p.length?`<div class="list-table"><table><thead><tr><th>Produto</th><th>Validade</th><th>Corredor</th><th>Encontrada</th><th>Separada</th><th>Restante</th><th>Status</th><th>Responsável</th></tr></thead><tbody>${[...p].sort((a,b)=>new Date(b.criado)-new Date(a.criado)).map(x=>`<tr><td>${esc(x.produto)}</td><td>${fmt(x.validade)}</td><td>${esc(corridorName(x.corredor))}</td><td>${+x.quantidade||0}</td><td>${+x.separada||0}</td><td>${remaining(x)}</td><td>${esc(x.status)}</td><td>${esc(userName(x.criadoPor))}</td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">Nenhum produto no período.</div>'
+let actorId=window.vencimentosCloud?.currentUser?.id||null;let actorName=window.vencimentosCloud?.currentProfile?.nome||userName(actorId);let pique=db.products.filter(x=>x.piqueEm&&inPeriod(x.piqueEm,period)&&(!actorId||x.piquePor===actorId)).sort((a,b)=>new Date(b.piqueEm)-new Date(a.piqueEm));$('reportPiqueLabel').textContent=actorName+' • '+pique.length+' retirada(s) confirmada(s) com foto no período';$('reportPique').innerHTML=pique.length?'<div class="pique-report-list">'+pique.map(x=>`<div class="pique-report-item">${x.fotoPique?`<img src="${escapeAttr(x.fotoPique)}" alt="Comprovante PIQUE">`:'<div style="width:110px;height:110px;display:grid;place-items:center;border-radius:10px;background:#eef3e9;font-size:32px">📷</div>'}<div><strong>${esc(x.produto)}</strong><div>Validade: ${x.validade&&days(x.validade)<0?'Vencido':x.validade&&days(x.validade)===0?'Vence hoje':fmt(x.validade)}</div><small>📸 Retirado/PIQUE em ${new Date(x.piqueEm).toLocaleString('pt-BR')}<br>👤 ${esc(x.piquePorNome||actorName)}<br>📍 ${esc(corridorName(x.corredor))}</small></div></div>`).join('')+'</div>':'<div class="empty">Nenhum movimento PIQUE seu no período selecionado.</div>';}
+function reportCSVRows(){let period=$('reportPeriod')?.value||'week',d=reportData(period),p=d.p;let rows=[['RELATÓRIO PREVENÇÃO DE VENCIMENTOS',reportLabel(period)],[],['Produto','Validade','Corredor','Quantidade encontrada','Quantidade separada','Restante','Status','Responsável','Data/hora']];p.forEach(x=>rows.push([x.produto,fmt(x.validade),corridorName(x.corredor),+x.quantidade||0,+x.separada||0,remaining(x),x.status,userName(x.criadoPor),new Date(x.criado).toLocaleString('pt-BR')]));return rows}
+function csvCell(v){let s=String(v??'').replace(/"/g,'""');return '"'+s+'"'}
+function exportarRelatorioCSV(){let csv='\ufeff'+reportCSVRows().map(r=>r.map(csvCell).join(';')).join('\r\n');let blob=new Blob([csv],{type:'text/csv;charset=utf-8;'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='relatorio_prevencao_'+new Date().toISOString().slice(0,10)+'.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast('Relatório Excel (CSV) exportado.')}
+function gerarPDF(){renderRelatorios();let old=document.title;document.title='Relatorio_Preventencao_'+new Date().toISOString().slice(0,10);window.print();setTimeout(()=>document.title=old,1000)}
+function compartilharRelatorio(){let period=$('reportPeriod')?.value||'week',text='Relatório Prevenção de Vencimentos • '+reportLabel(period),rows=reportCSVRows(),csv='\ufeff'+rows.map(r=>r.map(csvCell).join(';')).join('\r\n'),name='relatorio_prevencao_'+new Date().toISOString().slice(0,10)+'.csv';try{let file=new File([csv],name,{type:'text/csv;charset=utf-8'});if(navigator.share&&navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({title:'Relatório Prevenção de Vencimentos',text,files:[file]}).then(()=>toast('Relatório anexado ao compartilhamento.')).catch(e=>{if(e&&e.name!=='AbortError')baixarRelatorioCSV(csv,name)})}else{baixarRelatorioCSV(csv,name);if(navigator.share){setTimeout(()=>navigator.share({title:'Relatório Prevenção de Vencimentos',text}).catch(()=>{}),300)}else toast('Relatório baixado. Abra o arquivo e use Compartilhar para enviar como anexo.')}}catch(e){baixarRelatorioCSV(csv,name);toast('Relatório baixado. Use o botão Compartilhar do arquivo para anexar.')}}function baixarRelatorioCSV(csv,name){let blob=new Blob([csv],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500)}
+
+async function alterarSenhaApp(){
+  const n=$('novaSenhaApp')?.value||'',c=$('confirmaSenhaApp')?.value||'',msg=$('senhaAppMsg');
+  if(n.length<6){if(msg)msg.textContent='A nova senha precisa ter pelo menos 6 caracteres.';return}
+  if(n!==c){if(msg)msg.textContent='As senhas não conferem.';return}
+  const sb=window.vencimentosCloud?.supabase;
+  if(!sb||!window.vencimentosCloud?.currentUser){if(msg)msg.textContent='Faça login novamente para alterar sua senha.';return}
+  try{
+    if(msg)msg.textContent='Salvando…';
+    const {error}=await sb.auth.updateUser({password:n});
+    if(error)throw error;
+    $('novaSenhaApp').value='';$('confirmaSenhaApp').value='';
+    if(msg)msg.textContent='Senha alterada com sucesso. Ela será exigida no próximo login.';
+    toast('Senha alterada com sucesso.');
+  }catch(e){console.error(e);if(msg)msg.textContent='Não foi possível alterar a senha. Tente novamente.'}
+}
+function renderConfig(){let me=user();$('usersConfig').innerHTML=db.users.map(u=>`<div style="padding:10px 0;border-bottom:1px solid var(--line)"><strong>${esc(u.nome)}</strong> — ${esc(u.funcao)} ${u.admin?'🔑 Admin':''}<br><label><input type="checkbox" ${u.trabalhando?'checked':''} onchange="toggleWork('${u.id}',this.checked)"> Trabalhando hoje (recebe alertas)</label></div>`).join('');$('corrConfig').innerHTML=activeCorr().map(c=>`<div class="corridor-row"><input value="${esc(c.id)}" disabled style="width:60px;padding:8px"><input value="${esc(c.nome)}" onchange="renameCorridor(${c.id},this.value)"><button class="danger" onclick="disableCorridor(${c.id})">Desativar</button></div>`).join('');$('rGreen').value=db.rules.greenMax;$('rYellow').value=db.rules.yellowMax;$('notifTime').value=db.rules.notifTime;$('retiradaNotifTime').value=db.rules.retiradaNotifTime||'18:00'}
+function toggleWork(id,v){let u=db.users.find(x=>x.id===id);if(u){u.trabalhando=v;save();renderConfig();renderPainel();toast('Escala atualizada.')}}function renameCorridor(id,v){let c=db.corridors.find(x=>x.id===id);if(c){c.nome=v.trim()||('Corredor '+id);save();renderConfig();toast('Corredor atualizado.')}}function disableCorridor(id){let c=db.corridors.find(x=>x.id===id);if(c){c.ativo=false;save();renderConfig();fillCorridors();toast('Corredor desativado.')}}function addCorridor(){let id=Math.max(0,...db.corridors.map(c=>c.id))+1;db.corridors.push({id,nome:'Corredor '+id,ativo:true});save();renderConfig();toast('Corredor adicionado.')}function saveRules(){let g=+$('rGreen').value,y=+$('rYellow').value,t=$('notifTime').value,rt=$('retiradaNotifTime').value;if(!Number.isFinite(g)||!Number.isFinite(y)||y<=g){toast('Use limites válidos: atenção maior que em dia.');return}db.rules={...db.rules,greenMax:g,yellowMax:y,notifTime:t||'08:00',retiradaNotifTime:rt||'18:00'};save();toast('Regras salvas.');renderPainel()}
+function exportar(){let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='backup_prevencao_V3.12.6_'+new Date().toISOString().slice(0,10)+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast('Backup exportado.')}
+function importar(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let d=JSON.parse(r.result);if(!d.products||!d.corridors)throw 0;db=normalize(d);save();renderPainel();toast('Backup importado.')}catch{toast('Arquivo V3 inválido.')}};r.readAsText(f)}
+function currentActorId(){return window.vencimentosCloud?.currentUser?.id||user().id}function currentActorName(){return window.vencimentosCloud?.currentProfile?.nome||userName(currentActorId())}
+async function emitCloudEvent(type,payload){try{let sb=window.vencimentosCloud?.supabase;if(!sb||!window.vencimentosCloud?.currentUser)return;let {error}=await sb.from('activity_events').insert({tipo:type,actor_id:window.vencimentosCloud.currentUser.id,actor_name:currentActorName(),payload});if(error)console.warn('activity_events indisponível:',error.message)}catch(e){console.warn('Falha ao enviar evento:',e)}}
+let paNotifAudio=null; function unlockNotificationSound(){try{paNotifAudio=paNotifAudio||new Audio('./notificacao_pa.wav');paNotifAudio.muted=true;paNotifAudio.currentTime=0;let p=paNotifAudio.play();if(p&&p.then)p.then(()=>{paNotifAudio.pause();paNotifAudio.currentTime=0;paNotifAudio.muted=false}).catch(()=>{});else paNotifAudio.muted=false}catch(e){}} function playNotificationSound(){try{if(!paNotifAudio)return;paNotifAudio.muted=false;paNotifAudio.currentTime=0;paNotifAudio.play().catch(()=>{})}catch(e){}} function notifyLocal(title,body,kind='produto'){try{if(!('Notification'in window)||Notification.permission!=='granted')return;let icons={produto:'./notification-icon-produto.png',pique:'./notification-icon-pique.png',batida:'./notification-icon-batida.png',fefo:'./notification-icon-fefo.png'};let icon=icons[kind]||icons.produto;let opts={body,icon,badge:'./notification-icon-produto.png',tag:'vencimentos-pa-'+kind+'-'+Date.now()};playNotificationSound();if(navigator.serviceWorker?.controller){navigator.serviceWorker.controller.postMessage({type:'SHOW_NOTIFICATION',title,options:opts});}else new Notification(title,opts)}catch(e){console.warn('Falha na notificação local:',e)}}
+function updateNotificationStatus(){let el=$('notifStatus');if(!el||!('Notification'in window))return;if(Notification.permission==='granted')el.textContent='✅ Notificações autorizadas neste aparelho.';else if(Notification.permission==='denied')el.textContent='🚫 Notificações bloqueadas pelo navegador. Ative-as nas configurações do site.';else el.textContent='⚪ Notificações ainda não autorizadas neste aparelho.'}
+function requestNotifications(){if(!('Notification'in window)){toast('Este navegador não oferece notificações.');return}Notification.requestPermission().then(p=>{if(p==='granted')unlockNotificationSound();updateNotificationStatus();toast(p==='granted'?'Notificações ativadas neste aparelho.':'Notificações não autorizadas.');})}
+function subscribeCloudEvents(){try{let sb=window.vencimentosCloud?.supabase;if(!sb||!window.vencimentosCloud?.currentUser)return;if(window.vencimentosCloud.eventsChannel){try{sb.removeChannel(window.vencimentosCloud.eventsChannel)}catch(e){}}window.vencimentosCloud.eventsChannel=sb.channel('vencimentos-pa-events-'+window.vencimentosCloud.currentUser.id).on('postgres_changes',{event:'INSERT',schema:'public',table:'activity_events'},payload=>{let row=payload.new||{};if(row.actor_id===window.vencimentosCloud.currentUser.id)return;let p=row.payload||{};if(row.tipo==='PRODUTO_ATENCAO_30_DIAS'){notifyLocal('📦 Novo produto em atenção',`${row.actor_name||'Usuário'} registrou ${p.produto||'um produto'} • ${p.diasRestantes} dia(s) restantes.` ,'produto')}else if(row.tipo==='FEFO_LISTA_ATUALIZADA'){notifyLocal('📋 Lista FEFO atualizada',`${row.actor_name||'Usuário'} atualizou a lista FEFO com ${p.quantidade||0} produto(s).`,'fefo')}else if(row.tipo==='BATIDA_FINALIZADA'){notifyLocal('🛒 Batida finalizada',`${row.actor_name||'Usuário'} finalizou ${p.corredor||'um corredor'} • ${p.produtos||0} produto(s).`,'batida')}else if(row.tipo==='PIQUE_CONFIRMADO'){notifyLocal('🗑️ Retirada/PIQUE',`${row.actor_name||'Usuário'} confirmou o PIQUE de ${p.produto||'um produto'}.`,'pique')}}).subscribe((status)=>{if(status==='SUBSCRIBED')console.log('Realtime conectado para notificações.')})}catch(e){console.warn('Realtime indisponível:',e)}}
+function maybeNotify(){if(!('Notification'in window)||Notification.permission!=='granted')return;let d=new Date(),hm=d.toTimeString().slice(0,5),stamp=d.toISOString().slice(0,10),h=db.rules.notifTime||'08:00',rt=db.rules.retiradaNotifTime||'18:00';if(hm>=h&&localStorage.getItem('notifDate')!==stamp){localStorage.setItem('notifDate',stamp);sendNotification('morning')}if(hm>=rt&&localStorage.getItem('retiradaNotifDate')!==stamp){localStorage.setItem('retiradaNotifDate',stamp);sendNotification('retirada')}}
+function sendNotification(tipo='morning'){let r=recommended(),umDia=db.products.filter(x=>days(x.validade)===1&&x.status!=='Retirado/PIQUE'),ate30=db.products.filter(x=>isOpenProduct(x)&&days(x.validade)>=0&&days(x.validade)<=30).length,vencemHoje=db.products.filter(x=>isOpenProduct(x)&&days(x.validade)===0).length,title=tipo==='retirada'?'🚨 Retirada/PIQUE — fim do expediente':'Prevenção de Vencimentos',body=tipo==='retirada'?`Há ${umDia.length} produto(s) com 1 dia restante. Retire no final do expediente e marque Retirado/PIQUE.`:`Hoje: ${r.c.nome}. ${ate30} produto(s) estão na janela de até 30 dias.${vencemHoje?` ${vencemHoje} vence(m) hoje.`:''}`;if(umDia.length&&tipo!=='retirada')body+=` ${umDia.length} produto(s) vence(m) amanhã e precisam de retirada.`;notifyLocal(title,body)}
+// Integração inicial com nuvem: login conectado; dados locais continuam preservados nesta etapa.
+function cloudSession(){return window.vencimentosCloud?.currentUser||null}
+
+document.addEventListener('DOMContentLoaded',()=>{let b=$('fabNav');if(b)b.addEventListener('click',toggleFabNav);renderFabMenu();syncFabNavVisibility()});
+function init(){fillCorridors();renderPainel();renderLembretes();renderBatida();renderProdutos();renderVencimentos();renderHoje();renderSemana();renderHistorico();renderRelatorios();renderConfig();renderPendencias();restoreNavigation();if('Notification'in window&&Notification.permission==='default'){setTimeout(()=>{},1000)}setInterval(maybeNotify,60000);setTimeout(()=>{updateNotificationStatus();subscribeCloudEvents()},800);if('serviceWorker'in navigator)navigator.serviceWorker.register('./service-worker.js').catch(()=>{})}
+init();
+document.addEventListener('click',function(e){let b=e.target.closest('#statusOptions .status-option');if(!b)return;let idx=Number(b.dataset.statusIndex);let opts=b.dataset.statusContext==='next10'?['Ainda no corredor','Área de vencimento']:['Ainda no corredor','Área de vencimento','PLU/Etiqueta'];if(statusProductId!=null&&opts[idx]){selectStatusOption(statusProductId,opts[idx]);window._statusContext='';}});</script><script>
+(function(){
+  let deferredPrompt=null;
+  window.addEventListener('beforeinstallprompt',function(e){
+    e.preventDefault();
+    deferredPrompt=e;
+    window.dispatchEvent(new CustomEvent('vencimentospa:installavailable'));
+  });
+  window.VencimentosPAInstall=function(){
+    if(!deferredPrompt) return Promise.resolve(false);
+    const p=deferredPrompt;
+    deferredPrompt=null;
+    return p.prompt().then(function(){return p.userChoice;}).then(function(choice){
+      window.dispatchEvent(new CustomEvent('vencimentospa:installed',{detail:choice}));
+      return choice;
+    }).catch(function(){return false;});
+  };
+  window.addEventListener('appinstalled',function(){
+    deferredPrompt=null;
+    window.dispatchEvent(new CustomEvent('vencimentospa:installed'));
+  });
+})();
+</script>
+</body></html>
